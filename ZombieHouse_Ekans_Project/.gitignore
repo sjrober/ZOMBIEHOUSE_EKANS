@@ -1,0 +1,22 @@
+# Directory names
+bin
+out
+
+# Files from IDEs/etc.
+*.class
+*.classpath
+*.project
+*.xml
+*.idea
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+src/cs351/core/oldGame.java
