@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Sam\Documents\GitHub\zombiehouse_ekans\ZombieHouse_Ekans_Atle\Resources\Meshes\Feral_Ghoul\feralGHOUULAAH.obj" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
-    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474662459843" ignored="false" />
+    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474662567659" ignored="false" />
     <file path="/fragment.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661014322" ignored="false" />
     <file path="/MouseEventHandler.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474660947131" ignored="false" />
     <file path="/Feral_Ghoul.obj" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661769619" ignored="false" />
+    <file path="/ZombieHouse3d.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474662694987" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +91,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Feral_Ghoul.obj" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/Feral_Ghoul.obj">
+      <file leaf-file-name="Feral_ghoul.obj" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul.obj">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="5" selection-start="169" selection-end="169" vertical-scroll-proportion="0.2545757">
+            <state line="9" column="5" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZombieHouse3d.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="13" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.23989218">
               <folding />
             </state>
           </provider>
@@ -120,6 +129,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/game_engine/MouseEventHandler.java" />
         <option value="$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/Feral_Ghoul.obj" />
+        <option value="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
       </list>
     </option>
   </component>
@@ -263,7 +273,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Feral_Ghoul" />
+              <option name="myItemId" value="Feral_ghoul" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,7 +447,11 @@
       <created>1474662474257</created>
       <updated>1474662474257</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added comment to Feral_Ghoul.obj">
+      <created>1474662584323</created>
+      <updated>1474662584323</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -461,8 +475,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30227274" sideWeight="0.67145133" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30227274" sideWeight="0.67304623" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32695374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -611,9 +625,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/Feral_Ghoul.obj">
+    <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul.obj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="5" selection-start="169" selection-end="169" vertical-scroll-proportion="0.2545757">
+        <state line="9" column="5" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="13" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.23989218">
           <folding />
         </state>
       </provider>
