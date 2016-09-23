@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="Added comment to Feral_Ghoul.obj">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/feralGHOUULAAH.obj" />
+    <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\Sam\Documents\GitHub\zombiehouse_ekans\ZombieHouse_Ekans_Atle\Resources\Meshes\Feral_Ghoul\feralGHOUULAAH.obj" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
-    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661788154" ignored="false" />
+    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474662459843" ignored="false" />
     <file path="/fragment.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661014322" ignored="false" />
     <file path="/MouseEventHandler.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474660947131" ignored="false" />
     <file path="/Feral_Ghoul.obj" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661769619" ignored="false" />
@@ -91,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feralGHOUULAAH.obj" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/feralGHOUULAAH.obj">
+      <file leaf-file-name="Feral_Ghoul.obj" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/Feral_Ghoul.obj">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="30" selection-start="101" selection-end="101" vertical-scroll-proportion="0.16971713">
+            <state line="9" column="5" selection-start="169" selection-end="169" vertical-scroll-proportion="0.2545757">
               <folding />
             </state>
           </provider>
@@ -433,7 +433,11 @@
       <created>1474661388191</created>
       <updated>1474661388191</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added comment to Feral_Ghoul.obj">
+      <created>1474662474257</created>
+      <updated>1474662474257</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -607,9 +611,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/feralGHOUULAAH.obj">
+    <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/Feral_Ghoul.obj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="30" selection-start="101" selection-end="101" vertical-scroll-proportion="0.16971713">
+        <state line="9" column="5" selection-start="169" selection-end="169" vertical-scroll-proportion="0.2545757">
           <folding />
         </state>
       </provider>
