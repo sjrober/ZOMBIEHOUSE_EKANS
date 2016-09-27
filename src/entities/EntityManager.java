@@ -2,6 +2,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -41,6 +42,9 @@ public class EntityManager
   
   private MasterZombieDecision masterDecision;
   private ZombieDecision zombieDecision;
+
+  public LinkedList<PlayerClone> playerClones = new LinkedList<>();
+  private LinkedList<PointTime>currentPointTimeList = new LinkedList<PointTime>();
   
   /**
    * Constructor for EntityManager.
@@ -277,8 +281,16 @@ public class EntityManager
       
     }
 
+    /*
+    if player is not dead
+     */
     if (!player.isDead.get()) {
       ZombieHouse3d.tickCount++;
+
+      for(PlayerClone playerClone : playerClones)
+      {
+        playerClone.tick();
+      }
     }
     
     if (player!=null && player.foundExit.get())
@@ -409,9 +421,20 @@ public class EntityManager
   public void dispose()
   {
     gameIsRunning.set(false);
-    
+
+    //adding another player clone
+    currentPointTimeList = player.pointList;
+    playerClones.add(new PlayerClone(currentPointTimeList));
+
     player.dispose();
     player = null;
+
+    //delete current player clones
+    for(PlayerClone playerClone : playerClones)
+    {
+      playerClone.setActive(false);
+      //playerClone.dispose();
+    }
     
     for(Zombie zombie: zombies)
     {

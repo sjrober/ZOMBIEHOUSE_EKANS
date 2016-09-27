@@ -73,8 +73,12 @@ public class Player extends Creature
 
   private PlayerAction action=PlayerAction.NOACTION;
 
-  private LinkedList<PointTime> pointList = new LinkedList<PointTime>();
+  public LinkedList<PointTime> pointList = new LinkedList<PointTime>();
   
+
+  public Player() {
+
+  }
 
   /**
    * A constructor for a 3D player. takes in a camera object
@@ -252,8 +256,13 @@ public class Player extends Creature
   LinkedList array of pointTimes.
    */
   public void addPointTime() {
-    PointTime current = new PointTime(xPos,yPos,ZombieHouse3d.tickCount,action);
-    pointList.add(current);
+    /*PointTime current = new PointTime(xPos,yPos,ZombieHouse3d.tickCount,action);
+    if (ZombieHouse3d.tickCount==0) {
+      pointList.add(current);
+    }else {
+      pointList.set(ZombieHouse3d.tickCount,current);
+    } */
+
   }
 
   /**

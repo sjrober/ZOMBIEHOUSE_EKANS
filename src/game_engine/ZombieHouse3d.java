@@ -7,6 +7,7 @@ import com.interactivemesh.jfx.importer.obj.ObjModelImporter;
 
 import entities.EntityManager;
 import entities.Player;
+import entities.PlayerClone;
 import entities.Zombie;
 import graphing.GraphNode;
 import graphing.TileGraph;
@@ -158,6 +159,13 @@ public class ZombieHouse3d
     // Initialize player
     entityManager.player = new Player(3, 0, 3, camera, entityManager, light);
     entityManager.player.camera = camera;
+
+    tickCount=0;
+
+    for(PlayerClone playerClone : entityManager.playerClones)
+    {
+      playerClone.setActive(true);
+    }
 
     // Lighting
     root.getChildren().add(entityManager.player.light);
