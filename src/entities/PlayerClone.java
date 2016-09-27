@@ -1,6 +1,8 @@
 package entities;
 import entities.Player;
 import game_engine.ZombieHouse3d;
+import javafx.scene.Node;
+import javafx.scene.transform.Rotate;
 
 import java.util.LinkedList;
 
@@ -19,6 +21,7 @@ public class PlayerClone extends Player
   private double lastxPos;
   private double lastyPos;
   private boolean active=false;
+  public Node[] cloneMesh;
 
   public PlayerClone(LinkedList<PointTime> actionSequence) {
     this.actionSequence = actionSequence;
@@ -42,6 +45,15 @@ public class PlayerClone extends Player
 
   public void setActive(boolean active) {
     this.active = active;
+  }
+
+  public void setMesh(Node[] cloneMesh)
+  {
+    this.cloneMesh = cloneMesh;
+    for (int i = 0; i < cloneMesh.length; i++)
+    {
+      cloneMesh[i].setRotationAxis(Rotate.Y_AXIS);
+    }
   }
 
 }

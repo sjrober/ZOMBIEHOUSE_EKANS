@@ -256,12 +256,13 @@ public class Player extends Creature
   LinkedList array of pointTimes.
    */
   public void addPointTime() {
-    /*PointTime current = new PointTime(xPos,yPos,ZombieHouse3d.tickCount,action);
-    if (ZombieHouse3d.tickCount==0) {
+    PointTime current = new PointTime(xPos,yPos,ZombieHouse3d.tickCount,action);
+    pointList.add(current);
+    /*if (ZombieHouse3d.tickCount==0) {
       pointList.add(current);
     }else {
       pointList.set(ZombieHouse3d.tickCount,current);
-    } */
+    }*/
 
   }
 

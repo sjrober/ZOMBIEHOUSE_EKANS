@@ -265,6 +265,13 @@ public class EntityManager
         startMasterZombie();
       }
     }
+
+    ZombieHouse3d.tickCount++;
+
+    for(PlayerClone playerClone : playerClones)
+    {
+      playerClone.tick();
+    }
     
     if (player.isDead.get())
     {
@@ -281,17 +288,6 @@ public class EntityManager
       
     }
 
-    /*
-    if player is not dead
-     */
-    if (!player.isDead.get()) {
-      ZombieHouse3d.tickCount++;
-
-      for(PlayerClone playerClone : playerClones)
-      {
-        playerClone.tick();
-      }
-    }
     
     if (player!=null && player.foundExit.get())
     {
