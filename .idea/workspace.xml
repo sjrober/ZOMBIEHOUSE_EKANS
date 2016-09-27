@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/EntityManager.java" afterPath="$PROJECT_DIR$/src/entities/EntityManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Player.java" afterPath="$PROJECT_DIR$/src/entities/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/PlayerAction.java" afterPath="$PROJECT_DIR$/src/entities/PlayerAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/PlayerClone.java" afterPath="$PROJECT_DIR$/src/entities/PlayerClone.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/PointTime.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
-    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474955367358" ignored="false" />
+    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475005368321" ignored="false" />
     <file path="/fragment.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661014322" ignored="false" />
     <file path="/MouseEventHandler.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474665876444" ignored="false" />
     <file path="/Feral_Ghoul.obj" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661769619" ignored="false" />
@@ -653,7 +649,11 @@
       <created>1474955377716</created>
       <updated>1474955377716</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Keep working on player movement/action recording...">
+      <created>1475005382493</created>
+      <updated>1475005382493</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -760,7 +760,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still working on player movement/action recording..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Keep working on player movement/action recording..." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -778,6 +778,7 @@
     <MESSAGE value="Changed directory structure" />
     <MESSAGE value="Working on player movement/action recording..." />
     <MESSAGE value="Still working on player movement/action recording..." />
+    <MESSAGE value="Keep working on player movement/action recording..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
