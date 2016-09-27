@@ -2,120 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Lambent_Female/Lambent_Female_D.tga" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Lambent_Female/Lambent_Female_E.tga" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Lambent_Female/Lambent_Female_N.tga" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Lambent_Female/Lambent_Female_S.tga" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/music/Paranormal_Activity.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/brick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/brick_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/brick_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/gui/button.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/coal_block.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/coal_block_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/coal_block_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/deaths/death0.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/deaths/death1.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/achievements/exit.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep0.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep1.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep2.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep3.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep4.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep5.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep6.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep7.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep8.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/footstep9.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/ghoulferal_d.tga" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/ghoulferal_n.tga" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/ghoulferal_s.tga" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/glowstone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/glowstone_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/glowstone_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/gold_block.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/gold_block_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/gold_block_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/groans/groan0.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/groans/groan1.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/groans/groan2.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/groans/groan3.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/iron_block.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/iron_block_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/iron_block_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/External_Jars/jimObjModelImporterJFX.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/lapis_block.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/lapis_block_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/lapis_block_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/redstone_block.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/redstone_block_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Images/Textures/redstone_block_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/shuffles/shuffle0.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/shuffles/shuffle1.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/shuffles/shuffle2.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/shuffles/shuffle3.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game_engine/Attributes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/Creature.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/Entity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/EntityManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul.dae" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul.mtl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sounds/footsteps/Freesound.org - Footsteps on Tiles.wav by RutgerMuller.URL" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphing/GraphNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphing/Heading.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game_engine/KeyboardEventHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Lambent_Female/Lambent_Female.dae" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Lambent_Female/Lambent_Female.mtl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Lambent_Female/Lambent_Female.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utilities/MapLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utilities/MapViewerScene.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game_engine/MouseEventHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphing/NodeComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/Player.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/levels/ProceduralMap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/ResizableCanvas.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game_engine/Scenes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sounds/Sound.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sounds/SoundManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/levels/TextureMaps.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/levels/Tile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphing/TileGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/Zombie.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utilities/ZombieBoardRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZombieHouse.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Maps/testmap.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Maps/testmap2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Maps/testmap3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Maps/testmap4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Maps/textureRoom.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/PlayerAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/EntityManager.java" afterPath="$PROJECT_DIR$/src/entities/EntityManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/MouseEventHandler.java" afterPath="$PROJECT_DIR$/src/game_engine/MouseEventHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Player.java" afterPath="$PROJECT_DIR$/src/entities/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474663901895" ignored="false" />
     <file path="/fragment.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661014322" ignored="false" />
-    <file path="/MouseEventHandler.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474660947131" ignored="false" />
+    <file path="/MouseEventHandler.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474665876444" ignored="false" />
     <file path="/Feral_Ghoul.obj" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661769619" ignored="false" />
-    <file path="/ZombieHouse3d.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474662694987" ignored="false" />
-    <file path="/EntityManager.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474664824826" ignored="false" />
+    <file path="/ZombieHouse3d.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474946406958" ignored="false" />
+    <file path="/EntityManager.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474946516747" ignored="false" />
+    <file path="$USER_HOME$/Desktop/college/Y3/S1/cs351/3dGameOfLife/src/sample/Main.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474691652929" ignored="false" />
+    <file path="/Main.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474666462723" ignored="false" />
+    <file path="/Player.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474947251170" ignored="false" />
+    <file path="/pointTime.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474947232301" ignored="false" />
+    <file path="/PlayerActions.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474947174589" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,10 +92,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntityManager.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EntityManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/EntityManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="63" selection-start="2678" selection-end="2678" vertical-scroll-proportion="0.5530303">
+            <state line="280" column="32" selection-start="7495" selection-end="7495" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MouseEventHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game_engine/MouseEventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="4" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Zombie.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="35" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="253" column="47" selection-start="7364" selection-end="7364" vertical-scroll-proportion="0.55949366">
+              <folding>
+                <element signature="e#2135#2146#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerAction.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/PlayerAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PointTime.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/PointTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="62" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -197,8 +155,10 @@
       <file leaf-file-name="ZombieHouse3d.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="0" selection-start="3822" selection-end="3822" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="86" column="30" selection-start="2375" selection-end="2375" vertical-scroll-proportion="43.52">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -221,10 +181,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/game_engine/MouseEventHandler.java" />
         <option value="$PROJECT_DIR$/Resources/Meshes/Feral_Ghoul/Feral_Ghoul.obj" />
+        <option value="$PROJECT_DIR$/src/entities/pointTime.java" />
+        <option value="$PROJECT_DIR$/src/game_engine/MouseEventHandler.java" />
         <option value="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
         <option value="$PROJECT_DIR$/src/entities/EntityManager.java" />
+        <option value="$PROJECT_DIR$/src/entities/PlayerActions.java" />
+        <option value="$PROJECT_DIR$/src/entities/PointTime.java" />
+        <option value="$PROJECT_DIR$/src/entities/Player.java" />
       </list>
     </option>
   </component>
@@ -295,6 +259,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZombieHouse_Atle_Ben_Jeff" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zombiehouse_ekans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game_engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -591,14 +573,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19242424" sideWeight="0.67304623" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32695374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18636364" sideWeight="0.67145133" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -686,31 +668,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Resources/Maps/testmap3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/Maps/testmap2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/Maps/testmap.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.52745426" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="0" selection-start="1108" selection-end="1108" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game_engine/MouseEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="2" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul.obj">
@@ -730,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="586" selection-end="586" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utilities/ZombieBoardRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="13" selection-start="847" selection-end="847" vertical-scroll-proportion="-16.64394">
@@ -746,7 +701,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/levels/TextureMaps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="184" selection-end="184" vertical-scroll-proportion="-2.8636363" />
+        <state line="10" column="13" selection-start="184" selection-end="184" vertical-scroll-proportion="-2.8636363">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game_engine/Attributes.java">
@@ -763,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="0" selection-start="3822" selection-end="3822" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game_engine/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="367" column="22" selection-start="10333" selection-end="10333" vertical-scroll-proportion="0.0">
@@ -777,10 +727,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="35" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game_engine/MouseEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="4" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="30" selection-start="2375" selection-end="2375" vertical-scroll-proportion="43.52">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/EntityManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="63" selection-start="2678" selection-end="2678" vertical-scroll-proportion="0.5530303">
+        <state line="280" column="32" selection-start="7495" selection-end="7495" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/PointTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="62" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/PlayerAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="253" column="47" selection-start="7364" selection-end="7364" vertical-scroll-proportion="0.55949366">
+          <folding>
+            <element signature="e#2135#2146#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

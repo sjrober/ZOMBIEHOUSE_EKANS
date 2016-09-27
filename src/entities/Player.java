@@ -1,8 +1,11 @@
 package entities;
 
+import java.awt.*;
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import game_engine.Attributes;
+import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.TileGraph;
 import javafx.scene.PerspectiveCamera;
@@ -67,6 +70,10 @@ public class Player extends Creature
   private double stamina=5;
   private double regen=.2;
   private double deltaTime=0;
+
+  private PlayerAction action=PlayerAction.NOACTION;
+
+  private LinkedList<PointTime> pointList = new LinkedList<PointTime>();
   
 
   /**
@@ -143,6 +150,8 @@ public class Player extends Creature
       xPos += (velocity * Math.cos(angle));
       yPos += (velocity * Math.sin(angle));
     }
+
+    addPointTime();
   }
   
   /**
@@ -234,6 +243,17 @@ public class Player extends Creature
     light.setRotate(camera.getRotate() - 180);
     xPos = camera.getTranslateX();
     zPos = camera.getTranslateZ();
+
+    addPointTime();
+  }
+
+  /*
+  adds PointTime (object containing current position, global tick and action(if any)) to the
+  LinkedList array of pointTimes.
+   */
+  public void addPointTime() {
+    PointTime current = new PointTime(xPos,yPos,ZombieHouse3d.tickCount,action);
+    pointList.add(current);
   }
 
   /**

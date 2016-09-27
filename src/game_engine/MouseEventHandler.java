@@ -10,6 +10,9 @@ import entities.Player;
 import javafx.event.EventHandler;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
+
+import java.awt.Robot;
 
 /**
  * 
@@ -23,6 +26,11 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
 {
   private Player player;
   private PerspectiveCamera camera;
+
+  public static int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
+  public static int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
+
+  //Robot robot = new Robot();
   
   //The angle that the camera is rotated to.
 //  static double angle = 0;
@@ -75,5 +83,7 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
       camera.setRotate(player.angle -= rotationSpeed);
     }
     lastX = x;
+
+    //robot.mouseMove(screenWidth/2, screenHeight/2);
   }
 }

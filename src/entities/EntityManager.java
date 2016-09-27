@@ -272,7 +272,13 @@ public class EntityManager
       hBox.getChildren().addAll(scenes.returnButton,scenes.goTo3dGameDeath);
       scenes.gameOverRoot.setTop(hBox);
       main.assignStage(scenes.gameOver);
+
+      ZombieHouse3d.tickCount = 0;
       
+    }
+
+    if (!player.isDead.get()) {
+      ZombieHouse3d.tickCount++;
     }
     
     if (player!=null && player.foundExit.get())
