@@ -9,6 +9,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -44,11 +45,14 @@ public class Scenes
   Button goToGameOver  = new Button();
   Button goToWin       = new Button();
   Button goToSettings  = new Button();
+  ProgressBar pHealth = new ProgressBar();
+  ProgressBar pStam = new ProgressBar();
   
   Slider playerHearing      = new Slider(0, 50, 1);
   Slider playerWalkingSpeed = new Slider(0, 2, 0.16);
   Slider playerSprintSpeed  = new Slider(0, 2, 0.25);
   Slider playerStamina      = new Slider(0, 10, 5);
+  Slider playerHealth       = new Slider(1, 11, 5);
   Slider playerRegen        = new Slider(0, 2, 0.2);
   Slider zombieSmell        = new Slider(0, 30, 15);
   Slider maxZombies         = new Slider(0, 30, 20);
@@ -72,20 +76,19 @@ public class Scenes
   public Scenes(Stage primaryStage, Main main)
   {
     this.main = main;
-    
+
     returnButton.setText("Back to main menu.");
-    returnButton.setOnAction(new EventHandler<ActionEvent>() 
+    returnButton.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
         soundManager.playTrack(0);
         try
         {
           main.assignStage(mainMenu);
-        } 
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
@@ -93,18 +96,17 @@ public class Scenes
     });
 
     returnButtonDeath.setText("Back to main menu.");
-    returnButtonDeath.setOnAction(new EventHandler<ActionEvent>() 
+    returnButtonDeath.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
         soundManager.playTrack(0);
         try
         {
           main.assignStage(mainMenu);
-        } 
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
@@ -112,55 +114,53 @@ public class Scenes
     });
 
     goTo3dGame.setText("Play 3d ZombieHouse!");
-    goTo3dGame.setOnAction(new EventHandler<ActionEvent>() 
+    goTo3dGame.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
         createNewGameBoard(0);
-        
-        try 
+
+        try
         {
           main.assignStage(threeDGameObject.zombieHouse3d(primaryStage));
           //ZombieHouse3d.parent.getChildren().add(returnButton);
-        }
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
-        
+
       }
     });
-    
+
     goTo3dGameDeath.setText("Try Again?");
-    goTo3dGameDeath.setOnAction(new EventHandler<ActionEvent>() 
+    goTo3dGameDeath.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
         createNewGameBoard(0);
         soundManager.playTrack(0);
-        
-        try 
+
+        try
         {
           main.assignStage(threeDGameObject.zombieHouse3d(primaryStage));
           //ZombieHouse3d.parent.getChildren().add(returnButton);
-        }
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
-        
+
       }
     });
-    
+
     goTo3dGameNextLevel.setText("Next Level!!");
-    goTo3dGameNextLevel.setOnAction(new EventHandler<ActionEvent>() 
+    goTo3dGameNextLevel.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
         soundManager.playTrack(0);
@@ -168,160 +168,157 @@ public class Scenes
         createNewGameBoard(difficulty);
         try
         {
-          
+
           main.assignStage(threeDGameObject.zombieHouse3d(primaryStage));
           //ZombieHouse3d.parent.getChildren().add(returnButton);
-        }
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
-        
+
       }
     });
 
     goTo2dGame.setText("Play 2d ZombieHouse!");
-    goTo2dGame.setOnAction(new EventHandler<ActionEvent>() 
+    goTo2dGame.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
         create2DGameBoard();
-        try 
+        try
         {
           main.assignStage(twoDGameObject.zombieHouse2d(primaryStage));
           ZombieBoardRenderer.root.getChildren().add(returnButton);
-        } 
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
-        
+
       }
     });
-    
+
     goToMapViewer.setText("Map Viewer");
-    goToMapViewer.setOnAction(new EventHandler<ActionEvent>() 
+    goToMapViewer.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
-        try 
+        try
         {
           main.assignStage(mapObject.mapViewerScene(primaryStage, threeDGameObject));
           MapViewerScene.root.getChildren().add(returnButton);
-        }
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
-        
+
       }
     });
 
     goToGameOver.setText("Game Over!");
-    goToGameOver.setOnAction(new EventHandler<ActionEvent>() 
+    goToGameOver.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
-        try 
+        try
         {
           gameOverRoot.setTop(returnButton);
           main.assignStage(gameOver);
-        } 
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
-        
+
       }
     });
-    
+
     goToWin.setText("Win Screen");
-    goToWin.setOnAction(new EventHandler<ActionEvent>() 
+    goToWin.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
-        try 
+        try
         {
           winRoot.setTop(returnButton);
           main.assignStage(win);
-        } 
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
-        
+
       }
     });
-    
+
     goToSettings.setText("Settings");
-    goToSettings.setOnAction(new EventHandler<ActionEvent>() 
+    goToSettings.setOnAction(new EventHandler<ActionEvent>()
     {
       @Override
-      public void handle(ActionEvent event) 
+      public void handle(ActionEvent event)
       {
         playButtonSound();
-        try 
+        try
         {
           settingsRoot.setTop(returnButton);
           main.assignStage(settings);
-        } 
-        catch (Exception e) 
+        } catch (Exception e)
         {
           e.printStackTrace();
         }
-        
+
       }
     });
-    
+
     playerHearing.setShowTickMarks(true);
     playerHearing.setShowTickLabels(true);
-    
+
     playerWalkingSpeed.setShowTickMarks(true);
     playerWalkingSpeed.setShowTickLabels(true);
-    
+
     playerSprintSpeed.setShowTickMarks(true);
     playerSprintSpeed.setShowTickLabels(true);
-    
+
     playerStamina.setShowTickMarks(true);
     playerStamina.setShowTickLabels(true);
-    
+
+    playerHealth.setShowTickMarks(true);
+    playerHealth.setShowTickLabels(true);
+
     playerRegen.setShowTickMarks(true);
     playerRegen.setShowTickLabels(true);
-    
+
     zombieSmell.setShowTickMarks(true);
     zombieSmell.setShowTickLabels(true);
-    
+
     maxZombies.setShowTickMarks(true);
     maxZombies.setSnapToTicks(true);
     maxZombies.setShowTickLabels(true);
     maxZombies.setMajorTickUnit(5);
-    
+
     mapWidth.setShowTickMarks(true);
     mapWidth.setSnapToTicks(true);
     mapWidth.setShowTickLabels(true);
     mapWidth.setMajorTickUnit(20);
-    
+
     mapHeight.setShowTickMarks(true);
     mapHeight.setSnapToTicks(true);
     mapHeight.setShowTickLabels(true);
     mapHeight.setMajorTickUnit(20);
-    
+
     rotateSensitivity.setShowTickMarks(true);
     rotateSensitivity.setSnapToTicks(true);
     rotateSensitivity.setShowTickLabels(true);
     rotateSensitivity.setMajorTickUnit(4);
-    
+
     playerHearing.valueProperty().addListener(new ChangeListener<Number>()
     {
-      public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) 
+      public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val)
       {
         Attributes.Player_Hearing = playerHearing.getValue();
       }
@@ -345,6 +342,13 @@ public class Scenes
       public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) 
       {
         Attributes.Player_Stamina = playerStamina.getValue();
+      }
+    });
+    playerHealth.valueProperty().addListener(new ChangeListener<Number>()
+    {
+      public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val)
+      {
+        Attributes.Player_Health = playerHealth.getValue();
       }
     });
     playerRegen.valueProperty().addListener(new ChangeListener<Number>()
@@ -399,7 +403,7 @@ public class Scenes
         goTo3dGame,
         goTo2dGame,
         goToMapViewer,
-        goToGameOver, 
+        goToGameOver,
         goToWin,
         goToSettings
         );
@@ -451,6 +455,8 @@ public class Scenes
         playerSprintSpeed,
         new Label("Player Stamina"),
         playerStamina,
+        new Label("Player Health"),
+        playerHealth,
         new Label("Player Regen"),
         playerRegen,
         new Label("Zombie Smell"),
