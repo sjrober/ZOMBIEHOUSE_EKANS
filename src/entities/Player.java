@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import game_engine.Attributes;
 import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
@@ -40,7 +41,8 @@ public class Player extends Creature
 
   //
   public double strafeVelocity;
-  int counter = 0;
+  int counter = 0; // IntelliJ says that this variable isn't used for anything. Delete it?
+  int stabTickCounter = 0;
   
   //position and orientation:
   double newX = 0;
@@ -50,6 +52,14 @@ public class Player extends Creature
   public double radius = .25;
   
   //atomic booleans:
+  /*
+  The variable 'isStabbing' will be set to 'true' when the player left-clicks,
+  and after 20 ticks, will be set back to false.
+  TODO: Find out how long a tick is and modify the duration accordingly.
+  Half a second seems like a good duration for stabbing.
+  TODO: Find and replace the "Game Over" function with a function that decreases health.
+   */
+  public AtomicBoolean isStabbing = new AtomicBoolean(false);
   public AtomicBoolean shiftPressed = new AtomicBoolean(false);
   public AtomicBoolean wDown = new AtomicBoolean(false);
   public AtomicBoolean dDown = new AtomicBoolean(false);
@@ -165,6 +175,7 @@ public class Player extends Creature
   public void tick()
   {
     counter++;
+
     Cylinder tempX = new Cylinder(boundingCircle.getRadius(), boundingCircle.getHeight());
     Cylinder tempZ = new Cylinder(boundingCircle.getRadius(), boundingCircle.getHeight());
     
@@ -208,7 +219,15 @@ public class Player extends Creature
     {
       camera.setTranslateZ(movementZ);
     }
-    
+
+    if (isStabbing.get()) // Player is in the state of stabbing for 20 ticks
+    {
+      if (++stabTickCounter > Attributes.Player_Stab_Duration)
+      {
+        isStabbing.set(false);
+        stabTickCounter = 0;
+      }
+    }
     
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());

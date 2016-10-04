@@ -9,6 +9,7 @@ import entities.Player;
  */
 import javafx.event.EventHandler;
 import javafx.scene.PerspectiveCamera;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 
@@ -83,6 +84,11 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
       camera.setRotate(player.angle -= rotationSpeed);
     }
     lastX = x;
+
+    if (event.getEventType() == MouseEvent.MOUSE_CLICKED && event.getButton() == MouseButton.PRIMARY)
+    {
+      player.isStabbing.set(true);
+    }
 
     //robot.mouseMove(screenWidth/2, screenHeight/2);
   }
