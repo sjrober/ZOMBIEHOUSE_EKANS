@@ -45,6 +45,7 @@ public class Player extends Creature
   int counter = 0; // IntelliJ says that this variable isn't used for anything. Delete it?
   int stabTickCounter = 0;
   int lastDam = 0;
+  int damPeriod = 60;
   
   //position and orientation:
   double newX = 0;
@@ -238,7 +239,7 @@ public class Player extends Creature
     //Removes HP instead of instadeath
     if(entityManager.checkPlayerCollision(boundingCircle))
     {
-      if (counter >= lastDam + 60)
+      if (counter >= lastDam + damPeriod)
       {
         lastDam = counter;
         health = health - 1;
