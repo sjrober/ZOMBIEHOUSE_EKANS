@@ -15,6 +15,7 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
 import levels.Tile;
+import org.w3c.dom.Attr;
 import sounds.Sound;
 import utilities.ZombieBoardRenderer;
 
@@ -43,6 +44,7 @@ public class Player extends Creature
   public double strafeVelocity;
   int counter = 0; // IntelliJ says that this variable isn't used for anything. Delete it?
   int stabTickCounter = 0;
+  int lastDam = 0;
   
   //position and orientation:
   double newX = 0;
@@ -77,9 +79,10 @@ public class Player extends Creature
   public boolean turnLeft = false;
   public boolean turnRight = false;
 
-  private double stamina=5;
-  private double regen=.2;
-  private double deltaTime=0;
+  private double stamina = Attributes.Player_Stamina;
+  private double health = Attributes.Player_Health;
+  private double regen = Attributes.Player_Regen;
+  private double deltaTime = 0;
 
   private PlayerAction action=PlayerAction.NOACTION;
 
@@ -231,10 +234,16 @@ public class Player extends Creature
     
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());
-    
+
+    //Removes HP instead of instadeath
     if(entityManager.checkPlayerCollision(boundingCircle))
     {
-      isDead.set(true);
+      if (counter >= lastDam + 60)
+      {
+        lastDam = counter;
+        health = health - 1;
+        if (health == 0) isDead.set(true);
+      }
     }
     
     //checking for exit collision
