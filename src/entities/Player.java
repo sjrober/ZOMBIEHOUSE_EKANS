@@ -244,7 +244,7 @@ public class Player extends Creature
       {
         lastDam = counter;
         health = health - 1;
-        if (health == 0) isDead.set(true);
+        if (health <= 0) isDead.set(true);
       }
     }
     
