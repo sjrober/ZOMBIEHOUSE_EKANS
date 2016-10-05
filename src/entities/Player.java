@@ -41,6 +41,7 @@ public class Player extends Creature
   //
   public double strafeVelocity;
   int counter = 0;
+  int lastDam = 0;
   
   //position and orientation:
   double newX = 0;
@@ -67,9 +68,10 @@ public class Player extends Creature
   public boolean turnLeft = false;
   public boolean turnRight = false;
 
-  private double stamina=5;
-  private double regen=.2;
-  private double deltaTime=0;
+  private double stamina = Attributes.Player_Stamina;
+  private double health = Attributes.Player_Health;
+  private double regen = Attributes.Player_Regen;
+  private double deltaTime = 0;
 
   private PlayerAction action=PlayerAction.NOACTION;
 
@@ -212,10 +214,16 @@ public class Player extends Creature
     
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());
-    
+
+    //Take damage instead of instantly dying
     if(entityManager.checkPlayerCollision(boundingCircle))
     {
-      isDead.set(true);
+      if(counter >= lastDam+60)
+      {
+        lastDam = counter;
+        health = health - 1;
+        if(health == 0) isDead.set(true);
+      }
     }
     
     //checking for exit collision
