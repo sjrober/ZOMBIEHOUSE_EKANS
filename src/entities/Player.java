@@ -58,9 +58,10 @@ public class Player extends Creature
   /*
   The variable 'isStabbing' will be set to 'true' when the player left-clicks,
   and after 20 ticks, will be set back to false.
-  TODO: Find out how long a tick is and modify the duration accordingly.
+  DONE - tick is 1 frame: Find out how long a tick is and modify the duration accordingly.
   Half a second seems like a good duration for stabbing.
-  TODO: Find and replace the "Game Over" function with a function that decreases health.
+  DONE: Find and replace the "Game Over" function with a function that decreases health.
+
    */
   public AtomicBoolean isStabbing = new AtomicBoolean(false);
   public AtomicBoolean shiftPressed = new AtomicBoolean(false);
