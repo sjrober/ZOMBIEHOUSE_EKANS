@@ -253,7 +253,8 @@ public class EntityManager
    * This Method updates all the values of all entities
    * 
    */
-  public void tick(){
+  public void tick()
+  {
     player.tick();
     
     for (Zombie zombie: zombies)
