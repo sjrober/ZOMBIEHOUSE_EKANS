@@ -116,7 +116,7 @@ public class EntityManager
    *          The shape that represents the zombie.
    * @return True if there is a collision. False if there isn't.
    */
-  public boolean checkPlayerCollision(Shape3D player)
+  public boolean checkPlayerCollision(Shape3D player) // TODO change this to return Zombie instead of boolean
   {
     for (Zombie zombie : zombies)
     {
@@ -128,7 +128,7 @@ public class EntityManager
     }
     return false;
   }
-  
+
   /**
    * calculate the distance between two entities
    * 

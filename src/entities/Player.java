@@ -240,6 +240,7 @@ public class Player extends Creature
     //Removes HP instead of instadeath
     if(entityManager.checkPlayerCollision(boundingCircle))
     {
+      //if (isStabbing.get() && )
       if (counter >= lastDam + damPeriod)
       {
         lastDam = counter;
