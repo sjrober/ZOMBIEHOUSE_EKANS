@@ -59,6 +59,7 @@ public class Zombie extends Creature
   public AtomicBoolean goingAfterPlayer = new AtomicBoolean(false);
   public AtomicBoolean findNewPath = new AtomicBoolean(false);
   public AtomicBoolean masterZombieChasePlayer = new AtomicBoolean(false);
+  public AtomicBoolean isDead = new AtomicBoolean(false);
   Tile tile;
   public int col;
   public int row;
@@ -117,7 +118,7 @@ public class Zombie extends Creature
   public void twoDZombie(int zombieCounter, int row, int col,
       ArrayList<Zombie> zombies, int cellSize)
   {
-    Circle zombie = null;
+    Circle zombie;
     if (zombies.get(zombieCounter).col == col
         && zombies.get(zombieCounter).row == row)
     {
@@ -1064,11 +1065,7 @@ public class Zombie extends Creature
     /**
      * When 2D board is being displayed, draw the paths from each zombie to the
      * player on the screen.
-     * 
-     * @param cameFrom
-     *          Represents the complete path from the zombie to the player.
-     * @param end
-     *          The location of the player where the path ends.
+     *
      */
     public void drawPath()
     {
