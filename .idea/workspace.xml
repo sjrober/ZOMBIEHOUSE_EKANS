@@ -2,25 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entities/PointTime.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/PlayerClone.java" afterPath="$PROJECT_DIR$/src/entities/PlayerClone.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
-    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475005368321" ignored="false" />
-    <file path="/fragment.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661014322" ignored="false" />
+    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475779634420" ignored="false" />
+    <file path="/fragment.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475302423143" ignored="false" />
     <file path="/MouseEventHandler.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474665876444" ignored="false" />
     <file path="/Feral_Ghoul.obj" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474661769619" ignored="false" />
     <file path="/ZombieHouse3d.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474991884163" ignored="false" />
     <file path="/EntityManager.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474949525799" ignored="false" />
-    <file path="$USER_HOME$/Desktop/college/Y3/S1/cs351/3dGameOfLife/src/sample/Main.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474691652929" ignored="false" />
-    <file path="/Main.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474666462723" ignored="false" />
+    <file path="$USER_HOME$/Desktop/college/Y3/S1/cs351/3dGameOfLife/src/sample/Main.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475302905404" ignored="false" />
+    <file path="/Main.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475301679361" ignored="false" />
     <file path="/Player.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474990688203" ignored="false" />
     <file path="/pointTime.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474947969146" ignored="false" />
     <file path="/PlayerActions.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474947174589" ignored="false" />
-    <file path="/PlayerClone.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1474991314967" ignored="false" />
+    <file path="/PlayerClone.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475175972840" ignored="false" />
     <file path="/PlayerAction.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475004474482" ignored="false" />
+    <file path="$USER_HOME$/Desktop/college/Y3/S1/cs351/3dGameOfLife/src/sample/Cuboid.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475300499835" ignored="false" />
+    <file path="/Cuboid.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475300499835" ignored="false" />
+    <file path="$USER_HOME$/Desktop/college/Y3/S1/cs351/3dGameOfLife/dat/README.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475302198255" ignored="false" />
+    <file path="/README.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475302193358" ignored="false" />
+    <file path="$USER_HOME$/Desktop/college/Y3/S1/cs351/3dGameOfLife/.idea/workspace.xml" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1475354002069" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +40,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -72,6 +76,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -93,10 +98,8 @@
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="255" column="18" selection-start="7337" selection-end="7337" vertical-scroll-proportion="-25.52">
-              <folding>
-                <element signature="e#2134#2145#0" expanded="true" />
-              </folding>
+            <state line="264" column="7" selection-start="7642" selection-end="7642" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,11 +107,8 @@
       <file leaf-file-name="EntityManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/EntityManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="287" column="66" selection-start="7723" selection-end="7723" vertical-scroll-proportion="89.88">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1470#1481#0" expanded="true" />
-              </folding>
+            <state line="87" column="7" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,7 +125,7 @@
       <file leaf-file-name="Zombie.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="387" column="2" selection-start="11870" selection-end="12062" vertical-scroll-proportion="-4.64">
+            <state line="402" column="55" selection-start="12507" selection-end="12507" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -134,40 +134,26 @@
       <file leaf-file-name="PlayerClone.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/PlayerClone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="19" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#427#438#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerAction.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/PlayerAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="32" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
+            <state line="46" column="0" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointTime.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PointTime.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/entities/PointTime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="18" selection-start="645" selection-end="645" vertical-scroll-proportion="0.0">
+            <state line="34" column="1" selection-start="651" selection-end="651" vertical-scroll-proportion="0.69873416">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZombieHouse3d.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ZombieHouse3d.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="110" selection-start="3111" selection-end="3111" vertical-scroll-proportion="0.22571428">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="89" column="30" selection-start="2479" selection-end="2479" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -194,12 +180,12 @@
         <option value="$PROJECT_DIR$/src/entities/pointTime.java" />
         <option value="$PROJECT_DIR$/src/game_engine/MouseEventHandler.java" />
         <option value="$PROJECT_DIR$/src/entities/PlayerActions.java" />
-        <option value="$PROJECT_DIR$/src/entities/PointTime.java" />
         <option value="$PROJECT_DIR$/src/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/entities/EntityManager.java" />
-        <option value="$PROJECT_DIR$/src/entities/PlayerClone.java" />
         <option value="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
         <option value="$PROJECT_DIR$/src/entities/PlayerAction.java" />
+        <option value="$PROJECT_DIR$/src/entities/PointTime.java" />
+        <option value="$PROJECT_DIR$/src/entities/PlayerClone.java" />
       </list>
     </option>
   </component>
@@ -459,8 +445,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -476,6 +462,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -683,30 +670,30 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.43560606" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18636364" sideWeight="0.67304623" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32695374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21212122" sideWeight="0.67145133" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -809,13 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/PointTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="18" selection-start="645" selection-end="645" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utilities/MapViewerScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="13" selection-start="458" selection-end="458" vertical-scroll-proportion="0.36363637">
@@ -825,31 +805,13 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/LinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="489" column="0" selection-start="14458" selection-end="14458" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="387" column="2" selection-start="11870" selection-end="12062" vertical-scroll-proportion="-4.64">
-          <folding />
-        </state>
+        <state line="489" column="0" selection-start="14458" selection-end="14458" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/levels/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="13" selection-start="251" selection-end="251" vertical-scroll-proportion="0.49866667">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="255" column="18" selection-start="7337" selection-end="7337" vertical-scroll-proportion="-25.52">
-          <folding>
-            <element signature="e#2134#2145#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -878,37 +840,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/PlayerAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="32" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
+        <state line="9" column="15" selection-start="139" selection-end="139" vertical-scroll-proportion="0.26288658">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="264" column="7" selection-start="7642" selection-end="7642" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="402" column="55" selection-start="12507" selection-end="12507" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="30" selection-start="2479" selection-end="2479" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/EntityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="7" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/PlayerClone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#427#438#0" expanded="true" />
-          </folding>
+        <state line="46" column="0" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/EntityManager.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/PointTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="287" column="66" selection-start="7723" selection-end="7723" vertical-scroll-proportion="89.88">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1470#1481#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="110" selection-start="3111" selection-end="3111" vertical-scroll-proportion="0.22571428">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="34" column="1" selection-start="651" selection-end="651" vertical-scroll-proportion="0.69873416">
+          <folding />
         </state>
       </provider>
     </entry>

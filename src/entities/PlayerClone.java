@@ -25,10 +25,11 @@ public class PlayerClone extends Player
 
   public PlayerClone(LinkedList<PointTime> actionSequence) {
     this.actionSequence = actionSequence;
+
   }
 
   public void tick() {
-    if (active==true) {
+    if (active) {
       lastxPos = xPos;
       lastyPos = yPos;
       int currentTick = ZombieHouse3d.tickCount;
