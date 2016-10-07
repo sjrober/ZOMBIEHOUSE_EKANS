@@ -238,8 +238,9 @@ public class Player extends Creature
     boundingCircle.setTranslateZ(camera.getTranslateZ());
 
     //Removes HP instead of instadeath
-    if(entityManager.checkPlayerCollision(boundingCircle))
+    if(entityManager.checkPlayerCollision(boundingCircle) != null)
     {
+      //if (isStabbing.get() && )
       if (counter >= lastDam + damPeriod)
       {
         entityManager.soundManager.playSoundClip(Sound.pain);

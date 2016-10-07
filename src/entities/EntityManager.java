@@ -19,6 +19,8 @@ import sounds.Sound;
 import sounds.SoundManager;
 import utilities.ZombieBoardRenderer;
 
+import javax.lang.model.type.NullType;
+
 /**
  * @author Jeffrey McCall 
  *         Ben Matthews
@@ -116,19 +118,19 @@ public class EntityManager
    *          The shape that represents the zombie.
    * @return True if there is a collision. False if there isn't.
    */
-  public boolean checkPlayerCollision(Shape3D player)
+  public Zombie checkPlayerCollision(Shape3D player)
   {
     for (Zombie zombie : zombies)
     {
       if (player.getBoundsInParent()
           .intersects(zombie.zombieCylinder.getBoundsInParent()))
       {
-        return true;
+        return zombie;
       }
     }
-    return false;
+    return null;
   }
-  
+
   /**
    * calculate the distance between two entities
    * 

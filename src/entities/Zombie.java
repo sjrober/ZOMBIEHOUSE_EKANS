@@ -59,6 +59,7 @@ public class Zombie extends Creature
   public AtomicBoolean goingAfterPlayer = new AtomicBoolean(false);
   public AtomicBoolean findNewPath = new AtomicBoolean(false);
   public AtomicBoolean masterZombieChasePlayer = new AtomicBoolean(false);
+  public AtomicBoolean isDead = new AtomicBoolean(false);
   Tile tile;
   public int col;
   public int row;
