@@ -90,6 +90,14 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
       player.isStabbing.set(true);
     }
 
+    /**
+     * This method is just used for testing
+     */
+    if (event.getEventType() == MouseEvent.MOUSE_CLICKED && event.getButton() == MouseButton.SECONDARY)
+    {
+      System.out.println("testing");
+    }
+
     //robot.mouseMove(screenWidth/2, screenHeight/2);
   }
 }
