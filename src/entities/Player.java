@@ -42,7 +42,7 @@ public class Player extends Creature
 
   //
   public double strafeVelocity;
-  int counter = 0; // IntelliJ says that this variable isn't used for anything. Delete it?
+  int counter = 0;
   int stabTickCounter = 0;
   int lastDam = 0;
   int damPeriod = 60;
@@ -242,6 +242,7 @@ public class Player extends Creature
     {
       if (counter >= lastDam + damPeriod)
       {
+        entityManager.soundManager.playSoundClip(Sound.pain);
         lastDam = counter;
         health = health - 1;
         if (health <= 0) isDead.set(true);
