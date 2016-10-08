@@ -86,6 +86,10 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>
       }
       if(event.getCode()==KeyCode.SPACE)
       {
+        player.isStabbing.set(true);
+      }
+      if(event.getCode()==KeyCode.F1)
+      {
         player.camera.setTranslateY(-2*Tile.tileSize);
       }
       if(event.getCode()==KeyCode.ESCAPE)
@@ -119,7 +123,7 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>
       {
         player.shiftPressed.set(false);
       }
-      if(event.getCode()==KeyCode.SPACE)
+      if(event.getCode()==KeyCode.F1)
       {
         player.camera.setTranslateY(0);
       }

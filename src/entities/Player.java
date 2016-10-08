@@ -3,6 +3,7 @@ package entities;
 import java.awt.*;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.lang.Math;
 
 import com.sun.xml.internal.bind.v2.TODO;
 import game_engine.Attributes;
@@ -42,7 +43,7 @@ public class Player extends Creature
 
   //
   public double strafeVelocity;
-  int counter = 0; // IntelliJ says that this variable isn't used for anything. Delete it?
+  int counter = 0;
   int stabTickCounter = 0;
   int lastDam = 0;
   int damPeriod = 60;
@@ -85,6 +86,7 @@ public class Player extends Creature
   private double health = Attributes.Player_Health;
   private double regen = Attributes.Player_Regen;
   private double deltaTime = 0;
+  private double angleAttacked;
 
   private PlayerAction action=PlayerAction.NOACTION;
 
@@ -180,6 +182,8 @@ public class Player extends Creature
   public void tick()
   {
     counter++;
+    if (angle < 0) angle += 360;
+    if (angle > 360) angle -= 360; // To keep the angle value within 0 - 360
 
     Cylinder tempX = new Cylinder(boundingCircle.getRadius(), boundingCircle.getHeight());
     Cylinder tempZ = new Cylinder(boundingCircle.getRadius(), boundingCircle.getHeight());
@@ -240,11 +244,17 @@ public class Player extends Creature
     //Removes HP instead of instadeath
     if(entityManager.checkPlayerCollision(boundingCircle) != null)
     {
-      //if (isStabbing.get() && )
-      if (counter >= lastDam + damPeriod)
+      double xDiff = entityManager.checkPlayerCollision(boundingCircle).xPos - xPos;
+      double zDiff = entityManager.checkPlayerCollision(boundingCircle).zPos - zPos;
+      if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle))
       {
+        System.out.println("I'm hitting a zombie");
+      }
+      else if (counter >= lastDam + damPeriod)
+      {
+        entityManager.soundManager.playSoundClip(Sound.pain);
         lastDam = counter;
-        health = health - 1;
+        health -= 1;
         if (health <= 0) isDead.set(true);
       }
     }
@@ -426,4 +436,33 @@ public class Player extends Creature
       System.exit(0);
     }
   }
+
+  /**
+   * @author Robin Campos
+   * Returns true if the player is facing a zombie within the stab range.
+   * Used when isStabbing is true and the player is within the collision range of a zombie.
+   * @param xDiff The zombie's xPos minus the player's xPos
+   * @param zDiff The zombie's zPos minus the player's zPos
+   * @param yourAngle The camera's angle
+   * @return True if within range, false if out of range
+   */
+  private boolean isFacingZombie(double xDiff, double zDiff, double yourAngle)
+  {
+    double radToDeg = 180 / Math.PI;
+    double range = Attributes.Player_Stab_Range;
+    double angleAttacked = 0;
+    if (xDiff == 0 && zDiff > 0) angleAttacked = 0;
+    else if (xDiff == 0 && zDiff < 0) angleAttacked =  180;
+    else if (xDiff > 0) angleAttacked = (90 - (radToDeg * Math.atan(zDiff / xDiff)));
+    else if (xDiff < 0) angleAttacked = (270 - (radToDeg * Math.atan(zDiff / xDiff)));
+
+    if ((yourAngle + range) > angleAttacked && (yourAngle - range) < angleAttacked) return true;
+    yourAngle += 360;
+    if ((yourAngle + range) > angleAttacked && (yourAngle - range) < angleAttacked) return true;
+    angleAttacked += 720;
+    if ((yourAngle + range) > angleAttacked && (yourAngle - range) < angleAttacked) return true;
+    System.out.println("Out of range");
+    return false;
+  }
+
 }

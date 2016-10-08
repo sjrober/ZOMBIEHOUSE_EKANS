@@ -80,6 +80,12 @@ public class SoundManager
       url = getClass().getResource("/Sounds/deaths/" + name + i + ".wav");
       loadSoundClip(name + i, url);
     }
+
+    //pains:
+    name = "agony";
+    url = getClass().getResource("/Sounds/pain/" + name + ".wav");
+    loadSoundClip(name, url);
+
     
     //footsteps:
     name = "footstep";
@@ -192,6 +198,12 @@ public class SoundManager
     if (sound.equals(Sound.death)){
       int i = random.nextInt(DEATHS);
       clip = sounds.get("death" + i);
+      volume = DEATH_MOD;
+    }
+
+    //taking damage
+    if (sound.equals(Sound.pain)){
+      clip = sounds.get("agony");
       volume = DEATH_MOD;
     }
     
