@@ -248,6 +248,7 @@ public class Player extends Creature
       double zDiff = entityManager.checkPlayerCollision(boundingCircle).zPos - zPos;
       if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle))
       {
+        entityManager.checkPlayerCollision(boundingCircle).health--;
         System.out.println("I'm hitting a zombie");
       }
       else if (counter >= lastDam + damPeriod)
