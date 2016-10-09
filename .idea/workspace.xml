@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Player$PlayerStamina.class" afterPath="$PROJECT_DIR$/bin/entities/Player$PlayerStamina.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Player.class" afterPath="$PROJECT_DIR$/bin/entities/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Zombie$CalculatePath.class" afterPath="$PROJECT_DIR$/bin/entities/Zombie$CalculatePath.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Zombie.class" afterPath="$PROJECT_DIR$/bin/entities/Zombie.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$1.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$MainGameLoop.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$MainGameLoop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -777,7 +783,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475892140571</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="nothing">
+      <created>1476034603829</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1476034603829</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -858,7 +871,8 @@
     <MESSAGE value="Got started on the stabbing" />
     <MESSAGE value="You can now hit zombies" />
     <MESSAGE value="Zombies lose health when they get hit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zombies lose health when they get hit" />
+    <MESSAGE value="nothing" />
+    <option name="LAST_COMMIT_MESSAGE" value="nothing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
