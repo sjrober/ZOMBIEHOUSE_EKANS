@@ -413,10 +413,18 @@ public class EntityManager
     this.zombieHouse = zombieHouse;
   }
 
+  /**
+   * remember clones
+   * Sam Roberts
+   */
   public void addClones() {
 
     currentPointTimeList = player.pointList;
     playerClones.add(new PlayerClone(currentPointTimeList));
+
+  }
+
+  public void addGameBoard() {
 
   }
   

@@ -90,6 +90,9 @@ public class Player extends Creature
 
   private PlayerAction action=PlayerAction.NOACTION;
 
+  /*
+
+   */
   public LinkedList<PointTime> pointList = new LinkedList<PointTime>();
   
 
