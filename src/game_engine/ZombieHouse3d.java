@@ -365,6 +365,10 @@ public class ZombieHouse3d
     subScene.setFill(Color.rgb(10, 10, 40));
     subScene.setCamera(camera);
     subScene.setCursor(Cursor.CROSSHAIR);
+    /*subScene.setOnMouseMoved(e ->
+    {
+      m
+    });*/
 
     Group group = new Group();
     group.getChildren().add(subScene);
