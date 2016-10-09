@@ -15,10 +15,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import levels.Tile;
 import sounds.Sound;
 import sounds.SoundManager;
 import utilities.MapViewerScene;
 import utilities.ZombieBoardRenderer;
+
+import java.util.LinkedList;
 
 /**
  * @author Atle Olson
@@ -143,7 +146,21 @@ public class Scenes
       public void handle(ActionEvent event)
       {
         playButtonSound();
+
+
+        /*
+        This is where the new ZombieHouse3d class is initiated with previous playerClone linkedList and gameBoard.
+        (However gameBoard isn't taking effect yet.)
+         */
+        ZombieHouse3d tempGameObject = threeDGameObject;
+        LinkedList<entities.PlayerClone> cloneList = tempGameObject.tempPlayerClones;
+        Tile[][] tempGameBoard = tempGameObject.tempGameBoard;
+        boolean sameLevel = tempGameObject.sameLevel;
         createNewGameBoard(0);
+        threeDGameObject.tempPlayerClones = cloneList;
+        threeDGameObject.tempGameBoard = tempGameBoard;
+        threeDGameObject.sameLevel = sameLevel;
+
         soundManager.playTrack(0);
 
         try

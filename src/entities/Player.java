@@ -75,6 +75,7 @@ public class Player extends Creature
   
   //other player fields:
   public Cylinder boundingCircle = null;
+  public Cylinder stabbingCircle = null;
   public AtomicBoolean isDead = new AtomicBoolean(false);
   public AtomicBoolean foundExit = new AtomicBoolean(false);
   
@@ -90,6 +91,9 @@ public class Player extends Creature
 
   private PlayerAction action=PlayerAction.NOACTION;
 
+  /*
+
+   */
   public LinkedList<PointTime> pointList = new LinkedList<PointTime>();
   
 
@@ -131,10 +135,13 @@ public class Player extends Creature
     this.light = light;
     light.setRotationAxis(Rotate.Y_AXIS);
     boundingCircle = new Cylinder(radius, 1);
+    stabbingCircle = new Cylinder(radius, 10);
     PlayerStamina staminaCounter=new PlayerStamina();
     staminaCounter.start();
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());
+    stabbingCircle.setTranslateX(camera.getTranslateX());
+    stabbingCircle.setTranslateZ(camera.getTranslateZ());
     lastX = camera.getTranslateX();
     lastZ = camera.getTranslateZ();
   }
@@ -196,7 +203,6 @@ public class Player extends Creature
     movementZ += (velocity * Math.cos(angle * (Math.PI / 180)));
     movementZ += (strafeVelocity * Math.cos(angle * (Math.PI / 180) - Math.PI / 2));
     
-    
     tempX.setTranslateX(movementX);
     tempX.setTranslateZ(boundingCircle.getTranslateZ());
     
@@ -240,18 +246,21 @@ public class Player extends Creature
     
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());
+    stabbingCircle.setTranslateX(camera.getTranslateX());
+    stabbingCircle.setTranslateZ(camera.getTranslateZ());
 
     //Removes HP instead of instadeath
-    if(entityManager.checkPlayerCollision(boundingCircle) != null)
+    if(entityManager.checkPlayerCollision(stabbingCircle) != null)
     {
-      double xDiff = entityManager.checkPlayerCollision(boundingCircle).xPos - xPos;
-      double zDiff = entityManager.checkPlayerCollision(boundingCircle).zPos - zPos;
+      System.out.println("He's in");
+      double xDiff = entityManager.checkPlayerCollision(stabbingCircle).xPos - xPos;
+      double zDiff = entityManager.checkPlayerCollision(stabbingCircle).zPos - zPos;
       if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle))
       {
-        entityManager.checkPlayerCollision(boundingCircle).health--;
+        entityManager.checkPlayerCollision(stabbingCircle).health--;
         System.out.println("I'm hitting a zombie");
       }
-      else if (counter >= lastDam + damPeriod)
+      else if (entityManager.checkPlayerCollision(boundingCircle) != null && counter >= lastDam + damPeriod)
       {
         entityManager.soundManager.playSoundClip(Sound.pain);
         lastDam = counter;
@@ -383,6 +392,7 @@ public class Player extends Creature
     camera = null;
     light = null;
     boundingCircle = null;
+    stabbingCircle = null;
   }
   /**
    * 

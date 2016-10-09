@@ -92,7 +92,7 @@ public class ZombieHouse3d
   public static int tickCount;
 
   public LinkedList<PlayerClone> tempPlayerClones = new LinkedList<>();
-  private boolean sameLevel = false;
+  public boolean sameLevel = false;
 
   /**
    * Constructor for ZombieHouse3d object
@@ -470,6 +470,8 @@ public class ZombieHouse3d
   /**
    * Delete game data after game has ended. Used when going from
    * one level to another, or restarting a level.
+   *
+   * Add clones to current ZombieHouse3d.
    */
   public void dispose()
   {
