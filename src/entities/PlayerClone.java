@@ -34,10 +34,17 @@ public class PlayerClone extends Player
       lastyPos = yPos;
       int currentTick = ZombieHouse3d.tickCount;
 
+      //if there are still ticks left in clone's action sequence linkedlist
       if (actionSequence.get(currentTick)!=null) {
         xPos = actionSequence.get(currentTick).getXPos();
         yPos = actionSequence.get(currentTick).getYPos();
         currentAction = actionSequence.get(currentTick).getAction();
+
+
+        if (actionSequence.get(currentTick).equals(PlayerAction.LOSEHEALTH)) {
+
+        }
+
       }
 
     }

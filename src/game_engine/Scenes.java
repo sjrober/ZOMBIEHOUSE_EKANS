@@ -134,6 +134,8 @@ public class Scenes
       }
     });
 
+    /*RESTART*/
+
     goTo3dGameDeath.setText("Try Again?");
     goTo3dGameDeath.setOnAction(new EventHandler<ActionEvent>()
     {
