@@ -86,8 +86,17 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
     lastX = x;
 
     if (event.getEventType() == MouseEvent.MOUSE_CLICKED && event.getButton() == MouseButton.PRIMARY)
+        // TODO program is not picking up click events properly and clicking causes the camera to freeze, so for now I'll use the SPACE key instead
     {
       player.isStabbing.set(true);
+    }
+
+    /**
+     * This method is just used for testing
+     */
+    if (event.getButton() == MouseButton.PRIMARY)
+    {
+      System.out.println("testing");
     }
 
     //robot.mouseMove(screenWidth/2, screenHeight/2);

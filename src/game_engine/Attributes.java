@@ -18,6 +18,7 @@ public class Attributes
   public static double Zombie_Health = 3;
   public static double Player_Regen = .2; // regen of stamin per second
   public static double Player_Rotate_sensitivity = 5;
+  public static double Player_Stab_Range = 30;
   public static int Player_Stab_Duration = 20;
 
   // Zombie

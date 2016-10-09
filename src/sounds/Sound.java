@@ -9,7 +9,8 @@ package sounds;
 public enum Sound
 {
   achieve, //player achieves something
-  death, //zombie attack
+  death, //dying to zombie attack
+  pain, //hit by zombie attack
   footstep, //player walking
   groan, //zombie groan
   button, //button sound

@@ -40,6 +40,7 @@ public class Zombie extends Creature
   public double zombieWalkingSpeed = .5/60;
   public double masterZombieSpeed = .05;
   public double masterZombie2dSpeed = .3;
+  public double health = Attributes.Zombie_Health;
   public boolean isMasterZombie = false;
   private double zombieSmell = 15.0;
   public Circle zombieCirc = null;
