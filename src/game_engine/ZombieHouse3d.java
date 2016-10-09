@@ -1,6 +1,7 @@
 package game_engine;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import com.interactivemesh.jfx.importer.obj.ObjImportOption;
 import com.interactivemesh.jfx.importer.obj.ObjModelImporter;
@@ -60,6 +61,7 @@ public class ZombieHouse3d
   public int boardWidth;
   public int boardHeight;
   public Tile[][] gameBoard;
+  public Tile[][] tempGameBoard = null;
   private Box[][] floorDrawingBoard;
   private Box[][] roofDrawingBoard;
   
@@ -88,6 +90,9 @@ public class ZombieHouse3d
   private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
 
   public static int tickCount;
+
+  public LinkedList<PlayerClone> tempPlayerClones = new LinkedList<>();
+  private boolean sameLevel = false;
 
   /**
    * Constructor for ZombieHouse3d object
@@ -149,6 +154,8 @@ public class ZombieHouse3d
     entityManager.setZombieHouse3d(this);
     entityManager.createZombies(gameBoard, boardHeight, boardWidth);
     numZombies = entityManager.zombies.size();
+
+    entityManager.playerClones = tempPlayerClones;
 
     // Initialize camera
     camera = new PerspectiveCamera(true);
@@ -413,7 +420,17 @@ public class ZombieHouse3d
   {
     //Stage gameStage = new Stage();
     // gameBoard = MapLoader.loadLevel("/Maps/testmap.txt");
-    gameBoard = ProceduralMap.generateMap(Attributes.Map_Width, Attributes.Map_Height, difficulty);
+
+    //System.out.println(tempGameBoard.length);
+    System.out.println(sameLevel);
+    if (sameLevel == false) {
+      gameBoard = ProceduralMap.generateMap(Attributes.Map_Width, Attributes.Map_Height, difficulty);
+      tempGameBoard = gameBoard;
+      sameLevel = true;
+    } else {
+      gameBoard = tempGameBoard;
+    }
+
     boardWidth = gameBoard[0].length;
     boardHeight = gameBoard.length;
     floorDrawingBoard = new Box[boardWidth][boardHeight];
@@ -457,10 +474,14 @@ public class ZombieHouse3d
   public void dispose()
   {
     gameLoop.stop();
-    entityManager = null;
+    //entityManager = null;
+    entityManager.addClones();
     scene = null;
     camera = null;
     light = null;
+    //System.out.println("Disposing...");
+    //tempGameBoard = gameBoard;
+    tempPlayerClones = entityManager.playerClones;
     gameBoard = null;
     walls.clear();
     exits.clear();

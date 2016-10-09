@@ -412,6 +412,13 @@ public class EntityManager
   public void setZombieHouse3d(ZombieHouse3d zombieHouse){
     this.zombieHouse = zombieHouse;
   }
+
+  public void addClones() {
+
+    currentPointTimeList = player.pointList;
+    playerClones.add(new PlayerClone(currentPointTimeList));
+
+  }
   
   /**
    * Clears game data
@@ -422,8 +429,8 @@ public class EntityManager
     gameIsRunning.set(false);
 
     //adding another player clone
-    currentPointTimeList = player.pointList;
-    playerClones.add(new PlayerClone(currentPointTimeList));
+    //currentPointTimeList = player.pointList;
+    //playerClones.add(new PlayerClone(currentPointTimeList));
 
     player.dispose();
     player = null;
@@ -432,7 +439,7 @@ public class EntityManager
     for(PlayerClone playerClone : playerClones)
     {
       playerClone.setActive(false);
-      //playerClone.dispose();
+      playerClone.dispose();
     }
     
     for(Zombie zombie: zombies)
