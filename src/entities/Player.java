@@ -7,6 +7,7 @@ import java.lang.Math;
 
 import com.sun.xml.internal.bind.v2.TODO;
 import game_engine.Attributes;
+import game_engine.Scenes;
 import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.TileGraph;
@@ -15,6 +16,7 @@ import javafx.scene.PointLight;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
+import javafx.stage.Stage;
 import levels.Tile;
 import org.w3c.dom.Attr;
 import sounds.Sound;
@@ -83,8 +85,8 @@ public class Player extends Creature
   public boolean turnLeft = false;
   public boolean turnRight = false;
 
-  private double stamina = Attributes.Player_Stamina;
-  private double health = Attributes.Player_Health;
+  public double stamina = Attributes.Player_Stamina;
+  public double health = Attributes.Player_Health;
   private double regen = Attributes.Player_Regen;
   private double deltaTime = 0;
   private double angleAttacked;
@@ -186,6 +188,7 @@ public class Player extends Creature
    * Updates the player values when called from an animation timer
    * Implemented in 3 dimensions
    */
+
   public void tick()
   {
     counter++;
