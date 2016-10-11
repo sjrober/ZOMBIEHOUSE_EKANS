@@ -15,4 +15,5 @@ public enum Sound
   groan, //zombie groan
   button, //button sound
   shuffle, //zombie walking
+  hits, //hit by player attack
 }

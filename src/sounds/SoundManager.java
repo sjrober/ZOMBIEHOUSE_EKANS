@@ -86,6 +86,10 @@ public class SoundManager
     url = getClass().getResource("/Sounds/pain/" + name + ".wav");
     loadSoundClip(name, url);
 
+    //hits:
+    name = "tearing-flesh";
+    url = getClass().getResource("/Sounds/hits/" + name + ".wav");
+    loadSoundClip(name, url);
     
     //footsteps:
     name = "footstep";
@@ -147,7 +151,7 @@ public class SoundManager
    * should be used for zombie sounds
    * 
    * @param sound
-   * @param zombie
+   * @param //zombie
    */
   public void playSoundClip(Sound sound, double distance, double balance){
     Random random = new Random();
@@ -205,6 +209,12 @@ public class SoundManager
     if (sound.equals(Sound.pain)){
       clip = sounds.get("agony");
       volume = DEATH_MOD;
+    }
+
+    //dealing damage
+    if (sound.equals(Sound.hits)){
+      clip = sounds.get("tearing-flesh");
+      volume = GROAN_MOD;
     }
     
     //footstep

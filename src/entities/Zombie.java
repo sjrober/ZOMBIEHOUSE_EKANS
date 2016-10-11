@@ -61,10 +61,12 @@ public class Zombie extends Creature
   public AtomicBoolean findNewPath = new AtomicBoolean(false);
   public AtomicBoolean masterZombieChasePlayer = new AtomicBoolean(false);
   public AtomicBoolean isDead = new AtomicBoolean(false);
+  public AtomicBoolean isStunned = new AtomicBoolean(false);
   Tile tile;
   public int col;
   public int row;
   private double prevAngle = 0;
+  private int stunTickCounter = 0;
   public Cylinder zombieCylinder = null;
   public Cylinder zombie = null;
   public Node[] zombieMesh = null;
@@ -185,6 +187,8 @@ public class Zombie extends Creature
   public void moveThreeDZombie(double angle, double zombieWalkingSpeed,
       Cylinder zombieCylinder)
   {
+    if (isStunned.get() || isDead.get()) return;
+
     lastX = zombieCylinder.getTranslateX();
     lastZ = zombieCylinder.getTranslateZ();
 
@@ -413,6 +417,14 @@ public class Zombie extends Creature
   @Override
   public void tick()
   {
+    if (isStunned.get()) // Zombie is in the state of being stunned for 20 ticks
+    {
+      if (++stunTickCounter > Attributes.Zombie_Stun_Duration)
+      {
+        isStunned.set(false);
+        stunTickCounter = 0;
+      }
+    }
     if (entityManager.getWallCollision(zombieCylinder) != null
         && !angleAdjusted.get())
     {

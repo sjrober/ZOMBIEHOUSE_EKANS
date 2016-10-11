@@ -7,13 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import levels.Tile;
 import sounds.Sound;
@@ -48,8 +46,6 @@ public class Scenes
   Button goToGameOver  = new Button();
   Button goToWin       = new Button();
   Button goToSettings  = new Button();
-  ProgressBar pHealth = new ProgressBar();
-  ProgressBar pStam = new ProgressBar();
   
   Slider playerHearing      = new Slider(0, 50, 1);
   Slider playerWalkingSpeed = new Slider(0, 2, 0.16);
@@ -128,7 +124,6 @@ public class Scenes
         try
         {
           main.assignStage(threeDGameObject.zombieHouse3d(primaryStage));
-          //ZombieHouse3d.parent.getChildren().add(returnButton);
         } catch (Exception e)
         {
           e.printStackTrace();
@@ -166,7 +161,6 @@ public class Scenes
         try
         {
           main.assignStage(threeDGameObject.zombieHouse3d(primaryStage));
-          //ZombieHouse3d.parent.getChildren().add(returnButton);
         } catch (Exception e)
         {
           e.printStackTrace();
@@ -187,9 +181,7 @@ public class Scenes
         createNewGameBoard(difficulty);
         try
         {
-
           main.assignStage(threeDGameObject.zombieHouse3d(primaryStage));
-          //ZombieHouse3d.parent.getChildren().add(returnButton);
         } catch (Exception e)
         {
           e.printStackTrace();
@@ -510,7 +502,8 @@ public class Scenes
   {
     soundManager.playSoundClip(Sound.button);
   }
-  
+
+
   public void updateWinScreen()
   {
     String s = "";

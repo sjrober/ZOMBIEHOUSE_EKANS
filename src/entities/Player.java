@@ -7,6 +7,7 @@ import java.lang.Math;
 
 import com.sun.xml.internal.bind.v2.TODO;
 import game_engine.Attributes;
+import game_engine.Scenes;
 import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.TileGraph;
@@ -15,6 +16,7 @@ import javafx.scene.PointLight;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
+import javafx.stage.Stage;
 import levels.Tile;
 import org.w3c.dom.Attr;
 import sounds.Sound;
@@ -75,7 +77,6 @@ public class Player extends Creature
   
   //other player fields:
   public Cylinder boundingCircle = null;
-  public Cylinder stabbingCircle = null;
   public AtomicBoolean isDead = new AtomicBoolean(false);
   public AtomicBoolean foundExit = new AtomicBoolean(false);
   
@@ -83,8 +84,8 @@ public class Player extends Creature
   public boolean turnLeft = false;
   public boolean turnRight = false;
 
-  private double stamina = Attributes.Player_Stamina;
-  private double health = Attributes.Player_Health;
+  public double stamina = Attributes.Player_Stamina;
+  public double health = Attributes.Player_Health;
   private double regen = Attributes.Player_Regen;
   private double deltaTime = 0;
   private double angleAttacked;
@@ -135,13 +136,10 @@ public class Player extends Creature
     this.light = light;
     light.setRotationAxis(Rotate.Y_AXIS);
     boundingCircle = new Cylinder(radius, 1);
-    stabbingCircle = new Cylinder(radius, 10);
     PlayerStamina staminaCounter=new PlayerStamina();
     staminaCounter.start();
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());
-    stabbingCircle.setTranslateX(camera.getTranslateX());
-    stabbingCircle.setTranslateZ(camera.getTranslateZ());
     lastX = camera.getTranslateX();
     lastZ = camera.getTranslateZ();
   }
@@ -186,6 +184,7 @@ public class Player extends Creature
    * Updates the player values when called from an animation timer
    * Implemented in 3 dimensions
    */
+
   public void tick()
   {
     counter++;
@@ -246,28 +245,35 @@ public class Player extends Creature
     
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());
-    stabbingCircle.setTranslateX(camera.getTranslateX());
-    stabbingCircle.setTranslateZ(camera.getTranslateZ());
 
     //Removes HP instead of instadeath
-    if(entityManager.checkPlayerCollision(stabbingCircle) != null)
+    boundingCircle.setRadius(Attributes.Player_Stab_Reach);
+    Zombie collisionCheck = entityManager.checkPlayerCollision(boundingCircle);
+    if(collisionCheck != null)
     {
-      System.out.println("He's in");
-      double xDiff = entityManager.checkPlayerCollision(stabbingCircle).xPos - xPos;
-      double zDiff = entityManager.checkPlayerCollision(stabbingCircle).zPos - zPos;
-      if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle))
+      double xDiff = collisionCheck.xPos - xPos;
+      double zDiff = collisionCheck.zPos - zPos;
+      if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle) && counter >= lastDam + damPeriod && !collisionCheck.isDead.get())
       {
-        entityManager.checkPlayerCollision(stabbingCircle).health--;
-        System.out.println("I'm hitting a zombie");
-      }
-      else if (entityManager.checkPlayerCollision(boundingCircle) != null && counter >= lastDam + damPeriod)
-      {
-        entityManager.soundManager.playSoundClip(Sound.pain);
+        entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
         lastDam = counter;
-        health -= 1;
-        if (health <= 0) isDead.set(true);
+        collisionCheck.health--;
+        collisionCheck.isStunned.set(true);
+        if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
       }
     }
+    boundingCircle.setRadius(radius);
+    collisionCheck = entityManager.checkPlayerCollision(boundingCircle);
+    if (collisionCheck != null && counter >= lastDam + damPeriod && !collisionCheck.isStunned.get() && !collisionCheck.isDead.get())
+    {
+      entityManager.soundManager.playSoundClip(Sound.pain);
+      lastDam = counter;
+      health--;
+      if (health <= 0) isDead.set(true);
+    }
+    /*boundingCircle.setRadius(2);
+    if(entityManager.checkPlayerCollision(boundingCircle) != null) System.out.println("testing");
+    boundingCircle.setRadius(radius);*/
     
     //checking for exit collision
     for (Box box: entityManager.zombieHouse.exits){
@@ -392,7 +398,6 @@ public class Player extends Creature
     camera = null;
     light = null;
     boundingCircle = null;
-    stabbingCircle = null;
   }
   /**
    * 
