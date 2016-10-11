@@ -788,6 +788,7 @@ public class Zombie extends Creature
   @Override
   public void stepSound()
   {
+    if (isDead.get()) return;
     double distance = entityManager.calculateDistanceFromPlayer(this);
     if (distance < Attributes.Player_Hearing)
     {

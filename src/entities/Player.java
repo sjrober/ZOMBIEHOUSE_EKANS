@@ -455,7 +455,7 @@ public class Player extends Creature
 
   /**
    * @author Robin Campos
-   * Returns true if the player is facing a zombie within the stab range.
+   * Returns true if the player is facing a zombie within the stab range (angle).
    * Used when isStabbing is true and the player is within the collision range of a zombie.
    * @param xDiff The zombie's xPos minus the player's xPos
    * @param zDiff The zombie's zPos minus the player's zPos
@@ -477,7 +477,6 @@ public class Player extends Creature
     if ((yourAngle + range) > angleAttacked && (yourAngle - range) < angleAttacked) return true;
     angleAttacked += 720;
     if ((yourAngle + range) > angleAttacked && (yourAngle - range) < angleAttacked) return true;
-    System.out.println("Out of range");
     return false;
   }
 
