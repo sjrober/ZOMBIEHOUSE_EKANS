@@ -1,5 +1,4 @@
 package entities;
-import entities.Player;
 import game_engine.ZombieHouse3d;
 import javafx.scene.Node;
 import javafx.scene.transform.Rotate;
@@ -19,7 +18,7 @@ public class PlayerClone extends Player
   private PlayerAction currentAction = PlayerAction.NOACTION;
 
   private double lastxPos;
-  private double lastyPos;
+  private double lastzPos;
   private boolean active=false;
   public Node[] cloneMesh;
 
@@ -30,14 +29,28 @@ public class PlayerClone extends Player
 
   public void tick() {
     if (active) {
+
+
       lastxPos = xPos;
-      lastyPos = yPos;
+      lastzPos = zPos;
+
+
+
+      /*for (int i = 0; i < cloneMesh.length; i++)
+      {
+        //cloneMesh[i].setTranslateZ();
+        cloneMesh[i].setTranslateZ(zPos - lastzPos);
+        cloneMesh[i].setTranslateX(xPos - lastxPos);
+        //cloneMesh[i].setTranslateX(movementAmountX);
+        //cloneMesh[i].setRotate(angleToPlayer);
+      } */
+
       int currentTick = ZombieHouse3d.tickCount;
 
       //if there are still ticks left in clone's action sequence linkedlist
       if (actionSequence.get(currentTick)!=null) {
         xPos = actionSequence.get(currentTick).getXPos();
-        yPos = actionSequence.get(currentTick).getYPos();
+        zPos = actionSequence.get(currentTick).getZPos();
         currentAction = actionSequence.get(currentTick).getAction();
 
 

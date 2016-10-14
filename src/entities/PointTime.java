@@ -10,13 +10,13 @@ package entities;
 public class PointTime
 {
   private double xPos;
-  private double yPos;
+  private double zPos;
   private int tick;
   private PlayerAction action = PlayerAction.NOACTION;
 
-  public PointTime(double xPos, double yPos, int tick, PlayerAction action) {
+  public PointTime(double xPos, double zPos, int tick, PlayerAction action) {
     this.xPos = xPos;
-    this.yPos =yPos;
+    this.zPos =zPos;
     this.tick = tick;
     this.action = action;
   }
@@ -25,8 +25,8 @@ public class PointTime
     return xPos;
   }
 
-  public double getYPos() {
-    return yPos;
+  public double getZPos() {
+    return zPos;
   }
 
   public PlayerAction getAction() {

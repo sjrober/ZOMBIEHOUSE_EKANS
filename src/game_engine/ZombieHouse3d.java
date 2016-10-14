@@ -96,7 +96,8 @@ public class ZombieHouse3d
   private String Feral_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
   private String Lambent_Female = "Resources/Meshes/Lambent_Female/Lambent_Female.obj";
 
-  private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
+  //private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
+  private String Player_Clone = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
 
   public static int tickCount;
 
@@ -352,6 +353,7 @@ public class ZombieHouse3d
     
     System.out.println("Number of Zombies: " + entityManager.zombies.size());
     System.out.println("Number of Player Clones: " + entityManager.playerClones.size());
+
     for (Zombie zombie: entityManager.zombies){
       if (zombie.isMasterZombie){
         zombie.setMesh(loadMeshViews(Lambent_Female));
