@@ -22,6 +22,9 @@ public class PlayerClone extends Player
   private boolean active=false;
   public Node[] cloneMesh;
 
+  private boolean isDead=false;
+
+
   public PlayerClone(LinkedList<PointTime> actionSequence) {
     this.actionSequence = actionSequence;
 
@@ -48,14 +51,19 @@ public class PlayerClone extends Player
       int currentTick = ZombieHouse3d.tickCount;
 
       //if there are still ticks left in clone's action sequence linkedlist
-      if (actionSequence.get(currentTick)!=null) {
+      //if (actionSequence.get(currentTick)!=null) {
+      if (isDead == false) {
         xPos = actionSequence.get(currentTick).getXPos();
         zPos = actionSequence.get(currentTick).getZPos();
         currentAction = actionSequence.get(currentTick).getAction();
 
+        if (currentAction.equals(PlayerAction.LOSEHEALTH)) {
 
-        if (actionSequence.get(currentTick).equals(PlayerAction.LOSEHEALTH)) {
-
+        }
+        else if (currentAction.equals(PlayerAction.DIE)) {
+          System.out.println("A clone just died!");
+          isDead = true;
+          active = false;
         }
 
       }

@@ -12,7 +12,7 @@ public class PointTime
   private double xPos;
   private double zPos;
   private int tick;
-  private PlayerAction action = PlayerAction.NOACTION;
+  private PlayerAction action;
 
   public PointTime(double xPos, double zPos, int tick, PlayerAction action) {
     this.xPos = xPos;

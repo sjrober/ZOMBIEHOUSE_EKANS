@@ -177,7 +177,7 @@ public class Player extends Creature
       yPos += (velocity * Math.sin(angle));
     }
 
-    addPointTime();
+    addPointTime(action);
   }
   
   /**
@@ -305,16 +305,17 @@ public class Player extends Creature
     xPos = camera.getTranslateX();
     zPos = camera.getTranslateZ();
 
-    addPointTime();
+    addPointTime(action);
   }
 
   /*
   adds PointTime (object containing current position, global tick and action(if any)) to the
   LinkedList array of pointTimes.
    */
-  public void addPointTime() {
+  public void addPointTime(PlayerAction action) {
     PointTime current = new PointTime(xPos,yPos,ZombieHouse3d.tickCount,action);
     pointList.add(current);
+
     /*if (ZombieHouse3d.tickCount==0) {
       pointList.add(current);
     }else {

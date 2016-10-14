@@ -5,5 +5,5 @@ package entities;
  */
 public enum PlayerAction
 {
-  NOACTION, STAB, LOSEHEALTH
+  NOACTION, STAB, LOSEHEALTH, DIE
 }

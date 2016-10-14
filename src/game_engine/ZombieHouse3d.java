@@ -412,8 +412,12 @@ public class ZombieHouse3d
       if(!paused)
       {
         entityManager.tick();
-        pHealth.setProgress(entityManager.player.health / Attributes.Player_Health);
-        pStam.setProgress(entityManager.player.stamina / Attributes.Player_Stamina);
+        try {
+          pHealth.setProgress(entityManager.player.health / Attributes.Player_Health);
+          pStam.setProgress(entityManager.player.stamina / Attributes.Player_Stamina);
+        }
+          catch (NullPointerException e) {
+        }
       }
       else
       {

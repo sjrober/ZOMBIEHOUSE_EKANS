@@ -419,6 +419,8 @@ public class EntityManager
    */
   public void addClones() {
 
+    player.addPointTime(PlayerAction.DIE);
+    System.out.println("Player.pointList size: " + player.pointList.size());
     currentPointTimeList = player.pointList;
     playerClones.add(new PlayerClone(currentPointTimeList));
 
