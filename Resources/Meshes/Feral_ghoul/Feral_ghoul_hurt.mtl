@@ -1,0 +1,44 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl FeralGhoulBody
+Ns 94.117647
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd ghoulferal_d.tga
+map_Bump ghoulferal_n.tga
+map_Ka ghoulferal_o.tga
+map_d ghoulferal_d.tga
+
+newmtl FeralGhoulEyes
+Ns 94.117647
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd ghoulferal_d.tga
+map_Bump ghoulferal_n.tga
+map_Ka ghoulferal_o.tga
+map_d ghoulferal_d.tga
+
+newmtl FeralGhoulPants
+Ns 94.117647
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd ghoulferal_d.tga
+map_Bump ghoulferal_n.tga
+map_Ka ghoulferal_o.tga
+map_d ghoulferal_d.tga
