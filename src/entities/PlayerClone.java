@@ -43,6 +43,10 @@ public class PlayerClone extends Player
     cloneCylinder = cylinder;
   }
 
+  public void setDead(boolean dead) {
+    isDead = dead;
+  }
+
   public void tick() {
     if (active) {
 

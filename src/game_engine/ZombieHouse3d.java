@@ -180,9 +180,11 @@ public class ZombieHouse3d
 
     tickCount=0;
 
+    //init playerClones - Sam
     for(PlayerClone playerClone : entityManager.playerClones)
     {
       playerClone.setActive(true);
+      playerClone.setDead(false);
     }
 
     // Lighting
