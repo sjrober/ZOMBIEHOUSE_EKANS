@@ -1,6 +1,7 @@
 package entities;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Math;
@@ -95,7 +96,7 @@ public class Player extends Creature
   /*
 
    */
-  public LinkedList<PointTime> pointList = new LinkedList<PointTime>();
+  public ArrayList<PointTime> pointList = new ArrayList<PointTime>();
   
 
   public Player() {

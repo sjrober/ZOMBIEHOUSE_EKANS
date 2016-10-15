@@ -100,7 +100,7 @@ public class ZombieHouse3d
 
   public static int tickCount;
 
-  public LinkedList<PlayerClone> tempPlayerClones = new LinkedList<>();
+  public ArrayList<PlayerClone> tempPlayerClones = new ArrayList<>();
   public boolean sameLevel = false;
 
   /**

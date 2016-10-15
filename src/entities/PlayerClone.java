@@ -3,6 +3,7 @@ import game_engine.ZombieHouse3d;
 import javafx.scene.Node;
 import javafx.scene.transform.Rotate;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -14,7 +15,7 @@ import java.util.LinkedList;
  */
 public class PlayerClone extends Player
 {
-  private LinkedList<PointTime> actionSequence = new LinkedList<PointTime>();
+  private ArrayList<PointTime> actionSequence = new ArrayList<PointTime>();
   private PlayerAction currentAction = PlayerAction.NOACTION;
 
   private double lastxPos;
@@ -25,7 +26,7 @@ public class PlayerClone extends Player
   private boolean isDead=false;
 
 
-  public PlayerClone(LinkedList<PointTime> actionSequence) {
+  public PlayerClone(ArrayList<PointTime> actionSequence) {
     this.actionSequence = actionSequence;
 
   }
