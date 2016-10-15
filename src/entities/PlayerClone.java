@@ -1,6 +1,7 @@
 package entities;
 import game_engine.ZombieHouse3d;
 import javafx.scene.Node;
+import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
 
 import java.util.ArrayList;
@@ -24,11 +25,22 @@ public class PlayerClone extends Player
   public Node[] cloneMesh;
 
   private boolean isDead=false;
+  private Cylinder cloneCylinder;
 
 
   public PlayerClone(ArrayList<PointTime> actionSequence) {
     this.actionSequence = actionSequence;
+    create3DClone(1);
 
+  }
+
+  public void create3DClone(int cellSize)
+  {
+    Cylinder cylinder;
+    cylinder = new Cylinder(.2, 1);
+    cylinder.setTranslateX(zPos/* * cellSize*/);
+    cylinder.setTranslateZ(xPos/* * cellSize*/);
+    cloneCylinder = cylinder;
   }
 
   public void tick() {
@@ -40,14 +52,7 @@ public class PlayerClone extends Player
 
 
 
-      /*for (int i = 0; i < cloneMesh.length; i++)
-      {
-        //cloneMesh[i].setTranslateZ();
-        cloneMesh[i].setTranslateZ(zPos - lastzPos);
-        cloneMesh[i].setTranslateX(xPos - lastxPos);
-        //cloneMesh[i].setTranslateX(movementAmountX);
-        //cloneMesh[i].setRotate(angleToPlayer);
-      } */
+
 
       int currentTick = ZombieHouse3d.tickCount;
 
@@ -57,6 +62,22 @@ public class PlayerClone extends Player
         xPos = actionSequence.get(currentTick).getXPos();
         zPos = actionSequence.get(currentTick).getZPos();
         currentAction = actionSequence.get(currentTick).getAction();
+
+        //cloneCylinder.setTranslateX(xPos);
+        //cloneCylinder.setTranslateZ(zPos);
+
+        double deltaZ = zPos - lastzPos;
+        double deltaX = xPos - lastxPos;
+        double angle = (Math.atan(deltaX / deltaZ) * 180 / Math.PI)+180;
+
+        for (int i = 0; i < cloneMesh.length; i++)
+        {
+          //cloneMesh[i].setTranslateZ();
+          cloneMesh[i].setTranslateZ(zPos);
+          cloneMesh[i].setTranslateX(xPos);
+          //cloneMesh[i].setTranslateX(movementAmountX);
+          cloneMesh[i].setRotate(angle);
+        }
 
         if (currentAction.equals(PlayerAction.LOSEHEALTH)) {
 
