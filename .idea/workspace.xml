@@ -2,24 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/EntityManager.java" afterPath="$PROJECT_DIR$/src/entities/EntityManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Player.java" afterPath="$PROJECT_DIR$/src/entities/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/PlayerAction.java" afterPath="$PROJECT_DIR$/src/entities/PlayerAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/PlayerClone.java" afterPath="$PROJECT_DIR$/src/entities/PlayerClone.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/PointTime.java" afterPath="$PROJECT_DIR$/src/entities/PointTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
-    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476474763013" ignored="false" />
+    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476559879405" ignored="false" />
     <file path="/PlayerAction.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476474919077" ignored="false" />
-    <file path="/Player.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476475093799" ignored="false" />
-    <file path="/EntityManager.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476476557746" ignored="false" />
-    <file path="/PlayerClone.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476476896414" ignored="false" />
-    <file path="/ZombieHouse3d.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476475654554" ignored="false" />
+    <file path="/Player.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476559614227" ignored="false" />
+    <file path="/EntityManager.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476559575201" ignored="false" />
+    <file path="/PlayerClone.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476559434095" ignored="false" />
+    <file path="/ZombieHouse3d.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476559664952" ignored="false" />
+    <file path="/Scenes.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476559712609" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,19 +74,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
+      <file leaf-file-name="Scenes.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game_engine/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="316" column="37" selection-start="9887" selection-end="9887" vertical-scroll-proportion="0.0">
+            <state line="149" column="29" selection-start="4239" selection-end="4239" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SoundManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sounds/SoundManager.java">
+      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="98" column="55" selection-start="2956" selection-end="2956" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,7 +95,7 @@
       <file leaf-file-name="EntityManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/EntityManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="421" column="42" selection-start="11321" selection-end="11321" vertical-scroll-proportion="0.0">
+            <state line="423" column="37" selection-start="11432" selection-end="11432" vertical-scroll-proportion="-4.92">
               <folding />
             </state>
           </provider>
@@ -125,26 +119,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Zombie.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="47" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerClone.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PlayerClone.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/PlayerClone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="27" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.74242425">
+            <state line="72" column="30" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#429#440#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProceduralMap.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/levels/ProceduralMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="13" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Attributes.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game_engine/Attributes.java">
+      <file leaf-file-name="workspace.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -164,7 +160,7 @@
       <file leaf-file-name="ZombieHouse3d.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="417" column="14" selection-start="14032" selection-end="14032" vertical-scroll-proportion="0.0">
+            <state line="104" column="61" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -176,6 +172,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Push.Settings">
+    <option name="myUpdateMethod" value="REBASE" />
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -195,11 +194,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/entities/PlayerAction.java" />
+        <option value="$PROJECT_DIR$/src/entities/PointTime.java" />
+        <option value="$PROJECT_DIR$/src/entities/PlayerClone.java" />
+        <option value="$PROJECT_DIR$/src/entities/EntityManager.java" />
         <option value="$PROJECT_DIR$/src/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
-        <option value="$PROJECT_DIR$/src/entities/PointTime.java" />
-        <option value="$PROJECT_DIR$/src/entities/EntityManager.java" />
-        <option value="$PROJECT_DIR$/src/entities/PlayerClone.java" />
+        <option value="$PROJECT_DIR$/src/game_engine/Scenes.java" />
       </list>
     </option>
   </component>
@@ -669,7 +669,15 @@
       <created>1476167196020</created>
       <updated>1476167196020</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added try/catch block for health code null pointer exception.&#10;Working on player clones, they may stop when intended now but it's very laggy for some reason...">
+      <created>1476483125957</created>
+      <updated>1476483125957</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Invisible clones now die and lag is not nearly as bad anymore!">
+      <created>1476559908268</created>
+      <updated>1476559908268</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -697,23 +705,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.43560606" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.43560606" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277487" sideWeight="0.5029991" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32750398" sideWeight="0.49700084" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984293" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.49700084" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.67304623" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21060605" sideWeight="0.6012759" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39872408" sideWeight="0.5348485" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21060605" sideWeight="0.67145133" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39872408" sideWeight="0.5348485" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -779,7 +787,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zombies stop moving when  they die.&#10;Fixed hitting collision.&#10;Player makes hitting sound when he hits a zombie.&#10;Zombies become stunned when they get hit.&#10;Dead zombies can't hurt you or get hurt." />
+    <option name="LAST_COMMIT_MESSAGE" value="Invisible clones now die and lag is not nearly as bad anymore!" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -800,6 +808,8 @@
     <MESSAGE value="Keep working on player movement/action recording..." />
     <MESSAGE value="Added PointTime class" />
     <MESSAGE value="Zombies stop moving when  they die.&#10;Fixed hitting collision.&#10;Player makes hitting sound when he hits a zombie.&#10;Zombies become stunned when they get hit.&#10;Dead zombies can't hurt you or get hurt." />
+    <MESSAGE value="Added try/catch block for health code null pointer exception.&#10;Working on player clones, they may stop when intended now but it's very laggy for some reason..." />
+    <MESSAGE value="Invisible clones now die and lag is not nearly as bad anymore!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -809,28 +819,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/levels/ProceduralMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game_engine/MouseEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game_engine/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -865,13 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="417" column="14" selection-start="14032" selection-end="14032" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game_engine/Attributes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -900,23 +882,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/PlayerClone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="316" column="37" selection-start="9887" selection-end="9887" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="72" column="30" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#429#440#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/EntityManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="421" column="42" selection-start="11321" selection-end="11321" vertical-scroll-proportion="0.0">
+        <state line="423" column="37" selection-start="11432" selection-end="11432" vertical-scroll-proportion="-4.92">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/PlayerClone.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="27" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.74242425">
+        <state line="98" column="55" selection-start="2956" selection-end="2956" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="61" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game_engine/Scenes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="29" selection-start="4239" selection-end="4239" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/levels/ProceduralMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
