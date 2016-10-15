@@ -62,7 +62,6 @@ public class ZombieHouse3d
   
   boolean paused = false;
 
-  Stage secondaryStage = new Stage();
   BorderPane pane;
   ProgressBar pHealth = new ProgressBar();
   ProgressBar pStam = new ProgressBar();
@@ -376,7 +375,27 @@ public class ZombieHouse3d
     exitLight.setTranslateZ(exits.get(0).getTranslateZ());
     root.getChildren().addAll(exits);
     root.getChildren().add(exitLight);
-    
+
+    pHealth.setTooltip(new Tooltip("Health"));
+    pHealth.setStyle("-fx-accent: red;");
+    pHealth.setProgress(100);
+    pHealth.setPrefWidth(125);
+    pHealth.setMaxWidth(125);
+    pHealth.setMinWidth(125);
+    pStam.setProgress(100);
+    pStam.setTooltip(new Tooltip("Stamina"));
+    pStam.setStyle("-fx-accent: green;");
+    pStam.setPrefWidth(125);
+    pStam.setMaxWidth(125);
+    pStam.setMinWidth(125);
+
+    pane = new BorderPane();
+    HBox box = new HBox(8);
+    box.getChildren().addAll(pHealth, pStam);
+    pane.getChildren().add(box);
+    pane.setMinWidth(1280);
+    pane.setMinHeight(800);
+
     // Use a SubScene
     SubScene subScene = new SubScene(root, 1280, 800, true,
         SceneAntialiasing.BALANCED);
@@ -389,7 +408,7 @@ public class ZombieHouse3d
     });*/
 
     Group group = new Group();
-    group.getChildren().add(subScene);
+    group.getChildren().addAll(subScene,pane);
     group.addEventFilter(
         MouseEvent.MOUSE_MOVED,
         new MouseEventHandler(camera, entityManager.player)
@@ -412,11 +431,14 @@ public class ZombieHouse3d
       if(!paused)
       {
         entityManager.tick();
-        try {
+        try
+        {
           pHealth.setProgress(entityManager.player.health / Attributes.Player_Health);
           pStam.setProgress(entityManager.player.stamina / Attributes.Player_Stamina);
         }
-          catch (NullPointerException e) {
+        catch (NullPointerException e)
+        {
+          System.out.println("NPE - ZombieHouse3d.java");
         }
       }
       else
@@ -458,7 +480,7 @@ public class ZombieHouse3d
     scene.addEventHandler(KeyEvent.KEY_PRESSED,
         new KeyboardEventHandler(camera, entityManager.player, this));
     scene.addEventHandler(KeyEvent.KEY_RELEASED,
-        new KeyboardEventHandler(camera, entityManager.player, this));
+            new KeyboardEventHandler(camera, entityManager.player, this));
 
     // Initialize stage
     gameStage.setTitle("Zombie House 3D");
@@ -469,7 +491,6 @@ public class ZombieHouse3d
       entityManager.player.gameIsRunning.set(false);
       entityManager.gameIsRunning.set(false);
     });
-    setUpHUD(gameStage);
 
     Button play = new Button();
     play.setText("Play!");
@@ -485,40 +506,6 @@ public class ZombieHouse3d
     gameLoop = new MainGameLoop();
     gameLoop.start();
     return scene;
-  }
-  public void setUpHUD(Stage primaryStage)
-  {
-    pHealth.setTooltip(new Tooltip("Health"));
-    pHealth.setStyle("-fx-accent: red;");
-    pHealth.setProgress(100);
-    pHealth.setPrefWidth(125);
-    pHealth.setMaxWidth(125);
-    pHealth.setMinWidth(125);
-    pStam.setProgress(100);
-    pStam.setTooltip(new Tooltip("Stamina"));
-    pStam.setStyle("-fx-accent: green;");
-    pStam.setPrefWidth(125);
-    pStam.setMaxWidth(125);
-    pStam.setMinWidth(125);
-
-    pane = new BorderPane();
-    HBox box = new HBox(8);
-    box.getChildren().addAll(pHealth,pStam);
-    pane.getChildren().add(box);
-
-    Scene hud = new Scene(pane);
-    secondaryStage = new Stage();
-    secondaryStage.setTitle("Player Info");
-    secondaryStage.initOwner(primaryStage);
-    secondaryStage.setScene(hud);
-    secondaryStage.setWidth(300);
-    secondaryStage.setHeight(100);
-    secondaryStage.setX(100);
-    secondaryStage.setY(100);
-    secondaryStage.setResizable(false);
-    secondaryStage.setAlwaysOnTop(true);
-
-    secondaryStage.show();
   }
   /**
    * Delete game data after game has ended. Used when going from
@@ -541,7 +528,6 @@ public class ZombieHouse3d
     walls.clear();
     exits.clear();
     root.getChildren().clear();
-    secondaryStage.close();
     entityManager = null;
   }
 }
