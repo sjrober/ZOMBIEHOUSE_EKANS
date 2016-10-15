@@ -1,5 +1,6 @@
 package game_engine;
 
+import entities.PlayerClone;
 import gui.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -7,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.SubScene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -19,6 +21,7 @@ import sounds.SoundManager;
 import utilities.MapViewerScene;
 import utilities.ZombieBoardRenderer;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -148,7 +151,7 @@ public class Scenes
         (However gameBoard isn't taking effect yet.)
          */
         ZombieHouse3d tempGameObject = threeDGameObject;
-        LinkedList<entities.PlayerClone> cloneList = tempGameObject.tempPlayerClones;
+        ArrayList<PlayerClone> cloneList = tempGameObject.tempPlayerClones;
         Tile[][] tempGameBoard = tempGameObject.tempGameBoard;
         boolean sameLevel = tempGameObject.sameLevel;
         createNewGameBoard(0);

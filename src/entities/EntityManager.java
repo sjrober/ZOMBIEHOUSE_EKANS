@@ -45,8 +45,8 @@ public class EntityManager
   private MasterZombieDecision masterDecision;
   private ZombieDecision zombieDecision;
 
-  public LinkedList<PlayerClone> playerClones = new LinkedList<>();
-  private LinkedList<PointTime>currentPointTimeList = new LinkedList<PointTime>();
+  public ArrayList<PlayerClone> playerClones = new ArrayList<>();
+  private ArrayList<PointTime>currentPointTimeList = new ArrayList<PointTime>();
   
   /**
    * Constructor for EntityManager.
@@ -419,6 +419,8 @@ public class EntityManager
    */
   public void addClones() {
 
+    player.addPointTime(PlayerAction.DIE);
+    System.out.println("Player.pointList size: " + player.pointList.size());
     currentPointTimeList = player.pointList;
     playerClones.add(new PlayerClone(currentPointTimeList));
 
