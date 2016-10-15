@@ -70,9 +70,9 @@ public class PlayerClone extends Player
         //cloneCylinder.setTranslateX(xPos);
         //cloneCylinder.setTranslateZ(zPos);
 
-        double deltaZ = zPos - lastzPos;
+        /*double deltaZ = zPos - lastzPos;
         double deltaX = xPos - lastxPos;
-        double angle = (Math.atan(deltaX / deltaZ) * 180 / Math.PI)+180;
+        double angle = (Math.atan(deltaX / deltaZ) * 180 / Math.PI)+180;*/
 
         for (int i = 0; i < cloneMesh.length; i++)
         {
@@ -80,7 +80,7 @@ public class PlayerClone extends Player
           cloneMesh[i].setTranslateZ(zPos);
           cloneMesh[i].setTranslateX(xPos);
           //cloneMesh[i].setTranslateX(movementAmountX);
-          cloneMesh[i].setRotate(angle);
+          cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle()+180);
         }
 
         if (currentAction.equals(PlayerAction.LOSEHEALTH)) {
