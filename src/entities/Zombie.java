@@ -36,7 +36,8 @@ public class Zombie extends Creature
   private EntityManager entityManager;
 
   public boolean randomWalk = false;
-  Random rand = new Random();
+  //seeded random - Sam
+  Random rand = new Random(360);
   public double zombieWalkingSpeed = .5/60;
   public double masterZombieSpeed = .05;
   public double masterZombie2dSpeed = .3;

@@ -100,7 +100,7 @@ public class ZombieHouse3d
 
   public static int tickCount;
 
-  public LinkedList<PlayerClone> tempPlayerClones = new LinkedList<>();
+  public ArrayList<PlayerClone> tempPlayerClones = new ArrayList<>();
   public boolean sameLevel = false;
 
   /**
@@ -180,9 +180,11 @@ public class ZombieHouse3d
 
     tickCount=0;
 
+    //init playerClones - Sam
     for(PlayerClone playerClone : entityManager.playerClones)
     {
       playerClone.setActive(true);
+      playerClone.setDead(false);
     }
 
     // Lighting

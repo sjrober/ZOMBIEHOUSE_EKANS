@@ -45,8 +45,8 @@ public class EntityManager
   private MasterZombieDecision masterDecision;
   private ZombieDecision zombieDecision;
 
-  public LinkedList<PlayerClone> playerClones = new LinkedList<>();
-  private LinkedList<PointTime>currentPointTimeList = new LinkedList<PointTime>();
+  public ArrayList<PlayerClone> playerClones = new ArrayList<>();
+  private ArrayList<PointTime>currentPointTimeList = new ArrayList<PointTime>();
   
   /**
    * Constructor for EntityManager.

@@ -1,6 +1,7 @@
 package entities;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Math;
@@ -95,7 +96,7 @@ public class Player extends Creature
   /*
 
    */
-  public LinkedList<PointTime> pointList = new LinkedList<PointTime>();
+  public ArrayList<PointTime> pointList = new ArrayList<PointTime>();
   
 
   public Player() {
@@ -313,7 +314,7 @@ public class Player extends Creature
   LinkedList array of pointTimes.
    */
   public void addPointTime(PlayerAction action) {
-    PointTime current = new PointTime(xPos,yPos,ZombieHouse3d.tickCount,action);
+    PointTime current = new PointTime(xPos,zPos,ZombieHouse3d.tickCount,angle,action);
     pointList.add(current);
 
     /*if (ZombieHouse3d.tickCount==0) {
