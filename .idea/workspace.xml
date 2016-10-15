@@ -1,49 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="All clones are visible! Still look like zombies, and also still blink...">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.dae" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.mtl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul_hurt.dae" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul_hurt.mtl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Feral_ghoul/Feral_ghoul_hurt.obj" />
-      <change type="DELETED" beforePath="C:\Users\Dustin\IdeaProjects\zombiehouse_ekans\Resources\Meshes\Sword\Sword OBJ.mtl" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Dustin\IdeaProjects\zombiehouse_ekans\Resources\Meshes\Sword\Sword OBJ.obj" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/EntityManager.class" afterPath="$PROJECT_DIR$/bin/entities/EntityManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Player$PlayerStamina.class" afterPath="$PROJECT_DIR$/bin/entities/Player$PlayerStamina.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Player.class" afterPath="$PROJECT_DIR$/bin/entities/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/PlayerClone.class" afterPath="$PROJECT_DIR$/bin/entities/PlayerClone.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/PointTime.class" afterPath="$PROJECT_DIR$/bin/entities/PointTime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$1.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$10.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$11.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$12.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$13.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$14.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$15.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$16.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$17.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$18.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$19.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$2.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$20.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$3.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$4.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$5.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$6.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$7.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$8.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes$9.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Zombie$CalculatePath.class" afterPath="$PROJECT_DIR$/bin/entities/Zombie$CalculatePath.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Zombie.class" afterPath="$PROJECT_DIR$/bin/entities/Zombie.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$1.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$2.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$MainGameLoop.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$MainGameLoop.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+    <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Player_Clone/Casual_Man.dae" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Player_Clone/Casual_Man.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Player_Clone/Casual_Man.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Weapon/Victor Zsasz knife.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Meshes/Weapon/Victor Zsasz knife.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ZombieHouse.iws" />
@@ -182,7 +145,7 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -776,7 +739,13 @@
       <option name="project" value="LOCAL" />
       <updated>1476563320866</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added the between (1/3-2/3) and the (1/3) or less zombies. Hurt and dying meshes.">
+      <created>1476574003308</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1476574003308</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -860,7 +829,8 @@
     <MESSAGE value="nothing" />
     <MESSAGE value="Your first clone is now visible!! (Looks like a zombie though at the moment, also blinks in/out of existence sometimes. Might have to do with floating point values.)" />
     <MESSAGE value="All clones are visible! Still look like zombies, and also still blink..." />
-    <option name="LAST_COMMIT_MESSAGE" value="All clones are visible! Still look like zombies, and also still blink..." />
+    <MESSAGE value="Added the between (1/3-2/3) and the (1/3) or less zombies. Hurt and dying meshes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the between (1/3-2/3) and the (1/3) or less zombies. Hurt and dying meshes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1009,7 +979,7 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
           <folding />
         </state>
       </provider>
