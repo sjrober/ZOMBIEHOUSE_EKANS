@@ -92,10 +92,15 @@ public class PlayerClone extends Player
         if (currentAction.equals(Action.LOSEHEALTH)) {
           playSound(Sound.pain);
           currentAction = Action.NOACTION;
-
+        }
+        else if (currentAction.equals(Action.STAB)) {
+          playSound(Sound.hits);
+          currentAction = Action.NOACTION;
         }
         else if (currentAction.equals(Action.DIE)) {
           System.out.println("A player clone just died!");
+          playSound(Sound.death);
+          currentAction = Action.NOACTION;
           isDead = true;
           active = false;
         }
@@ -114,7 +119,6 @@ public class PlayerClone extends Player
 
     entityManager.soundManager.playSoundClip(sound, distance,
             balance);
-    System.out.println("Working!");
   }
 }
 

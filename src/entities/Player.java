@@ -271,6 +271,7 @@ public class Player extends Creature
           collisionCheck.engage(this);
           System.out.println("Zombie " + collisionCheck.index + " is engaged!");
         }
+        action = Action.STAB;
 
       }
     }
@@ -346,7 +347,6 @@ public class Player extends Creature
     zPos = camera.getTranslateZ();
 
     addPointTime(action);
-    action = Action.NOACTION;
   }
 
   /*
@@ -356,14 +356,7 @@ public class Player extends Creature
   public void addPointTime(Action action) {
     PointTime current = new PointTime(xPos,zPos,ZombieHouse3d.tickCount,angle,action);
     pointList.add(current);
-    //this.action = Action.NOACTION;
-
-    /*if (ZombieHouse3d.tickCount==0) {
-      pointList.add(current);
-    }else {
-      pointList.set(ZombieHouse3d.tickCount,current);
-    }*/
-
+    this.action = Action.NOACTION;
   }
 
   /**

@@ -169,8 +169,23 @@ public class SoundManager
       volume = GROAN_MOD*distance;
     }
 
+    //player clone hit
     if (sound.equals(Sound.pain)){
       clip = sounds.get("agony");
+      volume = GROAN_MOD;
+    }
+
+    //player clone stabs
+    if (sound.equals(Sound.hits)){
+      clip = sounds.get("tearing-flesh");
+      volume = GROAN_MOD;
+    }
+
+    //player clone dies
+    if (sound.equals(Sound.death)){
+      int i = random.nextInt(DEATHS);
+      clip = sounds.get("death" + i);
+      volume = GROAN_MOD;
     }
     
     //shuffle
