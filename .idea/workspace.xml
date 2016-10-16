@@ -2,27 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/EntityManager.java" afterPath="$PROJECT_DIR$/src/entities/EntityManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Player.java" afterPath="$PROJECT_DIR$/src/entities/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/PlayerClone.java" afterPath="$PROJECT_DIR$/src/entities/PlayerClone.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sounds/SoundManager.java" afterPath="$PROJECT_DIR$/src/sounds/SoundManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Zombie.java" afterPath="$PROJECT_DIR$/src/entities/Zombie.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/ZombieClone.java" afterPath="$PROJECT_DIR$/src/entities/ZombieClone.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" afterPath="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
-    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476637832000" ignored="false" />
-    <file path="/Player.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476635830201" ignored="false" />
+    <file path="/Dummy.txt" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476638592574" ignored="false" />
+    <file path="/Player.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476645932939" ignored="false" />
     <file path="/Scenes.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476588196006" ignored="false" />
     <file path="/fragment.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476587923865" ignored="false" />
     <file path="/EntityManager.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476636707387" ignored="false" />
-    <file path="/PlayerClone.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476637487595" ignored="false" />
-    <file path="/Zombie.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476595127459" ignored="false" />
-    <file path="/ZombieClone.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476636901440" ignored="false" />
+    <file path="/PlayerClone.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476638427921" ignored="false" />
+    <file path="/Zombie.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476646213224" ignored="false" />
+    <file path="/ZombieClone.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476646325273" ignored="false" />
     <file path="/ZombieHouse3d.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476636961979" ignored="false" />
-    <file path="/SoundManager.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476637578304" ignored="false" />
+    <file path="/SoundManager.java" changelist="efa80007-b8f0-4fea-848a-1a923e74dfd9" time="1476638187149" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,7 @@
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="301" column="38" selection-start="9917" selection-end="9917" vertical-scroll-proportion="-6.12">
+            <state line="253" column="26" selection-start="7696" selection-end="7696" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SoundManager.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SoundManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sounds/SoundManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="4" selection-start="6325" selection-end="6325" vertical-scroll-proportion="0.897281">
+            <state line="187" column="44" selection-start="4672" selection-end="4672" vertical-scroll-proportion="-6.8">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,7 +113,7 @@
       <file leaf-file-name="PlayerClone.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/PlayerClone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="76" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0">
+            <state line="100" column="12" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,7 +124,7 @@
       <file leaf-file-name="Zombie.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="863" column="78" selection-start="25515" selection-end="25515" vertical-scroll-proportion="-10.88">
+            <state line="98" column="44" selection-start="3149" selection-end="3149" vertical-scroll-proportion="-0.68">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,10 +159,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZombieClone.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ZombieClone.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/entities/ZombieClone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="3" selection-start="1217" selection-end="1217" vertical-scroll-proportion="-9.52">
+            <state line="88" column="12" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.46223566">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#543#554#0" expanded="true" />
@@ -211,13 +209,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/entities/ZombiePointTime.java" />
         <option value="$PROJECT_DIR$/src/game_engine/Scenes.java" />
-        <option value="$PROJECT_DIR$/src/entities/Zombie.java" />
-        <option value="$PROJECT_DIR$/src/entities/Player.java" />
-        <option value="$PROJECT_DIR$/src/entities/ZombieClone.java" />
         <option value="$PROJECT_DIR$/src/entities/EntityManager.java" />
         <option value="$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java" />
-        <option value="$PROJECT_DIR$/src/entities/PlayerClone.java" />
         <option value="$PROJECT_DIR$/src/sounds/SoundManager.java" />
+        <option value="$PROJECT_DIR$/src/entities/PlayerClone.java" />
+        <option value="$PROJECT_DIR$/src/entities/Player.java" />
+        <option value="$PROJECT_DIR$/src/entities/Zombie.java" />
+        <option value="$PROJECT_DIR$/src/entities/ZombieClone.java" />
       </list>
     </option>
   </component>
@@ -419,6 +417,32 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sounds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZombieHouse_Atle_Ben_Jeff" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zombiehouse_ekans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sounds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="deaths" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -457,6 +481,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Player_Clone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZombieHouse_Atle_Ben_Jeff" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zombiehouse_ekans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -756,7 +794,15 @@
       <created>1476589754088</created>
       <updated>1476589754088</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="PlayerClones now make pain sound when hit.">
+      <created>1476637847106</created>
+      <updated>1476637847106</updated>
+    </task>
+    <task id="LOCAL-00023" summary="PlayerClones now make sounds upon death and when hitting zombies.">
+      <created>1476638601220</created>
+      <updated>1476638601220</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -800,7 +846,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.67304623" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20984848" sideWeight="0.6028708" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20984848" sideWeight="0.6028708" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39712918" sideWeight="0.5348485" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -866,7 +912,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="PlayerClones now make pain sound when hit." />
+    <option name="LAST_COMMIT_MESSAGE" value="PlayerClones now make sounds upon death and when hitting zombies." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -899,6 +945,7 @@
     <MESSAGE value="PlayerClones now have their own models. Looks like the texture for them is off though for some reason.." />
     <MESSAGE value="ZombieClones now chase respective PlayerClones." />
     <MESSAGE value="PlayerClones now make pain sound when hit." />
+    <MESSAGE value="PlayerClones now make sounds upon death and when hitting zombies." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -960,23 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="301" column="38" selection-start="9917" selection-end="9917" vertical-scroll-proportion="-6.12">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/ZombieClone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="3" selection-start="1217" selection-end="1217" vertical-scroll-proportion="-9.52">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#543#554#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="188" column="38" selection-start="5543" selection-end="5543" vertical-scroll-proportion="-8.16">
@@ -998,9 +1028,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sounds/SoundManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="187" column="44" selection-start="4672" selection-end="4672" vertical-scroll-proportion="-6.8">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="253" column="26" selection-start="7696" selection-end="7696" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="863" column="78" selection-start="25515" selection-end="25515" vertical-scroll-proportion="-10.88">
+        <state line="98" column="44" selection-start="3149" selection-end="3149" vertical-scroll-proportion="-0.68">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1009,18 +1055,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/PlayerClone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="76" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0">
+        <state line="100" column="12" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sounds/SoundManager.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/ZombieClone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="4" selection-start="6325" selection-end="6325" vertical-scroll-proportion="0.897281">
+        <state line="88" column="12" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.46223566">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#543#554#0" expanded="true" />
           </folding>
         </state>
       </provider>

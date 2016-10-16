@@ -31,6 +31,8 @@ public class ZombieClone extends Zombie
   private boolean isDead=false;
   public Cylinder cloneCylinder;
 
+  private double health=Attributes.Zombie_Health;
+
   public ZombieClone(ArrayList<PointTime> actionSequence) {
     this.actionSequence = actionSequence;
     create3DClone(1);
@@ -83,16 +85,18 @@ public class ZombieClone extends Zombie
           cloneMesh[i].setTranslateZ(zPos);
           cloneMesh[i].setTranslateX(xPos);
           //cloneMesh[i].setTranslateX(movementAmountX);
-          cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle() + 180);
+          if (health>0)
+            cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle() + 180);
         }
         cloneCylinder.setTranslateX(xPos);
         cloneCylinder.setTranslateZ(zPos);
 
         if (currentAction.equals(Action.LOSEHEALTH)) {
-
+          updateMesh();
+          currentAction = Action.NOACTION;
         }
         else if (currentAction.equals(Action.DIE)) {
-          System.out.println("A zombie clone just died!");
+          //System.out.println("A zombie clone just died!");
           isDead = true;
           active = false;
         }
@@ -105,6 +109,18 @@ public class ZombieClone extends Zombie
 
   public void setActive(boolean active) {
     this.active = active;
+  }
+
+  public void updateMesh() {
+    health--;
+    System.out.println("Current zombie health: " + health);
+    ZombieHouse3d.root.getChildren().removeAll(this.cloneMesh);
+    if (health == 2)
+      setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Hurt_Ghoul));
+    else if (health == 1)
+      setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Dying_Ghoul));
+    ZombieHouse3d.root.getChildren().addAll(this.cloneMesh);
+
   }
 
   public void setMesh(Node[] cloneMesh)

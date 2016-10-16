@@ -265,9 +265,10 @@ public class Player extends Creature
           ZombieHouse3d.root.getChildren().addAll(collisionCheck.zombieMesh);
         }
         if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
+        collisionCheck.action=Action.LOSEHEALTH;
 
-        //engage player
-        if (collisionCheck.engaged==false) {
+          //engage player
+          if (collisionCheck.engaged==false) {
           collisionCheck.engage(this);
           System.out.println("Zombie " + collisionCheck.index + " is engaged!");
         }

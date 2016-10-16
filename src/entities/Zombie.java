@@ -81,6 +81,7 @@ public class Zombie extends Creature
   public int index;
 
   public ArrayList<PointTime> pointList = new ArrayList<PointTime>();
+  public Action action = Action.NOACTION;
 
 
   public Zombie() {
@@ -119,6 +120,7 @@ public class Zombie extends Creature
   public void addPointTime(Action action) {
     PointTime current = new PointTime(xPos,zPos, ZombieHouse3d.tickCount,angle,action);
     pointList.add(current);
+    this.action = Action.NOACTION;
   }
 
   public GraphNode getCurrentNode() {
@@ -613,7 +615,8 @@ public class Zombie extends Creature
     findPathToPlayer(currentTile);
     updateDistance();
 
-    addPointTime(Action.NOACTION);
+    addPointTime(action);
+
   }
 
   /**

@@ -98,7 +98,7 @@ public class PlayerClone extends Player
           currentAction = Action.NOACTION;
         }
         else if (currentAction.equals(Action.DIE)) {
-          System.out.println("A player clone just died!");
+          //System.out.println("A player clone just died!");
           playSound(Sound.death);
           currentAction = Action.NOACTION;
           isDead = true;
