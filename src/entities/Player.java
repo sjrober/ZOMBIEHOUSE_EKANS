@@ -271,6 +271,13 @@ public class Player extends Creature
           ZombieHouse3d.root.getChildren().addAll(collisionCheck.zombieMesh);
         }
         if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
+
+        //engage player
+        if (collisionCheck.engaged==false) {
+          collisionCheck.engage(this);
+          System.out.println("Zombie " + collisionCheck.index + "is engaged!");
+        }
+
       }
     }
     boundingCircle.setRadius(radius);
@@ -281,6 +288,12 @@ public class Player extends Creature
       lastDam = counter;
       health--;
       if (health <= 0) isDead.set(true);
+
+      //engage player
+      if (collisionCheck.engaged==false) {
+        collisionCheck.engage(this);
+        System.out.println("Zombie " + collisionCheck.index + "is engaged!");
+      }
     }
     /*boundingCircle.setRadius(2);
     if(entityManager.checkPlayerCollision(boundingCircle) != null) System.out.println("testing");
