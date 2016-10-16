@@ -29,7 +29,7 @@ public class ZombieClone extends Zombie
   public Node[] cloneMesh;
 
   private boolean isDead=false;
-  private Cylinder cloneCylinder;
+  public Cylinder cloneCylinder;
 
   public ZombieClone(ArrayList<PointTime> actionSequence) {
     this.actionSequence = actionSequence;
@@ -85,6 +85,8 @@ public class ZombieClone extends Zombie
           //cloneMesh[i].setTranslateX(movementAmountX);
           cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle() + 180);
         }
+        cloneCylinder.setTranslateX(xPos);
+        cloneCylinder.setTranslateZ(zPos);
 
         if (currentAction.equals(Action.LOSEHEALTH)) {
 

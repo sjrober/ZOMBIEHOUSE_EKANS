@@ -276,10 +276,23 @@ public class Player extends Creature
     }
 
     //bifurcation -Sam
-    ZombieClone collisionCloneCheck = entityManager.checkPlayerCloneCollision(boundingCircle);
+    /*ZombieClone collisionCloneCheck = entityManager.checkPlayerCloneCollision(boundingCircle);
     if (collisionCloneCheck != null) {
 
-    }
+      double xDiff = collisionCloneCheck.xPos - xPos;
+      double zDiff = collisionCloneCheck.zPos - zPos;
+      if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle) && counter >= lastDam + damPeriod)
+      {
+        System.out.println("Bifurcate!!");
+        entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
+        lastDam = counter;
+        Zombie newZombie = new Zombie(getCurrentNode().nodeTile, getCurrentNode().row, getCurrentNode().col,
+                xPos, zPos, entityManager, counter);
+        newZombie.create3DZombie(getCurrentNode().row, getCurrentNode().col, Tile.tileSize);
+        newZombie.setFollowing(this);
+          ZombieHouse3d.root.getChildren().addAll(newZombie.zombieMesh);
+       }
+    } */
 
     boundingCircle.setRadius(radius);
     collisionCheck = entityManager.checkPlayerCollision(boundingCircle);
@@ -289,6 +302,8 @@ public class Player extends Creature
       lastDam = counter;
       health--;
       if (health <= 0) isDead.set(true);
+      //addPointTime(Action.LOSEHEALTH);
+      action = Action.LOSEHEALTH;
 
       //engage player
       if (collisionCheck.engaged==false) {
@@ -331,6 +346,7 @@ public class Player extends Creature
     zPos = camera.getTranslateZ();
 
     addPointTime(action);
+    action = Action.NOACTION;
   }
 
   /*
@@ -340,6 +356,7 @@ public class Player extends Creature
   public void addPointTime(Action action) {
     PointTime current = new PointTime(xPos,zPos,ZombieHouse3d.tickCount,angle,action);
     pointList.add(current);
+    //this.action = Action.NOACTION;
 
     /*if (ZombieHouse3d.tickCount==0) {
       pointList.add(current);

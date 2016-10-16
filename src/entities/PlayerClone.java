@@ -1,8 +1,11 @@
 package entities;
+import game_engine.Attributes;
 import game_engine.ZombieHouse3d;
 import javafx.scene.Node;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
+import sounds.Sound;
+import javafx.scene.media.AudioClip;
 
 import java.util.ArrayList;
 
@@ -27,9 +30,14 @@ public class PlayerClone extends Player
   private Cylinder cloneCylinder;
 
   public PlayerClone(ArrayList<PointTime> actionSequence) {
+    this.entityManager = entityManager;
     this.actionSequence = actionSequence;
     create3DClone(1);
 
+  }
+
+  public void setEntityManager(EntityManager entityManager) {
+    this.entityManager = entityManager;
   }
 
   public void create3DClone(int cellSize)
@@ -82,6 +90,8 @@ public class PlayerClone extends Player
         }
 
         if (currentAction.equals(Action.LOSEHEALTH)) {
+          playSound(Sound.pain);
+          currentAction = Action.NOACTION;
 
         }
         else if (currentAction.equals(Action.DIE)) {
@@ -95,6 +105,18 @@ public class PlayerClone extends Player
     }
 
   }
+
+  public void playSound(Sound sound) {
+  double distance = entityManager.calculateDistanceFromPlayer(xPos,zPos);
+  if (distance < Attributes.Player_Hearing)
+  {
+    double balance = entityManager.calculateSoundBalance(this);
+
+    entityManager.soundManager.playSoundClip(sound, distance,
+            balance);
+    System.out.println("Working!");
+  }
+}
 
   public void setActive(boolean active) {
     this.active = active;

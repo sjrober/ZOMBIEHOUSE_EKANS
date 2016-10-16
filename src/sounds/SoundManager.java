@@ -168,6 +168,10 @@ public class SoundManager
       clip = sounds.get("groan" + i);
       volume = GROAN_MOD*distance;
     }
+
+    if (sound.equals(Sound.pain)){
+      clip = sounds.get("agony");
+    }
     
     //shuffle
     if (sound.equals(Sound.shuffle)){

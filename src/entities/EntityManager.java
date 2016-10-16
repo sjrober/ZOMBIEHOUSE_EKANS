@@ -137,7 +137,7 @@ public class EntityManager
     for (ZombieClone zombieClone : zombieClones)
     {
       if (player.getBoundsInParent()
-              .intersects(zombieClone.zombieCylinder.getBoundsInParent()))
+              .intersects(zombieClone.cloneCylinder.getBoundsInParent()))
       {
         return zombieClone;
       }
@@ -161,6 +161,17 @@ public class EntityManager
     return Math.sqrt(xDist * xDist + zDist * zDist);
   }
 
+  //distance using points
+  public double calculateDistanceFromPlayer(double otherxPos, double otherzPos)
+  {
+    //System.out.println(player.health);
+    //System.out.println("other: " + player.xPos + ", " + player.zPos);
+    double xDist = player.xPos - otherxPos;
+    double zDist = player.zPos - otherzPos;
+
+    return Math.sqrt(xDist * xDist + zDist * zDist);
+  }
+
   /**
    * calculate the sound balance based on the player angle and
    * the zombie position
@@ -180,6 +191,20 @@ public class EntityManager
     angle -= theta;
     if (angle < -Math.PI) angle += 2*Math.PI;
     
+    return angle/Math.PI;
+  }
+
+  public double calculateSoundBalance(PlayerClone clone)
+  {
+    double angle = player.boundingCircle.getRotate()*(180/Math.PI);
+
+    double xDiff = player.xPos - clone.xPos;
+    double zDiff = player.zPos - clone.zPos;
+    double theta = Math.atan(xDiff / zDiff);
+
+    angle -= theta;
+    if (angle < -Math.PI) angle += 2*Math.PI;
+
     return angle/Math.PI;
   }
 

@@ -188,6 +188,7 @@ public class ZombieHouse3d
     for(PlayerClone playerClone : entityManager.playerClones)
     {
       playerClone.setActive(true);
+      playerClone.setEntityManager(entityManager);
       playerClone.setDead(false);
     }
 
