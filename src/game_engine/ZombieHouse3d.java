@@ -62,6 +62,7 @@ public class ZombieHouse3d
   
   boolean paused = false;
 
+  Stage secondaryStage = new Stage();
   BorderPane pane;
   ProgressBar pHealth = new ProgressBar();
   ProgressBar pStam = new ProgressBar();
@@ -493,6 +494,7 @@ public class ZombieHouse3d
       entityManager.player.gameIsRunning.set(false);
       entityManager.gameIsRunning.set(false);
     });
+    //setUpHUD(gameStage);
 
     Button play = new Button();
     play.setText("Play!");
@@ -508,6 +510,40 @@ public class ZombieHouse3d
     gameLoop = new MainGameLoop();
     gameLoop.start();
     return scene;
+  }
+  public void setUpHUD(Stage primaryStage)
+  {
+    pHealth.setTooltip(new Tooltip("Health"));
+    pHealth.setStyle("-fx-accent: red;");
+    pHealth.setProgress(100);
+    pHealth.setPrefWidth(125);
+    pHealth.setMaxWidth(125);
+    pHealth.setMinWidth(125);
+    pStam.setProgress(100);
+    pStam.setTooltip(new Tooltip("Stamina"));
+    pStam.setStyle("-fx-accent: green;");
+    pStam.setPrefWidth(125);
+    pStam.setMaxWidth(125);
+    pStam.setMinWidth(125);
+
+    pane = new BorderPane();
+    HBox box = new HBox(8);
+    box.getChildren().addAll(pHealth,pStam);
+    pane.getChildren().add(box);
+
+    Scene hud = new Scene(pane);
+    secondaryStage = new Stage();
+    secondaryStage.setTitle("Player Info");
+    secondaryStage.initOwner(primaryStage);
+    secondaryStage.setScene(hud);
+    secondaryStage.setWidth(300);
+    secondaryStage.setHeight(100);
+    secondaryStage.setX(100);
+    secondaryStage.setY(100);
+    secondaryStage.setResizable(false);
+    secondaryStage.setAlwaysOnTop(true);
+
+    secondaryStage.show();
   }
   /**
    * Delete game data after game has ended. Used when going from
@@ -530,6 +566,7 @@ public class ZombieHouse3d
     walls.clear();
     exits.clear();
     root.getChildren().clear();
+    secondaryStage.close();
     entityManager = null;
   }
 }
