@@ -93,7 +93,7 @@ public class ZombieHouse3d
   Main main;
   Scenes scenes;
   
-  private String Feral_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
+  private String Feral_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.obj";
   private String Lambent_Female = "Resources/Meshes/Lambent_Female/Lambent_Female.obj";
 
   //private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
