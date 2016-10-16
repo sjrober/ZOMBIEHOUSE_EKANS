@@ -6,10 +6,7 @@ import java.util.LinkedList;
 import com.interactivemesh.jfx.importer.obj.ObjImportOption;
 import com.interactivemesh.jfx.importer.obj.ObjModelImporter;
 
-import entities.EntityManager;
-import entities.Player;
-import entities.PlayerClone;
-import entities.Zombie;
+import entities.*;
 import graphing.GraphNode;
 import graphing.TileGraph;
 import gui.Main;
@@ -161,8 +158,8 @@ public class ZombieHouse3d
     // initialize entity manager
     entityManager = new EntityManager(soundManager, main, scenes);
     entityManager.setZombieHouse3d(this);
-    entityManager.createZombies(gameBoard, boardHeight, boardWidth);
-    numZombies = entityManager.zombies.size();
+    //entityManager.createZombies(gameBoard, boardHeight, boardWidth);
+    //numZombies = entityManager.zombies.size();
 
     entityManager.playerClones = tempPlayerClones;
 
@@ -177,6 +174,9 @@ public class ZombieHouse3d
     // Initialize player
     entityManager.player = new Player(3, 0, 3, camera, entityManager, light);
     entityManager.player.camera = camera;
+
+    entityManager.createZombies(gameBoard, boardHeight, boardWidth);
+    numZombies = entityManager.zombies.size();
 
     tickCount=0;
 
@@ -354,6 +354,7 @@ public class ZombieHouse3d
     
     System.out.println("Number of Zombies: " + entityManager.zombies.size());
     System.out.println("Number of Player Clones: " + entityManager.playerClones.size());
+    System.out.println("Number of Zombie Clones: " + entityManager.zombieClones.size());
 
     for (Zombie zombie: entityManager.zombies){
       if (zombie.isMasterZombie){
@@ -362,6 +363,11 @@ public class ZombieHouse3d
         zombie.setMesh(loadMeshViews(Feral_Ghoul));
       }
       root.getChildren().addAll(zombie.zombieMesh);
+    }
+
+    for (ZombieClone zombieClone: entityManager.zombieClones){
+      zombieClone.setMesh(loadMeshViews(Feral_Ghoul));
+      root.getChildren().addAll(zombieClone.zombieMesh);
     }
 
     for (PlayerClone playerClone: entityManager.playerClones){
