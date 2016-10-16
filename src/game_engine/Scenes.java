@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import entities.PointTime;
 
 /**
  * @author Atle Olson
@@ -75,6 +76,7 @@ public class Scenes
 
   //public static HashMap zombiesEngaged = new HashMap<Integer,PlayerClone>();
   public static ArrayList<PlayerClone> engagedZombies = new ArrayList<>(100);
+  public static ArrayList<ArrayList<PointTime>> zombieClonePaths = new ArrayList<>(100);
   //engagedZombies.
   
   /**
@@ -90,6 +92,7 @@ public class Scenes
     //System.out.println("Size of CloneList: " + engagedZombies.size());
     for (int i = 0; i < 100; i++) {
       engagedZombies.add(null);
+      zombieClonePaths.add(null);
     }
     System.out.println("Size of CloneList: " + engagedZombies.size());
 

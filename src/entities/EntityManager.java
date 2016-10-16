@@ -17,8 +17,6 @@ import sounds.Sound;
 import sounds.SoundManager;
 import utilities.ZombieBoardRenderer;
 
-import javax.lang.model.type.NullType;
-
 /**
  * @author Jeffrey McCall 
  *         Ben Matthews
@@ -134,6 +132,19 @@ public class EntityManager
     return null;
   }
 
+  public ZombieClone checkPlayerCloneCollision(Shape3D player)
+  {
+    for (ZombieClone zombieClone : zombieClones)
+    {
+      if (player.getBoundsInParent()
+              .intersects(zombieClone.zombieCylinder.getBoundsInParent()))
+      {
+        return zombieClone;
+      }
+    }
+    return null;
+  }
+
   /**
    * calculate the distance between two entities
    * 
@@ -187,9 +198,8 @@ public class EntityManager
         {
           counter++;
           if (counter<=scenes.engagedZombies.size() && scenes.engagedZombies.get(counter)!=null) {
-            ZombieClone newZombieClone = new ZombieClone(gameBoard[col][row], row, col,
-                    gameBoard[col][row].xPos, gameBoard[col][row].zPos, this, counter, scenes.engagedZombies.get(counter));
-            newZombieClone.create3DZombie(row, col, Tile.tileSize);
+            ZombieClone newZombieClone = new ZombieClone(scenes.zombieClonePaths.get(counter));
+            //newZombieClone.create3DZombie(row, col, Tile.tileSize);
 
             zombieClones.add(newZombieClone);
           }
@@ -441,7 +451,7 @@ public class EntityManager
    */
   public void addClones() {
 
-    player.addPointTime(PlayerAction.DIE);
+    player.addPointTime(Action.DIE);
     System.out.println("Player.pointList size: " + player.pointList.size());
     currentPointTimeList = player.pointList;
     playerClones.add(new PlayerClone(currentPointTimeList));
@@ -479,6 +489,8 @@ public class EntityManager
       if (zombie.engaged==true) {
         //scenes.zombiesEngaged.put(zombie.index,playerClones.get(playerClones.size()-1));
         scenes.engagedZombies.set(zombie.index, playerClones.get(playerClones.size() - 1));
+        zombie.addPointTime(Action.DIE);
+        scenes.zombieClonePaths.set(zombie.index, zombie.pointList);
       }
       zombie.dispose();
     }

@@ -1,14 +1,10 @@
 package entities;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Math;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import game_engine.Attributes;
-import game_engine.Scenes;
 import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.TileGraph;
@@ -17,9 +13,7 @@ import javafx.scene.PointLight;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
-import javafx.stage.Stage;
 import levels.Tile;
-import org.w3c.dom.Attr;
 import sounds.Sound;
 import utilities.ZombieBoardRenderer;
 
@@ -91,7 +85,7 @@ public class Player extends Creature
   private double deltaTime = 0;
   private double angleAttacked;
 
-  private PlayerAction action=PlayerAction.NOACTION;
+  private Action action= Action.NOACTION;
 
   /*
 
@@ -275,11 +269,18 @@ public class Player extends Creature
         //engage player
         if (collisionCheck.engaged==false) {
           collisionCheck.engage(this);
-          System.out.println("Zombie " + collisionCheck.index + "is engaged!");
+          System.out.println("Zombie " + collisionCheck.index + " is engaged!");
         }
 
       }
     }
+
+    //bifurcation -Sam
+    ZombieClone collisionCloneCheck = entityManager.checkPlayerCloneCollision(boundingCircle);
+    if (collisionCloneCheck != null) {
+
+    }
+
     boundingCircle.setRadius(radius);
     collisionCheck = entityManager.checkPlayerCollision(boundingCircle);
     if (collisionCheck != null && counter >= lastDam + damPeriod && !collisionCheck.isStunned.get() && !collisionCheck.isDead.get())
@@ -292,7 +293,7 @@ public class Player extends Creature
       //engage player
       if (collisionCheck.engaged==false) {
         collisionCheck.engage(this);
-        System.out.println("Zombie " + collisionCheck.index + "is engaged!");
+        System.out.println("Zombie " + collisionCheck.index + " is engaged!");
       }
     }
     /*boundingCircle.setRadius(2);
@@ -336,7 +337,7 @@ public class Player extends Creature
   adds PointTime (object containing current position, global tick and action(if any)) to the
   LinkedList array of pointTimes.
    */
-  public void addPointTime(PlayerAction action) {
+  public void addPointTime(Action action) {
     PointTime current = new PointTime(xPos,zPos,ZombieHouse3d.tickCount,angle,action);
     pointList.add(current);
 

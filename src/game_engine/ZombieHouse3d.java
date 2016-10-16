@@ -370,8 +370,9 @@ public class ZombieHouse3d
     }
 
     for (ZombieClone zombieClone: entityManager.zombieClones){
+      zombieClone.setActive(true);
       zombieClone.setMesh(loadMeshViews(Feral_Ghoul));
-      root.getChildren().addAll(zombieClone.zombieMesh);
+      root.getChildren().addAll(zombieClone.cloneMesh);
     }
 
     for (PlayerClone playerClone: entityManager.playerClones){

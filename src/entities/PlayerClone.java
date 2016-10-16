@@ -5,7 +5,6 @@ import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +16,7 @@ import java.util.LinkedList;
 public class PlayerClone extends Player
 {
   private ArrayList<PointTime> actionSequence = new ArrayList<PointTime>();
-  private PlayerAction currentAction = PlayerAction.NOACTION;
+  private Action currentAction = Action.NOACTION;
 
   private double lastxPos;
   private double lastzPos;
@@ -26,7 +25,6 @@ public class PlayerClone extends Player
 
   private boolean isDead=false;
   private Cylinder cloneCylinder;
-
 
   public PlayerClone(ArrayList<PointTime> actionSequence) {
     this.actionSequence = actionSequence;
@@ -83,11 +81,11 @@ public class PlayerClone extends Player
           cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle()+180);
         }
 
-        if (currentAction.equals(PlayerAction.LOSEHEALTH)) {
+        if (currentAction.equals(Action.LOSEHEALTH)) {
 
         }
-        else if (currentAction.equals(PlayerAction.DIE)) {
-          System.out.println("A clone just died!");
+        else if (currentAction.equals(Action.DIE)) {
+          System.out.println("A player clone just died!");
           isDead = true;
           active = false;
         }

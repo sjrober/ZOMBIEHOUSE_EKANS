@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import game_engine.Attributes;
+import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.Heading;
 import graphing.NodeComparator;
@@ -79,7 +80,7 @@ public class Zombie extends Creature
 
   public int index;
 
-  //public Map zombiesEngaged = new HashMap<Integer,Player>();
+  public ArrayList<PointTime> pointList = new ArrayList<PointTime>();
 
 
   public Zombie() {
@@ -113,6 +114,11 @@ public class Zombie extends Creature
     boundingCircle = new Cylinder(.5, 1);
 
     follow = entityManager.player;
+  }
+
+  public void addPointTime(Action action) {
+    PointTime current = new PointTime(xPos,zPos, ZombieHouse3d.tickCount,angle,action);
+    pointList.add(current);
   }
 
   public GraphNode getCurrentNode() {
@@ -606,6 +612,8 @@ public class Zombie extends Creature
     Tile currentTile = entityManager.zombieHouse.gameBoard[(int) currentZ][(int) currentX];
     findPathToPlayer(currentTile);
     updateDistance();
+
+    addPointTime(Action.NOACTION);
   }
 
   /**
