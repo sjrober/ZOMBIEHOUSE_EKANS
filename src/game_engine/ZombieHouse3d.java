@@ -59,6 +59,7 @@ public class ZombieHouse3d
   
   boolean paused = false;
 
+  Stage secondaryStage = new Stage();
   BorderPane pane;
   ProgressBar pHealth = new ProgressBar();
   ProgressBar pStam = new ProgressBar();
@@ -72,7 +73,7 @@ public class ZombieHouse3d
   
   public ArrayList<Box> exits = new ArrayList<>();
   
-  public Group root;
+  public static Group root;
 
   // The list of walls used for collision detection.
   public ArrayList<Box> walls = new ArrayList<>();
@@ -89,7 +90,9 @@ public class ZombieHouse3d
   Main main;
   Scenes scenes;
   
-  private String Feral_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
+  public static String Feral_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
+  public static String Hurt_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_hurt.obj";
+  public static String Dying_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.obj";
   private String Lambent_Female = "Resources/Meshes/Lambent_Female/Lambent_Female.obj";
 
   //private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
@@ -499,6 +502,7 @@ public class ZombieHouse3d
       entityManager.player.gameIsRunning.set(false);
       entityManager.gameIsRunning.set(false);
     });
+    //setUpHUD(gameStage);
 
     Button play = new Button();
     play.setText("Play!");
@@ -514,6 +518,40 @@ public class ZombieHouse3d
     gameLoop = new MainGameLoop();
     gameLoop.start();
     return scene;
+  }
+  public void setUpHUD(Stage primaryStage)
+  {
+    pHealth.setTooltip(new Tooltip("Health"));
+    pHealth.setStyle("-fx-accent: red;");
+    pHealth.setProgress(100);
+    pHealth.setPrefWidth(125);
+    pHealth.setMaxWidth(125);
+    pHealth.setMinWidth(125);
+    pStam.setProgress(100);
+    pStam.setTooltip(new Tooltip("Stamina"));
+    pStam.setStyle("-fx-accent: green;");
+    pStam.setPrefWidth(125);
+    pStam.setMaxWidth(125);
+    pStam.setMinWidth(125);
+
+    pane = new BorderPane();
+    HBox box = new HBox(8);
+    box.getChildren().addAll(pHealth,pStam);
+    pane.getChildren().add(box);
+
+    Scene hud = new Scene(pane);
+    secondaryStage = new Stage();
+    secondaryStage.setTitle("Player Info");
+    secondaryStage.initOwner(primaryStage);
+    secondaryStage.setScene(hud);
+    secondaryStage.setWidth(300);
+    secondaryStage.setHeight(100);
+    secondaryStage.setX(100);
+    secondaryStage.setY(100);
+    secondaryStage.setResizable(false);
+    secondaryStage.setAlwaysOnTop(true);
+
+    secondaryStage.show();
   }
   /**
    * Delete game data after game has ended. Used when going from
@@ -536,6 +574,7 @@ public class ZombieHouse3d
     walls.clear();
     exits.clear();
     root.getChildren().clear();
+    secondaryStage.close();
     entityManager = null;
   }
 }

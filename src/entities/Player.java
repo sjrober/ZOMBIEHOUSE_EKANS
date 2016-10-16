@@ -1,10 +1,14 @@
 package entities;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Math;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import game_engine.Attributes;
+import game_engine.Scenes;
 import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.TileGraph;
@@ -13,7 +17,9 @@ import javafx.scene.PointLight;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
+import javafx.stage.Stage;
 import levels.Tile;
+import org.w3c.dom.Attr;
 import sounds.Sound;
 import utilities.ZombieBoardRenderer;
 
@@ -248,25 +254,25 @@ public class Player extends Creature
     {
       double xDiff = collisionCheck.xPos - xPos;
       double zDiff = collisionCheck.zPos - zPos;
-        if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle) && counter >= lastDam + damPeriod && !collisionCheck.isDead.get())
+      if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle) && counter >= lastDam + damPeriod && !collisionCheck.isDead.get())
+      {
+        entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
+        lastDam = counter;
+        collisionCheck.health--;
+        collisionCheck.isStunned.set(true);
+        if (!collisionCheck.isMasterZombie)
         {
-          entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
-          lastDam = counter;
-          collisionCheck.health--;
-          collisionCheck.isStunned.set(true);
-          if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
-
-          /*engage player*/
-          if (collisionCheck.engaged==false) {
-            collisionCheck.engage(this);
-            System.out.println("zombie " + collisionCheck.index + " is engaged!");
-          }
+          ZombieHouse3d.root.getChildren().removeAll(collisionCheck.zombieMesh);
+          if (collisionCheck.health == 2)
+            collisionCheck.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Hurt_Ghoul));
+          else if (collisionCheck.health == 1)
+            collisionCheck.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Dying_Ghoul));
+          else if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
+          ZombieHouse3d.root.getChildren().addAll(collisionCheck.zombieMesh);
         }
-
+        if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
+      }
     }
-    /*else {
-      System.out.println("The zombie " + collisionCheck.index + " is already engaged!");
-    }*/
     boundingCircle.setRadius(radius);
     collisionCheck = entityManager.checkPlayerCollision(boundingCircle);
     if (collisionCheck != null && counter >= lastDam + damPeriod && !collisionCheck.isStunned.get() && !collisionCheck.isDead.get())
@@ -275,13 +281,6 @@ public class Player extends Creature
       lastDam = counter;
       health--;
       if (health <= 0) isDead.set(true);
-
-      /*engage player*/
-      if (collisionCheck.engaged==false) {
-        collisionCheck.engage(this);
-        System.out.println("zombie " + collisionCheck.index + " is engaged!");
-      }
-
     }
     /*boundingCircle.setRadius(2);
     if(entityManager.checkPlayerCollision(boundingCircle) != null) System.out.println("testing");
