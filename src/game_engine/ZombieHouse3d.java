@@ -76,7 +76,7 @@ public class ZombieHouse3d
   
   public ArrayList<Box> exits = new ArrayList<>();
   
-  public Group root;
+  public static Group root;
 
   // The list of walls used for collision detection.
   public ArrayList<Box> walls = new ArrayList<>();
@@ -93,7 +93,9 @@ public class ZombieHouse3d
   Main main;
   Scenes scenes;
   
-  private String Feral_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.obj";
+  public static String Feral_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
+  public static String Hurt_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_hurt.obj";
+  public static String Dying_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.obj";
   private String Lambent_Female = "Resources/Meshes/Lambent_Female/Lambent_Female.obj";
 
   //private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
