@@ -260,6 +260,16 @@ public class Player extends Creature
         lastDam = counter;
         collisionCheck.health--;
         collisionCheck.isStunned.set(true);
+        if (!collisionCheck.isMasterZombie)
+        {
+          ZombieHouse3d.root.getChildren().removeAll(collisionCheck.zombieMesh);
+          if (collisionCheck.health == 2)
+            collisionCheck.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Hurt_Ghoul));
+          else if (collisionCheck.health == 1)
+            collisionCheck.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Dying_Ghoul));
+          else if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
+          ZombieHouse3d.root.getChildren().addAll(collisionCheck.zombieMesh);
+        }
         if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
       }
     }
