@@ -104,6 +104,10 @@ public class ZombieHouse3d
   public ArrayList<PlayerClone> tempPlayerClones = new ArrayList<>();
   public boolean sameLevel = false;
 
+  public static Node[] hurtGhoul;
+  public static Node[] dyingGhoul;
+  public static Node[] feralGhoul;
+
   /**
    * Constructor for ZombieHouse3d object
    * @param difficulty
@@ -122,6 +126,10 @@ public class ZombieHouse3d
     this.soundManager = soundManager;
     this.main = main;
     this.scenes = scenes;
+
+    feralGhoul = loadMeshViews(Hurt_Ghoul);
+    hurtGhoul = loadMeshViews(Hurt_Ghoul);
+    dyingGhoul = loadMeshViews(Dying_Ghoul);
   }
   
   /**
@@ -172,7 +180,7 @@ public class ZombieHouse3d
     camera.getTransforms().addAll(new Rotate(0, Rotate.Y_AXIS),
         new Rotate(0, Rotate.X_AXIS), new Translate(0, -.5, 0));
     camera.setFieldOfView(60);
-    camera.setFarClip(15);
+    camera.setFarClip(20);
     camera.setRotationAxis(Rotate.Y_AXIS);
 
     // Initialize player
@@ -190,6 +198,11 @@ public class ZombieHouse3d
       playerClone.setActive(true);
       playerClone.setEntityManager(entityManager);
       playerClone.setDead(false);
+    }
+
+    for(ZombieClone zombieClone : entityManager.zombieClones)
+    {
+      zombieClone.setEntityManager(entityManager);
     }
 
     // Lighting
@@ -413,7 +426,8 @@ public class ZombieHouse3d
     // Use a SubScene
     SubScene subScene = new SubScene(root, 1280, 800, true,
         SceneAntialiasing.BALANCED);
-    subScene.setFill(Color.rgb(10, 10, 40));
+    //subScene.setFill(Color.rgb(10, 10, 40));
+    subScene.setFill(Color.BLACK);
     subScene.setCamera(camera);
     subScene.setCursor(Cursor.CROSSHAIR);
     /*subScene.setOnMouseMoved(e ->

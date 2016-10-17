@@ -29,12 +29,12 @@ import utilities.ZombieBoardRenderer;
  */
 public class Zombie extends Creature
 {
-  private EntityManager entityManager;
+  public EntityManager entityManager;
 
   public boolean randomWalk = false;
   //seeded random - Sam
   Random rand = new Random(360);
-  public double zombieWalkingSpeed = .5/60;
+  public double zombieWalkingSpeed = .05;
   public double masterZombieSpeed = .05;
   public double masterZombie2dSpeed = .3;
   public double health = Attributes.Zombie_Health;

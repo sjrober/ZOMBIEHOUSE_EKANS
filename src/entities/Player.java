@@ -43,7 +43,7 @@ public class Player extends Creature
   int counter = 0;
   int stabTickCounter = 0;
   int lastDam = 0;
-  int damPeriod = 60;
+  int damPeriod = 30;
   
   //position and orientation:
   double newX = 0;
@@ -258,9 +258,9 @@ public class Player extends Creature
         {
           ZombieHouse3d.root.getChildren().removeAll(collisionCheck.zombieMesh);
           if (collisionCheck.health == 2)
-            collisionCheck.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Hurt_Ghoul));
+            collisionCheck.setMesh(ZombieHouse3d.hurtGhoul);
           else if (collisionCheck.health == 1)
-            collisionCheck.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Dying_Ghoul));
+            collisionCheck.setMesh(ZombieHouse3d.dyingGhoul);
           else if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
           ZombieHouse3d.root.getChildren().addAll(collisionCheck.zombieMesh);
         }
@@ -277,24 +277,22 @@ public class Player extends Creature
       }
     }
 
-    //bifurcation -Sam
-    /*ZombieClone collisionCloneCheck = entityManager.checkPlayerCloneCollision(boundingCircle);
+    //bifurcation from stabbing zombieClone -Sam
+    ZombieClone collisionCloneCheck = entityManager.checkPlayerCloneCollision(boundingCircle);
     if (collisionCloneCheck != null) {
 
       double xDiff = collisionCloneCheck.xPos - xPos;
       double zDiff = collisionCloneCheck.zPos - zPos;
       if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle) && counter >= lastDam + damPeriod)
       {
-        System.out.println("Bifurcate!!");
+        //System.out.println("Bifurcate!!");
         entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
         lastDam = counter;
-        Zombie newZombie = new Zombie(getCurrentNode().nodeTile, getCurrentNode().row, getCurrentNode().col,
-                xPos, zPos, entityManager, counter);
-        newZombie.create3DZombie(getCurrentNode().row, getCurrentNode().col, Tile.tileSize);
-        newZombie.setFollowing(this);
-          ZombieHouse3d.root.getChildren().addAll(newZombie.zombieMesh);
+        bifurcateZombie(collisionCloneCheck);
+        //System.out.println("zomb xy: " + collisionCloneCheck.xPos + ", " + collisionCloneCheck.zPos);
+        //System.out.println("zombClone xy: " + zomb.xPos + ", " + zomb.zPos);
        }
-    } */
+    }
 
     boundingCircle.setRadius(radius);
     collisionCheck = entityManager.checkPlayerCollision(boundingCircle);
@@ -313,6 +311,17 @@ public class Player extends Creature
         System.out.println("Zombie " + collisionCheck.index + " is engaged!");
       }
     }
+
+    //bifurcate when touching zombieClone
+    collisionCloneCheck = entityManager.checkPlayerCloneCollision(boundingCircle);
+    if (collisionCloneCheck != null && counter >= lastDam + damPeriod)
+    {
+      entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
+      lastDam = counter;
+      bifurcateZombie(collisionCloneCheck);
+    }
+
+
     /*boundingCircle.setRadius(2);
     if(entityManager.checkPlayerCollision(boundingCircle) != null) System.out.println("testing");
     boundingCircle.setRadius(radius);*/
@@ -412,6 +421,19 @@ public class Player extends Creature
   public void stepSound()
   {
     entityManager.soundManager.playSoundClip(Sound.footstep);
+  }
+
+  public void bifurcateZombie(Zombie collisionCloneCheck) {
+    entityManager.zombies.add(new Zombie(collisionCloneCheck.getCurrentNode().nodeTile, collisionCloneCheck.getCurrentNode().row,
+            collisionCloneCheck.getCurrentNode().col,collisionCloneCheck.xPos, collisionCloneCheck.zPos,
+            entityManager, counter));
+    Zombie zomb = entityManager.zombies.get(entityManager.zombies.size()-1);
+    zomb.create3DZombie(collisionCloneCheck.getCurrentNode().row, collisionCloneCheck.getCurrentNode().col,1);
+    zomb.setFollowing(this);
+    zomb.engage(this);
+    zomb.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Feral_Ghoul));
+    zomb.startZombie();
+    ZombieHouse3d.root.getChildren().addAll(zomb.zombieMesh);
   }
 
   /**

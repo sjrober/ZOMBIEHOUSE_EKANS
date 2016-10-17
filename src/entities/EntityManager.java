@@ -508,6 +508,12 @@ public class EntityManager
       playerClone.setActive(false);
       playerClone.dispose();
     }
+
+    for(ZombieClone zombieClone : zombieClones)
+    {
+      zombieClone.setActive(false);
+      zombieClone.dispose();
+    }
     
     for(Zombie zombie: zombies)
     {

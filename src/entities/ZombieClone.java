@@ -39,6 +39,11 @@ public class ZombieClone extends Zombie
 
   }
 
+  public void setEntityManager(EntityManager entityManager) {
+    this.entityManager = entityManager;
+
+  }
+
   public void create3DClone(int cellSize)
   {
     Cylinder cylinder;
@@ -116,11 +121,25 @@ public class ZombieClone extends Zombie
     System.out.println("Current zombie health: " + health);
     ZombieHouse3d.root.getChildren().removeAll(this.cloneMesh);
     if (health == 2)
-      setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Hurt_Ghoul));
+      setMesh(ZombieHouse3d.hurtGhoul);
     else if (health == 1)
-      setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Dying_Ghoul));
+      setMesh(ZombieHouse3d.dyingGhoul);
     ZombieHouse3d.root.getChildren().addAll(this.cloneMesh);
 
+  }
+
+  public GraphNode getCurrentNode() {
+    GraphNode currentNode = null;
+    Tile currentTile = null;
+    double currentX = cloneCylinder.getTranslateX();
+    double currentZ = cloneCylinder.getTranslateZ();
+    currentTile = entityManager.zombieHouse.gameBoard[(int) currentZ][(int) currentX];
+    if (TileGraph.tileGraph.containsKey(currentTile))
+    {
+      currentNode = TileGraph.tileGraph.get(currentTile);
+      return currentNode;
+    }
+    return currentNode;
   }
 
   public void setMesh(Node[] cloneMesh)

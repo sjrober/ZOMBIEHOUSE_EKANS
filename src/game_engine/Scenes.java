@@ -199,6 +199,10 @@ public class Scenes
         soundManager.playTrack(0);
         difficulty++;
         createNewGameBoard(difficulty);
+        for (int i = 0; i < 100; i++) {
+          engagedZombies.add(null);
+          zombieClonePaths.add(null);
+        }
         try
         {
           main.assignStage(threeDGameObject.zombieHouse3d(primaryStage));
