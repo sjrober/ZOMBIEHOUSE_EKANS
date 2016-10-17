@@ -6,10 +6,7 @@ import java.util.LinkedList;
 import com.interactivemesh.jfx.importer.obj.ObjImportOption;
 import com.interactivemesh.jfx.importer.obj.ObjModelImporter;
 
-import entities.EntityManager;
-import entities.Player;
-import entities.PlayerClone;
-import entities.Zombie;
+import entities.*;
 import graphing.GraphNode;
 import graphing.TileGraph;
 import gui.Main;
@@ -99,12 +96,17 @@ public class ZombieHouse3d
   private String Lambent_Female = "Resources/Meshes/Lambent_Female/Lambent_Female.obj";
 
   //private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
-  private String Player_Clone = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
+  //private String Player_Clone = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
+  private String Player_Clone = "Resources/Meshes/Player_Clone/Casual_Man.obj";
 
   public static int tickCount;
 
   public ArrayList<PlayerClone> tempPlayerClones = new ArrayList<>();
   public boolean sameLevel = false;
+
+  public static Node[] hurtGhoul;
+  public static Node[] dyingGhoul;
+  public static Node[] feralGhoul;
 
   /**
    * Constructor for ZombieHouse3d object
@@ -124,6 +126,10 @@ public class ZombieHouse3d
     this.soundManager = soundManager;
     this.main = main;
     this.scenes = scenes;
+
+    feralGhoul = loadMeshViews(Hurt_Ghoul);
+    hurtGhoul = loadMeshViews(Hurt_Ghoul);
+    dyingGhoul = loadMeshViews(Dying_Ghoul);
   }
   
   /**
@@ -164,8 +170,8 @@ public class ZombieHouse3d
     // initialize entity manager
     entityManager = new EntityManager(soundManager, main, scenes);
     entityManager.setZombieHouse3d(this);
-    entityManager.createZombies(gameBoard, boardHeight, boardWidth);
-    numZombies = entityManager.zombies.size();
+    //entityManager.createZombies(gameBoard, boardHeight, boardWidth);
+    //numZombies = entityManager.zombies.size();
 
     entityManager.playerClones = tempPlayerClones;
 
@@ -174,12 +180,15 @@ public class ZombieHouse3d
     camera.getTransforms().addAll(new Rotate(0, Rotate.Y_AXIS),
         new Rotate(0, Rotate.X_AXIS), new Translate(0, -.5, 0));
     camera.setFieldOfView(60);
-    camera.setFarClip(15);
+    camera.setFarClip(20);
     camera.setRotationAxis(Rotate.Y_AXIS);
 
     // Initialize player
     entityManager.player = new Player(3, 0, 3, camera, entityManager, light);
     entityManager.player.camera = camera;
+
+    entityManager.createZombies(gameBoard, boardHeight, boardWidth);
+    numZombies = entityManager.zombies.size();
 
     tickCount=0;
 
@@ -187,7 +196,13 @@ public class ZombieHouse3d
     for(PlayerClone playerClone : entityManager.playerClones)
     {
       playerClone.setActive(true);
+      playerClone.setEntityManager(entityManager);
       playerClone.setDead(false);
+    }
+
+    for(ZombieClone zombieClone : entityManager.zombieClones)
+    {
+      zombieClone.setEntityManager(entityManager);
     }
 
     // Lighting
@@ -208,6 +223,22 @@ public class ZombieHouse3d
           case wall:
             floorDrawingBoard[col][row] = new Box(1,2,1);
             floorDrawingBoard[col][row].setMaterial(TextureMaps.brickMaterial);
+            break;
+          case region1Decor:
+            floorDrawingBoard[col][row] = new Box(1,2,1);
+            floorDrawingBoard[col][row].setMaterial(TextureMaps.graffitiMaterial);
+            break;
+          case region2Decor:
+            floorDrawingBoard[col][row] = new Box(1,2,1);
+            floorDrawingBoard[col][row].setMaterial(TextureMaps.eyeMaterial);
+            break;
+          case region3Decor:
+            floorDrawingBoard[col][row] = new Box(1,2,1);
+            floorDrawingBoard[col][row].setMaterial(TextureMaps.paperMaterial);
+            break;
+          case region4Decor:
+            floorDrawingBoard[col][row] = new Box(1,2,1);
+            floorDrawingBoard[col][row].setMaterial(TextureMaps.boneMaterial);
             break;
           case region1:
             floorDrawingBoard[col][row].setMaterial(TextureMaps.redMaterial);
@@ -357,6 +388,7 @@ public class ZombieHouse3d
     
     System.out.println("Number of Zombies: " + entityManager.zombies.size());
     System.out.println("Number of Player Clones: " + entityManager.playerClones.size());
+    System.out.println("Number of Zombie Clones: " + entityManager.zombieClones.size());
 
     for (Zombie zombie: entityManager.zombies){
       if (zombie.isMasterZombie){
@@ -365,6 +397,12 @@ public class ZombieHouse3d
         zombie.setMesh(loadMeshViews(Feral_Ghoul));
       }
       root.getChildren().addAll(zombie.zombieMesh);
+    }
+
+    for (ZombieClone zombieClone: entityManager.zombieClones){
+      zombieClone.setActive(true);
+      zombieClone.setMesh(loadMeshViews(Feral_Ghoul));
+      root.getChildren().addAll(zombieClone.cloneMesh);
     }
 
     for (PlayerClone playerClone: entityManager.playerClones){
@@ -404,7 +442,8 @@ public class ZombieHouse3d
     // Use a SubScene
     SubScene subScene = new SubScene(root, 1280, 800, true,
         SceneAntialiasing.BALANCED);
-    subScene.setFill(Color.rgb(10, 10, 40));
+    //subScene.setFill(Color.rgb(10, 10, 40));
+    subScene.setFill(Color.BLACK);
     subScene.setCamera(camera);
     subScene.setCursor(Cursor.CROSSHAIR);
     /*subScene.setOnMouseMoved(e ->

@@ -1,9 +1,7 @@
 
 package entities;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import game_engine.Attributes;
@@ -19,8 +17,6 @@ import sounds.Sound;
 import sounds.SoundManager;
 import utilities.ZombieBoardRenderer;
 
-import javax.lang.model.type.NullType;
-
 /**
  * @author Jeffrey McCall 
  *         Ben Matthews
@@ -34,6 +30,7 @@ public class EntityManager
 {
   public Player player;
   public ArrayList<Zombie> zombies;
+  public ArrayList<ZombieClone> zombieClones;
   public SoundManager soundManager;
   public ZombieHouse3d zombieHouse;
   public Scenes scenes;
@@ -47,6 +44,9 @@ public class EntityManager
 
   public ArrayList<PlayerClone> playerClones = new ArrayList<>();
   private ArrayList<PointTime>currentPointTimeList = new ArrayList<PointTime>();
+
+  //list of players that zombie follows
+  //public ArrayList<Player> zombieFollow = new ArrayList<>();
   
   /**
    * Constructor for EntityManager.
@@ -66,6 +66,7 @@ public class EntityManager
     this.scenes = scenes;
     this.main = main;
     zombies = new ArrayList<>();
+    zombieClones = new ArrayList<>();
     zombieDecision = new ZombieDecision();
     zombieDecision.setDaemon(true);
     zombieDecision.start(); 
@@ -131,6 +132,19 @@ public class EntityManager
     return null;
   }
 
+  public ZombieClone checkPlayerCloneCollision(Shape3D player)
+  {
+    for (ZombieClone zombieClone : zombieClones)
+    {
+      if (player.getBoundsInParent()
+              .intersects(zombieClone.cloneCylinder.getBoundsInParent()))
+      {
+        return zombieClone;
+      }
+    }
+    return null;
+  }
+
   /**
    * calculate the distance between two entities
    * 
@@ -143,6 +157,17 @@ public class EntityManager
   {
     double xDist = player.xPos - zombie.xPos;
     double zDist = player.zPos - zombie.zPos;
+
+    return Math.sqrt(xDist * xDist + zDist * zDist);
+  }
+
+  //distance using points
+  public double calculateDistanceFromPlayer(double otherxPos, double otherzPos)
+  {
+    //System.out.println(player.health);
+    //System.out.println("other: " + player.xPos + ", " + player.zPos);
+    double xDist = player.xPos - otherxPos;
+    double zDist = player.zPos - otherzPos;
 
     return Math.sqrt(xDist * xDist + zDist * zDist);
   }
@@ -169,6 +194,20 @@ public class EntityManager
     return angle/Math.PI;
   }
 
+  public double calculateSoundBalance(PlayerClone clone)
+  {
+    double angle = player.boundingCircle.getRotate()*(180/Math.PI);
+
+    double xDiff = player.xPos - clone.xPos;
+    double zDiff = player.zPos - clone.zPos;
+    double theta = Math.atan(xDiff / zDiff);
+
+    angle -= theta;
+    if (angle < -Math.PI) angle += 2*Math.PI;
+
+    return angle/Math.PI;
+  }
+
   /**
    * Creates list of all of the zombies that will spawn
    * on the board.
@@ -183,10 +222,22 @@ public class EntityManager
         if (gameBoard[col][row].hasZombie && !gameBoard[col][row].isHallway)
         {
           counter++;
-          Zombie newZombie = new Zombie(gameBoard[col][row], row, col,
-              gameBoard[col][row].xPos, gameBoard[col][row].zPos, this);
-          newZombie.create3DZombie(row, col, Tile.tileSize);
-          zombies.add(newZombie);
+          if (counter<=scenes.engagedZombies.size() && scenes.engagedZombies.get(counter)!=null) {
+            ZombieClone newZombieClone = new ZombieClone(scenes.zombieClonePaths.get(counter));
+            //newZombieClone.create3DZombie(row, col, Tile.tileSize);
+
+            zombieClones.add(newZombieClone);
+          }
+          else {
+            Zombie newZombie = new Zombie(gameBoard[col][row], row, col,
+                    gameBoard[col][row].xPos, gameBoard[col][row].zPos, this, counter);
+
+            newZombie.create3DZombie(row, col, Tile.tileSize);
+            newZombie.setFollowing(player);
+            //newZombie.create3DZombie(row, col, Tile.tileSize);
+            zombies.add(newZombie);
+          }
+
           if (counter == Attributes.Max_Zombies)
             break;
         }
@@ -212,6 +263,7 @@ public class EntityManager
         masterDecision.setDaemon(true);
         masterDecision.start();
       }
+      //zombie.setFollowing(player);
       zombieListCounter++;
     }
     
@@ -245,9 +297,10 @@ public class EntityManager
    */
   private int masterZombieSpawnChance()
   {
-    Random masterSpawnChance = new Random();
+    Random masterSpawnChance = new Random(360);
     int numZombies = zombies.size();
-    int spawnChance = masterSpawnChance.nextInt(numZombies);
+    //int spawnChance = masterSpawnChance.nextInt(numZombies);
+    int spawnChance = masterSpawnChance.nextInt();
     return spawnChance;
   }
   
@@ -274,6 +327,10 @@ public class EntityManager
     for(PlayerClone playerClone : playerClones)
     {
       playerClone.tick();
+    }
+
+    for (ZombieClone zombieClone: zombieClones) {
+      zombieClone.tick();
     }
     
     if (player.isDead.get())
@@ -419,7 +476,7 @@ public class EntityManager
    */
   public void addClones() {
 
-    player.addPointTime(PlayerAction.DIE);
+    player.addPointTime(Action.DIE);
     System.out.println("Player.pointList size: " + player.pointList.size());
     currentPointTimeList = player.pointList;
     playerClones.add(new PlayerClone(currentPointTimeList));
@@ -451,9 +508,21 @@ public class EntityManager
       playerClone.setActive(false);
       playerClone.dispose();
     }
+
+    for(ZombieClone zombieClone : zombieClones)
+    {
+      zombieClone.setActive(false);
+      zombieClone.dispose();
+    }
     
     for(Zombie zombie: zombies)
     {
+      if (zombie.engaged==true) {
+        //scenes.zombiesEngaged.put(zombie.index,playerClones.get(playerClones.size()-1));
+        scenes.engagedZombies.set(zombie.index, playerClones.get(playerClones.size() - 1));
+        zombie.addPointTime(Action.DIE);
+        scenes.zombieClonePaths.set(zombie.index, zombie.pointList);
+      }
       zombie.dispose();
     }
     zombies.clear();

@@ -1,5 +1,8 @@
 package entities;
 
+import graphing.GraphNode;
+import javafx.scene.shape.Cylinder;
+
 /**
  * @author Ben Matthews
  * Class that contains fields and methods
@@ -14,8 +17,12 @@ public abstract class Creature extends Entity
   
   public double lastX;
   public double lastZ;
+  public Cylinder boundingCircle;
   
   protected double distanceTraveled;
+
+  public abstract GraphNode getCurrentNode();
+  public abstract GraphNode getCurrent2dNode();
   
   /**
    * Get distance that the zombie has traveled and

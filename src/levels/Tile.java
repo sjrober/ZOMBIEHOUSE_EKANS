@@ -14,7 +14,7 @@ public class Tile
   // an enum that describes the type of tile
   public enum TileType
   {
-    wall, region1, region2, region3, region4, exit
+    wall, region1, region2, region3, region4, exit, region1Decor, region2Decor, region3Decor, region4Decor
   }
 
   public static int tileSize = 1;
@@ -94,6 +94,14 @@ public class Tile
       tileType = TileType.region4;
     if (type == 5)
       tileType = TileType.exit;
+    if (type == 6)
+      tileType = TileType.region1Decor;
+    if (type == 7)
+      tileType = TileType.region2Decor;
+    if (type == 8)
+      tileType = TileType.region3Decor;
+    if (type == 9)
+      tileType = TileType.region4Decor;
 
     this.type = tileType;
     setType(tileType);
@@ -129,6 +137,14 @@ public class Tile
       typeString = "green tile";
     if (type.equals(TileType.exit))
       typeString = "exit";
+    if (type.equals(TileType.region1Decor))
+      typeString = "red decor";
+    if (type.equals(TileType.region2Decor))
+      typeString = "orange decor";
+    if (type.equals(TileType.region3Decor))
+      typeString = "yellow decor";
+    if (type.equals(TileType.region4Decor))
+      typeString = "green decor";
   }
 
   /**
@@ -161,6 +177,14 @@ public class Tile
         return 4;
       case exit:
         return 5;
+      case region1Decor:
+        return 6;
+      case region2Decor:
+        return 7;
+      case region3Decor:
+        return 8;
+      case region4Decor:
+        return 9;
     }
     return -1;
   }

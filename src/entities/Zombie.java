@@ -1,14 +1,10 @@
 package entities;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import game_engine.Attributes;
+import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.Heading;
 import graphing.NodeComparator;
@@ -33,17 +29,17 @@ import utilities.ZombieBoardRenderer;
  */
 public class Zombie extends Creature
 {
-  private EntityManager entityManager;
+  public EntityManager entityManager;
 
   public boolean randomWalk = false;
   //seeded random - Sam
   Random rand = new Random(360);
-  public double zombieWalkingSpeed = .5/60;
+  public double zombieWalkingSpeed = .05;
   public double masterZombieSpeed = .05;
   public double masterZombie2dSpeed = .3;
   public double health = Attributes.Zombie_Health;
   public boolean isMasterZombie = false;
-  private double zombieSmell = 15.0;
+  public double zombieSmell = 15.0;
   public Circle zombieCirc = null;
   public double twoDSpeed = (.5/60)*ZombieBoardRenderer.cellSize;
   int twoDSize = 3;
@@ -67,7 +63,7 @@ public class Zombie extends Creature
   public int col;
   public int row;
   private double prevAngle = 0;
-  private int stunTickCounter = 0;
+  public int stunTickCounter = 0;
   public Cylinder zombieCylinder = null;
   public Cylinder zombie = null;
   public Node[] zombieMesh = null;
@@ -79,15 +75,30 @@ public class Zombie extends Creature
   double lastX;
   double lastZ;
 
+  public Player follow;
+  public boolean engaged=false;
+
+  public int index;
+
+  public ArrayList<PointTime> pointList = new ArrayList<PointTime>();
+  public Action action = Action.NOACTION;
+
+
+  public Zombie() {
+
+  }
   /**
    * Constructor that sets whether this zombie is a random walk zombie or a line
    * walk zombie. Also sets the values for the location of initial spawning
    * point of the zombie.
    */
   public Zombie(Tile tile, int row, int col, double xPos, double zPos,
-      EntityManager entityManager)
+      EntityManager entityManager, int index)
   {
     stepDistance = 1;
+    this.index = index;
+
+    //this.zombiesEngaged = zombiesEngaged;
 
     this.entityManager = entityManager;
     // 50% chance that the zombie is either a random
@@ -102,6 +113,30 @@ public class Zombie extends Creature
     this.xPos = xPos;
     this.zPos = zPos;
     boundingCircle = new Cylinder(.5, 1);
+
+    follow = entityManager.player;
+  }
+
+  public void addPointTime(Action action) {
+    PointTime current = new PointTime(xPos,zPos, ZombieHouse3d.tickCount,angle,action);
+    pointList.add(current);
+    this.action = Action.NOACTION;
+  }
+
+  public GraphNode getCurrentNode() {
+    return null;
+  }
+
+  public GraphNode getCurrent2dNode() {
+    return null;
+  }
+
+  /*
+  Sets the clone number for the next time the game respawns.
+   */
+  public void engage(Player player) {
+    engaged=true;
+    follow = player;
   }
 
   /**
@@ -153,6 +188,15 @@ public class Zombie extends Creature
     cylinder.setTranslateX(xPos * cellSize);
     cylinder.setTranslateZ(zPos * cellSize);
     zombieCylinder = cylinder;
+    //follow = entityManager.player;
+
+    /*if(zombiesEngaged.containsKey(index)) {
+      System.out.println("Zombie " + index + " is following clone...");
+      engage((Player) zombiesEngaged.get(index));
+    }else{
+      follow = entityManager.player;
+    } */
+
   }
 
   /**
@@ -224,9 +268,19 @@ public class Zombie extends Creature
    */
   private double getAngleToPlayer()
   {
-    
-    double xDiff = entityManager.player.boundingCircle.getTranslateX() - zombieCylinder.getTranslateX();
-    double zDiff = entityManager.player.boundingCircle.getTranslateZ() - zombieCylinder.getTranslateZ();
+    /*if (following!=null && following.equals(entityManager.player)) {
+      System.out.print("WE ARE EQUAL!");
+    } */
+    Player following = setFollowing(follow);
+    double xDiff=0;
+    double zDiff=0;
+    try {
+      xDiff = following.boundingCircle.getTranslateX() - zombieCylinder.getTranslateX();
+      zDiff = following.boundingCircle.getTranslateZ() - zombieCylinder.getTranslateZ();
+    }
+    catch (NullPointerException e) {
+      System.out.println("zombie: " + index + " failure");
+    }
     
     if (zDiff < 0){
       return (Math.atan(xDiff/zDiff) - Math.PI)*(180/Math.PI) - 180;
@@ -401,6 +455,10 @@ public class Zombie extends Creature
     }
   }
 
+  public Player setFollowing(Player following) {
+    return following;
+  }
+
   /**
    * This method is called every time the animation time is called. A collision
    * is checked for. If the zombie has collided with an obstacle, while the
@@ -556,6 +614,9 @@ public class Zombie extends Creature
     Tile currentTile = entityManager.zombieHouse.gameBoard[(int) currentZ][(int) currentX];
     findPathToPlayer(currentTile);
     updateDistance();
+
+    addPointTime(action);
+
   }
 
   /**
@@ -714,12 +775,13 @@ public class Zombie extends Creature
       GraphNode zombieNode = TileGraph.tileGraph.get(currentTile);
       Tile zombieTile = zombieNode.nodeTile;
       GraphNode playerNode=null;
+      Player following = setFollowing(follow);
       if(!twoDBoard)
       {
-        playerNode = entityManager.player.getCurrentNode();
+        playerNode = following.getCurrentNode();
       }else if(twoDBoard)
       {
-        playerNode=entityManager.player.getCurrent2dNode();
+        playerNode=following.getCurrent2dNode();
         calcPath.twoD=true;
       }
       Tile playerTile = playerNode.nodeTile;
@@ -800,7 +862,7 @@ public class Zombie extends Creature
       if (Math.random() < .03)
       {
         entityManager.soundManager.playSoundClip(Sound.groan, distance,
-            balance);
+                balance);
       }
     }
   }

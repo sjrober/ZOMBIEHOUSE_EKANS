@@ -1,14 +1,10 @@
 package entities;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Math;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import game_engine.Attributes;
-import game_engine.Scenes;
 import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.TileGraph;
@@ -17,9 +13,7 @@ import javafx.scene.PointLight;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
-import javafx.stage.Stage;
 import levels.Tile;
-import org.w3c.dom.Attr;
 import sounds.Sound;
 import utilities.ZombieBoardRenderer;
 
@@ -49,7 +43,7 @@ public class Player extends Creature
   int counter = 0;
   int stabTickCounter = 0;
   int lastDam = 0;
-  int damPeriod = 60;
+  int damPeriod = 30;
   
   //position and orientation:
   double newX = 0;
@@ -91,7 +85,7 @@ public class Player extends Creature
   private double deltaTime = 0;
   private double angleAttacked;
 
-  private PlayerAction action=PlayerAction.NOACTION;
+  private Action action= Action.NOACTION;
 
   /*
 
@@ -264,15 +258,42 @@ public class Player extends Creature
         {
           ZombieHouse3d.root.getChildren().removeAll(collisionCheck.zombieMesh);
           if (collisionCheck.health == 2)
-            collisionCheck.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Hurt_Ghoul));
+            collisionCheck.setMesh(ZombieHouse3d.hurtGhoul);
           else if (collisionCheck.health == 1)
-            collisionCheck.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Dying_Ghoul));
+            collisionCheck.setMesh(ZombieHouse3d.dyingGhoul);
           else if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
           ZombieHouse3d.root.getChildren().addAll(collisionCheck.zombieMesh);
         }
         if (collisionCheck.health <= 0) collisionCheck.isDead.set(true);
+        collisionCheck.action=Action.LOSEHEALTH;
+
+          //engage player
+          if (collisionCheck.engaged==false) {
+          collisionCheck.engage(this);
+          System.out.println("Zombie " + collisionCheck.index + " is engaged!");
+        }
+        action = Action.STAB;
+
       }
     }
+
+    //bifurcation from stabbing zombieClone -Sam
+    ZombieClone collisionCloneCheck = entityManager.checkPlayerCloneCollision(boundingCircle);
+    if (collisionCloneCheck != null) {
+
+      double xDiff = collisionCloneCheck.xPos - xPos;
+      double zDiff = collisionCloneCheck.zPos - zPos;
+      if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle) && counter >= lastDam + damPeriod)
+      {
+        //System.out.println("Bifurcate!!");
+        entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
+        lastDam = counter;
+        bifurcateZombie(collisionCloneCheck);
+        //System.out.println("zomb xy: " + collisionCloneCheck.xPos + ", " + collisionCloneCheck.zPos);
+        //System.out.println("zombClone xy: " + zomb.xPos + ", " + zomb.zPos);
+       }
+    }
+
     boundingCircle.setRadius(radius);
     collisionCheck = entityManager.checkPlayerCollision(boundingCircle);
     if (collisionCheck != null && counter >= lastDam + damPeriod && !collisionCheck.isStunned.get() && !collisionCheck.isDead.get())
@@ -281,7 +302,26 @@ public class Player extends Creature
       lastDam = counter;
       health--;
       if (health <= 0) isDead.set(true);
+      //addPointTime(Action.LOSEHEALTH);
+      action = Action.LOSEHEALTH;
+
+      //engage player
+      if (collisionCheck.engaged==false) {
+        collisionCheck.engage(this);
+        System.out.println("Zombie " + collisionCheck.index + " is engaged!");
+      }
     }
+
+    //bifurcate when touching zombieClone
+    collisionCloneCheck = entityManager.checkPlayerCloneCollision(boundingCircle);
+    if (collisionCloneCheck != null && counter >= lastDam + damPeriod)
+    {
+      entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
+      lastDam = counter;
+      bifurcateZombie(collisionCloneCheck);
+    }
+
+
     /*boundingCircle.setRadius(2);
     if(entityManager.checkPlayerCollision(boundingCircle) != null) System.out.println("testing");
     boundingCircle.setRadius(radius);*/
@@ -323,16 +363,10 @@ public class Player extends Creature
   adds PointTime (object containing current position, global tick and action(if any)) to the
   LinkedList array of pointTimes.
    */
-  public void addPointTime(PlayerAction action) {
+  public void addPointTime(Action action) {
     PointTime current = new PointTime(xPos,zPos,ZombieHouse3d.tickCount,angle,action);
     pointList.add(current);
-
-    /*if (ZombieHouse3d.tickCount==0) {
-      pointList.add(current);
-    }else {
-      pointList.set(ZombieHouse3d.tickCount,current);
-    }*/
-
+    this.action = Action.NOACTION;
   }
 
   /**
@@ -387,6 +421,19 @@ public class Player extends Creature
   public void stepSound()
   {
     entityManager.soundManager.playSoundClip(Sound.footstep);
+  }
+
+  public void bifurcateZombie(Zombie collisionCloneCheck) {
+    entityManager.zombies.add(new Zombie(collisionCloneCheck.getCurrentNode().nodeTile, collisionCloneCheck.getCurrentNode().row,
+            collisionCloneCheck.getCurrentNode().col,collisionCloneCheck.xPos, collisionCloneCheck.zPos,
+            entityManager, counter));
+    Zombie zomb = entityManager.zombies.get(entityManager.zombies.size()-1);
+    zomb.create3DZombie(collisionCloneCheck.getCurrentNode().row, collisionCloneCheck.getCurrentNode().col,1);
+    zomb.setFollowing(this);
+    zomb.engage(this);
+    zomb.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Feral_Ghoul));
+    zomb.startZombie();
+    ZombieHouse3d.root.getChildren().addAll(zomb.zombieMesh);
   }
 
   /**

@@ -32,7 +32,12 @@ public class TextureMaps
   public  final static String GLOW_DIFFUSE_MAP    = "File:Resources/Images/Textures/glowstone.png";
   private final static String GLOW_SPECULAR_MAP   = "File:Resources/Images/Textures/glowstone_s.png";
   private final static String GLOW_NORMAL_MAP     = "File:Resources/Images/Textures/glowstone_n.png";
-  
+
+  private final static String GRAFFITI_DIFFUSE_MAP = "File:Resources/Images/Textures/graffiti.png";
+  private final static String EYE_DIFFUSE_MAP = "File:Resources/Images/Textures/eye.png";
+  private final static String PAPER_DIFFUSE_MAP = "File:Resources/Images/Textures/paper.png";
+  private final static String BONE_DIFFUSE_MAP = "File:Resources/Images/Textures/bone.png";
+
   public static PhongMaterial brickMaterial = new PhongMaterial();
   public static PhongMaterial redMaterial = new PhongMaterial();
   public static PhongMaterial yellowMaterial = new PhongMaterial();
@@ -40,6 +45,11 @@ public class TextureMaps
   public static PhongMaterial blackMaterial = new PhongMaterial();
   public static PhongMaterial ironMaterial = new PhongMaterial();
   public static PhongMaterial glowMaterial = new PhongMaterial();
+
+  public static PhongMaterial graffitiMaterial = new PhongMaterial();
+  public static PhongMaterial eyeMaterial = new PhongMaterial();
+  public static PhongMaterial paperMaterial = new PhongMaterial();
+  public static PhongMaterial boneMaterial = new PhongMaterial();
 
   static Image brickD  = new Image(BRICK_DIFFUSE_MAP,   128, 128, true, true, false);
   static Image brickS  = new Image(BRICK_SPECULAR_MAP,  128, 128, true, true, false);
@@ -62,6 +72,11 @@ public class TextureMaps
   static Image glowD   = new Image(GLOW_DIFFUSE_MAP,    128, 128, true, true, false);
   static Image glowS   = new Image(GLOW_SPECULAR_MAP,   128, 128, true, true, false);
   static Image glowN   = new Image(GLOW_NORMAL_MAP,     128, 128, true, true, false);
+
+  static Image graffitiD = new Image(GRAFFITI_DIFFUSE_MAP, 128, 128, true, true, false);
+  static Image eyeD = new Image(EYE_DIFFUSE_MAP, 128, 128, true, true, false);
+  static Image paperD = new Image(PAPER_DIFFUSE_MAP, 128, 128, true, true, false);
+  static Image boneD = new Image(BONE_DIFFUSE_MAP, 128, 128, true, true, false);
  
   /**
    * Initalizes all the texture maps
@@ -90,5 +105,10 @@ public class TextureMaps
     glowMaterial.setDiffuseMap    (glowD);
     glowMaterial.setSpecularMap   (glowS);
     glowMaterial.setBumpMap       (glowN);
+
+    graffitiMaterial.setDiffuseMap (graffitiD);
+    eyeMaterial.setDiffuseMap (eyeD);
+    paperMaterial.setDiffuseMap (paperD);
+    boneMaterial.setDiffuseMap (boneD);
   }
 }

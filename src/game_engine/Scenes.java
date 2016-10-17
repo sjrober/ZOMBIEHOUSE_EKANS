@@ -1,6 +1,8 @@
 package game_engine;
 
+import entities.Player;
 import entities.PlayerClone;
+import entities.Zombie;
 import gui.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -22,7 +24,10 @@ import utilities.MapViewerScene;
 import utilities.ZombieBoardRenderer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
+import entities.PointTime;
 
 /**
  * @author Atle Olson
@@ -68,6 +73,11 @@ public class Scenes
   public int difficulty = 0;
   public BorderPane startRoot, threeDGameRoot, twoDGameRoot, settingsRoot, gameOverRoot, loadRoot, winRoot;
   public Scene mainMenu, threeDGame, twoDGame, gameOver, loading, win, settings, nextLevel, mapScene;
+
+  //public static HashMap zombiesEngaged = new HashMap<Integer,PlayerClone>();
+  public static ArrayList<PlayerClone> engagedZombies = new ArrayList<>(100);
+  public static ArrayList<ArrayList<PointTime>> zombieClonePaths = new ArrayList<>(100);
+  //engagedZombies.
   
   /**
    * @param primaryStage
@@ -78,6 +88,13 @@ public class Scenes
   public Scenes(Stage primaryStage, Main main)
   {
     this.main = main;
+
+    //System.out.println("Size of CloneList: " + engagedZombies.size());
+    for (int i = 0; i < 100; i++) {
+      engagedZombies.add(null);
+      zombieClonePaths.add(null);
+    }
+    System.out.println("Size of CloneList: " + engagedZombies.size());
 
     returnButton.setText("Back to main menu.");
     returnButton.setOnAction(new EventHandler<ActionEvent>()
@@ -182,6 +199,10 @@ public class Scenes
         soundManager.playTrack(0);
         difficulty++;
         createNewGameBoard(difficulty);
+        for (int i = 0; i < 100; i++) {
+          engagedZombies.add(null);
+          zombieClonePaths.add(null);
+        }
         try
         {
           main.assignStage(threeDGameObject.zombieHouse3d(primaryStage));

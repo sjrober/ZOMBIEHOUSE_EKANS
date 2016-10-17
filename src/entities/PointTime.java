@@ -13,9 +13,9 @@ public class PointTime
   private double zPos;
   private int tick;
   private double angle;
-  private PlayerAction action;
+  private Action action;
 
-  public PointTime(double xPos, double zPos, int tick, double angle, PlayerAction action) {
+  public PointTime(double xPos, double zPos, int tick, double angle, Action action) {
     this.xPos = xPos;
     this.zPos =zPos;
     this.tick = tick;
@@ -35,7 +35,7 @@ public class PointTime
     return zPos;
   }
 
-  public PlayerAction getAction() {
+  public Action getAction() {
     return action;
   }
 }
