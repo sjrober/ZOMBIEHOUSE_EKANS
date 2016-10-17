@@ -1,13 +1,12 @@
 package entities;
-
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Math;
-
 import game_engine.Attributes;
 import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.TileGraph;
+import javafx.scene.Node;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.PointLight;
 import javafx.scene.shape.Box;
@@ -72,6 +71,7 @@ public class Player extends Creature
   
   //other player fields:
   public Cylinder boundingCircle = null;
+  public Node[] weaponMesh = null;
   public AtomicBoolean isDead = new AtomicBoolean(false);
   public AtomicBoolean foundExit = new AtomicBoolean(false);
   
@@ -95,6 +95,14 @@ public class Player extends Creature
 
   public Player() {
 
+  }
+  public void setWeaponMesh(Node[] weaponMesh) //Copying format for zombies
+  {
+    this.weaponMesh = weaponMesh;
+    for (int i = 0; i < weaponMesh.length; i++)
+    {
+      weaponMesh[i].setRotationAxis(Rotate.Y_AXIS);
+    }
   }
 
   /**
@@ -125,14 +133,14 @@ public class Player extends Creature
     this.angle = 0;
     this.strafeVelocity = 0;
     camera.setRotate(this.angle);
-    this.camera = camera;
     camera.setTranslateX(x);
     camera.setTranslateZ(z);
+    this.camera = camera;
     this.light = light;
     light.setRotationAxis(Rotate.Y_AXIS);
-    boundingCircle = new Cylinder(radius, 1);
     PlayerStamina staminaCounter=new PlayerStamina();
     staminaCounter.start();
+    boundingCircle = new Cylinder(radius, 1);
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());
     lastX = camera.getTranslateX();
@@ -196,6 +204,13 @@ public class Player extends Creature
     movementX += (strafeVelocity * Math.sin(angle * (Math.PI / 180) - Math.PI / 2));
     movementZ += (velocity * Math.cos(angle * (Math.PI / 180)));
     movementZ += (strafeVelocity * Math.cos(angle * (Math.PI / 180) - Math.PI / 2));
+
+    for (int i = 0; i < weaponMesh.length; i++) //Copying format for camera
+    {
+      weaponMesh[i].setTranslateZ(movementZ);
+      weaponMesh[i].setTranslateX(movementX);
+      weaponMesh[i].setRotate(angle);
+    }
     
     tempX.setTranslateX(movementX);
     tempX.setTranslateZ(boundingCircle.getTranslateZ());

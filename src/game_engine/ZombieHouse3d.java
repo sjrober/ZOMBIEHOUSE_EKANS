@@ -94,6 +94,7 @@ public class ZombieHouse3d
   public static String Hurt_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_hurt.obj";
   public static String Dying_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.obj";
   private String Lambent_Female = "Resources/Meshes/Lambent_Female/Lambent_Female.obj";
+  public static String Weapon = "Resources/Meshes/Weapon/sword.obj";
 
   //private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
   //private String Player_Clone = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
@@ -389,6 +390,8 @@ public class ZombieHouse3d
     System.out.println("Number of Zombies: " + entityManager.zombies.size());
     System.out.println("Number of Player Clones: " + entityManager.playerClones.size());
     System.out.println("Number of Zombie Clones: " + entityManager.zombieClones.size());
+
+    entityManager.player.setWeaponMesh(loadMeshViews(Weapon)); //Copying format from zombies
 
     for (Zombie zombie: entityManager.zombies){
       if (zombie.isMasterZombie){
