@@ -184,8 +184,13 @@ public class ZombieBoardRenderer
       {
         gameBoard[col][row].col = col;
         gameBoard[col][row].row = row;
-        if (gameBoard[col][row].getType().equals("wall"))
+        if (gameBoard[col][row].getType().equals("wall")
+                || gameBoard[col][row].getType().equals("red decor")
+                || gameBoard[col][row].getType().equals("orange decor")
+                || gameBoard[col][row].getType().equals("yellow decor")
+                || gameBoard[col][row].getType().equals("green decor"))
         {
+          System.out.println(gameBoard[col][row].getType());
           Rectangle wallTile = new Rectangle(row * cellSize, col * cellSize,
               cellSize, cellSize);
           wallTile.setFill(Color.BLACK);
