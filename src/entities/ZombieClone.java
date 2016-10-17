@@ -31,10 +31,14 @@ public class ZombieClone extends Zombie
   private boolean isDead=false;
   public Cylinder cloneCylinder;
 
+  public int index;
+  public int currentTick;
+
   private double health=Attributes.Zombie_Health;
 
-  public ZombieClone(ArrayList<PointTime> actionSequence) {
+  public ZombieClone(ArrayList<PointTime> actionSequence,int index) {
     this.actionSequence = actionSequence;
+    this.index = index;
     create3DClone(1);
 
   }
@@ -68,7 +72,7 @@ public class ZombieClone extends Zombie
 
 
 
-      int currentTick = ZombieHouse3d.tickCount;
+      currentTick = ZombieHouse3d.tickCount;
 
       //if there are still ticks left in clone's action sequence linkedlist
       //if (actionSequence.get(currentTick)!=null) {
@@ -96,7 +100,11 @@ public class ZombieClone extends Zombie
         cloneCylinder.setTranslateX(xPos);
         cloneCylinder.setTranslateZ(zPos);
 
-        if (currentAction.equals(Action.LOSEHEALTH)) {
+        if(currentAction.equals(Action.CREATECLONE)) {
+          makeClone();
+          currentAction = Action.NOACTION;
+        }
+        else if (currentAction.equals(Action.LOSEHEALTH)) {
           updateMesh();
           currentAction = Action.NOACTION;
         }
@@ -140,6 +148,11 @@ public class ZombieClone extends Zombie
       return currentNode;
     }
     return currentNode;
+  }
+
+  public void makeClone() {
+    System.out.println("new clone!!");
+
   }
 
   public void setMesh(Node[] cloneMesh)

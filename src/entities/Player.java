@@ -433,6 +433,12 @@ public class Player extends Creature
     zomb.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Feral_Ghoul));
     zomb.startZombie();
     ZombieHouse3d.root.getChildren().addAll(zomb.zombieMesh);
+
+    System.out.println("clone index: " + collisionCloneCheck.index);
+    entityManager.scenes.zombieClonePaths.
+            get(collisionCloneCheck.index).
+            get(ZombieHouse3d.tickCount).
+            setAction(Action.CREATECLONE);
   }
 
   /**

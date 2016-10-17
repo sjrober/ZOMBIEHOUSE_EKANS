@@ -75,8 +75,8 @@ public class Scenes
   public Scene mainMenu, threeDGame, twoDGame, gameOver, loading, win, settings, nextLevel, mapScene;
 
   //public static HashMap zombiesEngaged = new HashMap<Integer,PlayerClone>();
-  public static ArrayList<PlayerClone> engagedZombies = new ArrayList<>(100);
-  public static ArrayList<ArrayList<PointTime>> zombieClonePaths = new ArrayList<>(100);
+  public static ArrayList<PlayerClone> engagedZombies = new ArrayList<>(10000);
+  public static ArrayList<ArrayList<PointTime>> zombieClonePaths = new ArrayList<>(10000);
   //engagedZombies.
   
   /**
@@ -90,7 +90,7 @@ public class Scenes
     this.main = main;
 
     //System.out.println("Size of CloneList: " + engagedZombies.size());
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10000; i++) {
       engagedZombies.add(null);
       zombieClonePaths.add(null);
     }

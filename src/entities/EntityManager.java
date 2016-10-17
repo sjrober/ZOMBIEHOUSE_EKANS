@@ -223,7 +223,7 @@ public class EntityManager
         {
           counter++;
           if (counter<=scenes.engagedZombies.size() && scenes.engagedZombies.get(counter)!=null) {
-            ZombieClone newZombieClone = new ZombieClone(scenes.zombieClonePaths.get(counter));
+            ZombieClone newZombieClone = new ZombieClone(scenes.zombieClonePaths.get(counter),counter);
             //newZombieClone.create3DZombie(row, col, Tile.tileSize);
 
             zombieClones.add(newZombieClone);
