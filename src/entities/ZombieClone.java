@@ -34,7 +34,8 @@ public class ZombieClone extends Zombie
   public int index;
   public int currentTick;
 
-  private double health=Attributes.Zombie_Health;
+  public double health=Attributes.Zombie_Health;
+  public int ignoreFirstDamage = 0;
 
   public ZombieClone(ArrayList<PointTime> actionSequence,int index) {
     this.actionSequence = actionSequence;
@@ -76,7 +77,7 @@ public class ZombieClone extends Zombie
 
       //if there are still ticks left in clone's action sequence linkedlist
       //if (actionSequence.get(currentTick)!=null) {
-      if (isDead == false) {
+      if (isDead == false || actionSequence.get(currentTick)!=null) {
         xPos = actionSequence.get(currentTick).getXPos();
         zPos = actionSequence.get(currentTick).getZPos();
         currentAction = actionSequence.get(currentTick).getAction();
@@ -105,8 +106,16 @@ public class ZombieClone extends Zombie
           currentAction = Action.NOACTION;
         }
         else if (currentAction.equals(Action.LOSEHEALTH)) {
-          updateMesh();
-          currentAction = Action.NOACTION;
+          if (ignoreFirstDamage==1) {
+            ignoreFirstDamage++;
+          }else if (ignoreFirstDamage==2)
+          {
+            ignoreFirstDamage=0;
+          }else
+          {
+            updateMesh();
+            currentAction = Action.NOACTION;
+          }
         }
         else if (currentAction.equals(Action.DIE)) {
           //System.out.println("A zombie clone just died!");
