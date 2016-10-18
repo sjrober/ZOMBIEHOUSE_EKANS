@@ -485,7 +485,7 @@ public class Player extends Creature
 
         ArrayList<PointTime> thisRun = new ArrayList<PointTime>();
         for(int j=0;j<currentZombieTime.get(i);j++) {
-          thisRun.add(i,new PointTime(0, 0, j, 0, Action.NOACTION));
+          thisRun.add(new PointTime(0, 0, j, 0, Action.NOACTION));
         }
         thisRun.addAll(currentZombieClones.get(i).pointList);
         thisRun.get(thisRun.size()-1).setAction(Action.DIE);
