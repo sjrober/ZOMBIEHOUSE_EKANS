@@ -77,6 +77,7 @@ public class Scenes
   //engagedZombies.
 
   public static ArrayList<ArrayList<PointTime>> zombieCloneChildren = new ArrayList<>(10000);
+  public static ArrayList<Integer> zombieCreateList = new ArrayList<>(10000);
   
   /**
    * @param primaryStage
@@ -93,8 +94,9 @@ public class Scenes
       engagedZombies.add(null);
       zombieClonePaths.add(null);
       zombieCloneChildren.add(null);
+      zombieCreateList.add(0);
     }
-    System.out.println("Size of CloneList: " + zombieCloneChildren.size());
+    System.out.println("Size of CloneList: " + zombieCreateList.size());
 
     returnButton.setText("Back to main menu.");
     returnButton.setOnAction(new EventHandler<ActionEvent>()

@@ -447,7 +447,7 @@ public class Player extends Creature
             setAction(Action.CREATECLONE);*/
     //entityManager.scenes.zombieCloneChildren.set(counter,zomb);
     //entityManager.zombies.add(zomb);
-    if (zomb==null) System.out.println("the clone is null");
+    //if (zomb==null) System.out.println("the clone is null");
     //Zombie mart = zomb;
     currentZombieClones.add(zomb);
     currentZombieTime.add(counter);
@@ -475,19 +475,30 @@ public class Player extends Creature
     light = null;
     boundingCircle = null;
 
-    //ArrayList<Zombie> currentZombieClones = new ArrayList<Zombie>();
 
-    System.out.println("current time: " + counter);
     if(!currentZombieTime.isEmpty())
     {
-      /*for (Zombie zombie: entityManager.zombies) {
-        if (zombie.index == counter) {
-          currentZombieClones.add(zombie);
+      System.out.println("current time: " + counter);
+      for(int i=0;i<currentZombieTime.size();i++) {
+        //entityManager.scenes.zombieCloneChildren.get(counter).set;
+        //thisRun.add(currentZombieClones.get(i).pointList);         \
+
+        ArrayList<PointTime> thisRun = new ArrayList<PointTime>();
+        for(int j=0;j<currentZombieTime.get(i);j++) {
+          thisRun.add(i,new PointTime(0, 0, j, 0, Action.NOACTION));
         }
-      }*/
-      for(int i=0;i<currentZombieClones.size()-1;i++) {
-        entityManager.scenes.zombieCloneChildren.set(currentZombieTime.get(i),currentZombieClones.get(i).pointList);
+        thisRun.addAll(currentZombieClones.get(i).pointList);
+        thisRun.get(thisRun.size()-1).setAction(Action.DIE);
+
+        System.out.println("currentzombietime: " + currentZombieTime.get(i));
+        entityManager.scenes.zombieCreateList.set(currentZombieTime.get(i),1);
+        //entityManager.scenes.zombieCloneChildren.set(currentZombieTime.get(i),currentZombieClones.get(i).pointList);
+        entityManager.scenes.zombieCloneChildren.set(currentZombieTime.get(i),thisRun);
       }
+      //entityManager.scenes.zombieCloneChildren.set(currentZombieTime.get(0),thisRun);
+      //for(int i=0;i<currentZombieClones.size()-1;i++) {
+        //entityManager.scenes.zombieCloneChildren.get(currentZombieTime.get(i)).set(currentZombieTime.get(i),currentZombieClones.get(i).pointList);
+      //}
     }
 
   }

@@ -4,6 +4,8 @@ Team Ekans: Robin Campos, Sam Roberts, Dustin Loughrin
 
 This is the readme file.
 
+The Main class is located in gui.Main.
+
 Credits:
 
 graffitiMaterial: DeviantArt - n00bi32k3
