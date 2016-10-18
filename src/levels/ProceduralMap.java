@@ -406,7 +406,7 @@ public class ProceduralMap
               System.out.println("found connection");
             }
             current.paths.add(r);
-            r.paths.add(current);//
+            r.paths.add(current);
             break;
           }
         }
