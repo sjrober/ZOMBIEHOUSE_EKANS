@@ -44,9 +44,6 @@ public class EntityManager
 
   public ArrayList<PlayerClone> playerClones = new ArrayList<>();
   private ArrayList<PointTime>currentPointTimeList = new ArrayList<PointTime>();
-
-  //list of players that zombie follows
-  //public ArrayList<Player> zombieFollow = new ArrayList<>();
   
   /**
    * Constructor for EntityManager.
@@ -164,8 +161,6 @@ public class EntityManager
   //distance using points
   public double calculateDistanceFromPlayer(double otherxPos, double otherzPos)
   {
-    //System.out.println(player.health);
-    //System.out.println("other: " + player.xPos + ", " + player.zPos);
     double xDist = player.xPos - otherxPos;
     double zDist = player.zPos - otherzPos;
 
@@ -234,7 +229,6 @@ public class EntityManager
 
             newZombie.create3DZombie(row, col, Tile.tileSize);
             newZombie.setFollowing(player);
-            //newZombie.create3DZombie(row, col, Tile.tileSize);
             zombies.add(newZombie);
           }
 
@@ -299,7 +293,6 @@ public class EntityManager
   {
     Random masterSpawnChance = new Random(360);
     int numZombies = zombies.size();
-    //int spawnChance = masterSpawnChance.nextInt(numZombies);
     int spawnChance = masterSpawnChance.nextInt();
     return spawnChance;
   }
@@ -335,8 +328,6 @@ public class EntityManager
 
     if (scenes.zombieCreateList.get(ZombieHouse3d.tickCount)!=0) {
       System.out.println("Creating bifurcated Zombie Clone!!! " + ZombieHouse3d.tickCount);
-      //for(int i=0;i<scenes.zombieCloneChildren.get(ZombieHouse3d.tickCount).size()-1;i++)
-      //{
         ZombieClone newZombieClone = new ZombieClone(scenes.zombieCloneChildren.get(ZombieHouse3d.tickCount),ZombieHouse3d.tickCount);
         zombieClones.add(newZombieClone);
         newZombieClone.setActive(true);
@@ -344,7 +335,6 @@ public class EntityManager
         newZombieClone.health = Attributes.Zombie_Health;
         newZombieClone.ignoreFirstDamage=1;
         ZombieHouse3d.root.getChildren().addAll(newZombieClone.cloneMesh);
-      //}
     }
     
     if (player.isDead.get())
@@ -509,10 +499,6 @@ public class EntityManager
   {
     gameIsRunning.set(false);
 
-    //adding another player clone
-    //currentPointTimeList = player.pointList;
-    //playerClones.add(new PlayerClone(currentPointTimeList));
-
     player.dispose();
     player = null;
 
@@ -532,7 +518,6 @@ public class EntityManager
     for(Zombie zombie: zombies)
     {
       if (zombie.engaged==true) {
-        //scenes.zombiesEngaged.put(zombie.index,playerClones.get(playerClones.size()-1));
         scenes.engagedZombies.set(zombie.index, playerClones.get(playerClones.size() - 1));
         zombie.addPointTime(Action.DIE);
         scenes.zombieClonePaths.set(zombie.index, zombie.pointList);

@@ -30,11 +30,8 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
 
   public static int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
   public static int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
-
-  //Robot robot = new Robot();
   
   //The angle that the camera is rotated to.
-//  static double angle = 0;
   double lastX = 0;
   double lastY = 0;
   double rotationSpeed = Math.PI/2;
@@ -86,19 +83,8 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
     lastX = x;
 
     if (event.getEventType() == MouseEvent.MOUSE_CLICKED && event.getButton() == MouseButton.PRIMARY)
-        // TODO program is not picking up click events properly and clicking causes the camera to freeze, so for now I'll use the SPACE key instead
     {
       player.isStabbing.set(true);
     }
-
-    /**
-     * This method is just used for testing
-     */
-    if (event.getButton() == MouseButton.PRIMARY)
-    {
-      System.out.println("testing");
-    }
-
-    //robot.mouseMove(screenWidth/2, screenHeight/2);
   }
 }

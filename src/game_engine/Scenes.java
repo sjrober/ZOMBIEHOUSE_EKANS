@@ -71,7 +71,6 @@ public class Scenes
   public BorderPane startRoot, threeDGameRoot, twoDGameRoot, settingsRoot, gameOverRoot, loadRoot, winRoot;
   public Scene mainMenu, threeDGame, twoDGame, gameOver, loading, win, settings, nextLevel, mapScene;
 
-  //public static HashMap zombiesEngaged = new HashMap<Integer,PlayerClone>();
   public static ArrayList<PlayerClone> engagedZombies = new ArrayList<>(10000);
   public static ArrayList<ArrayList<PointTime>> zombieClonePaths = new ArrayList<>(10000);
   //engagedZombies.
@@ -89,7 +88,6 @@ public class Scenes
   {
     this.main = main;
 
-    //System.out.println("Size of CloneList: " + engagedZombies.size());
     for (int i = 0; i < 10000; i++) {
       engagedZombies.add(null);
       zombieClonePaths.add(null);
@@ -369,7 +367,7 @@ public class Scenes
     });
     playerSprintSpeed.valueProperty().addListener(new ChangeListener<Number>()
     {
-      public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) 
+      public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val)
       {
         Attributes.Player_Sprint_Speed = playerSprintSpeed.getValue();
       }

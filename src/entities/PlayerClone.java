@@ -30,7 +30,6 @@ public class PlayerClone extends Player
   private Cylinder cloneCylinder;
 
   public PlayerClone(ArrayList<PointTime> actionSequence) {
-    this.entityManager = entityManager;
     this.actionSequence = actionSequence;
     create3DClone(1);
 
@@ -56,13 +55,8 @@ public class PlayerClone extends Player
   public void tick() {
     if (active) {
 
-
       lastxPos = xPos;
       lastzPos = zPos;
-
-
-
-
 
       int currentTick = ZombieHouse3d.tickCount;
 
@@ -73,19 +67,10 @@ public class PlayerClone extends Player
         zPos = actionSequence.get(currentTick).getZPos();
         currentAction = actionSequence.get(currentTick).getAction();
 
-        //cloneCylinder.setTranslateX(xPos);
-        //cloneCylinder.setTranslateZ(zPos);
-
-        /*double deltaZ = zPos - lastzPos;
-        double deltaX = xPos - lastxPos;
-        double angle = (Math.atan(deltaX / deltaZ) * 180 / Math.PI)+180;*/
-
         for (int i = 0; i < cloneMesh.length; i++)
         {
-          //cloneMesh[i].setTranslateZ();
           cloneMesh[i].setTranslateZ(zPos);
           cloneMesh[i].setTranslateX(xPos);
-          //cloneMesh[i].setTranslateX(movementAmountX);
           cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle()+180);
         }
 
@@ -98,17 +83,13 @@ public class PlayerClone extends Player
           currentAction = Action.NOACTION;
         }
         else if (currentAction.equals(Action.DIE)) {
-          //System.out.println("A player clone just died!");
           playSound(Sound.death);
           currentAction = Action.NOACTION;
           isDead = true;
           active = false;
         }
-
       }
-
     }
-
   }
 
   public void playSound(Sound sound) {
@@ -134,5 +115,4 @@ public class PlayerClone extends Player
       cloneMesh[i].setRotationAxis(Rotate.Y_AXIS);
     }
   }
-
 }

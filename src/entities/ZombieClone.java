@@ -37,16 +37,16 @@ public class ZombieClone extends Zombie
   public double health=Attributes.Zombie_Health;
   public int ignoreFirstDamage = 0;
 
-  public ZombieClone(ArrayList<PointTime> actionSequence,int index) {
+  public ZombieClone(ArrayList<PointTime> actionSequence,int index)
+  {
     this.actionSequence = actionSequence;
     this.index = index;
     create3DClone(1);
-
   }
 
-  public void setEntityManager(EntityManager entityManager) {
+  public void setEntityManager(EntityManager entityManager)
+  {
     this.entityManager = entityManager;
-
   }
 
   public void create3DClone(int cellSize)
@@ -65,36 +65,20 @@ public class ZombieClone extends Zombie
   public void tick() {
     if (active) {
 
-
       lastxPos = xPos;
       lastzPos = zPos;
 
-
-
-
-
       currentTick = ZombieHouse3d.tickCount;
 
-      //if there are still ticks left in clone's action sequence linkedlist
-      //if (actionSequence.get(currentTick)!=null) {
       if (isDead == false || actionSequence.get(currentTick)!=null) {
         xPos = actionSequence.get(currentTick).getXPos();
         zPos = actionSequence.get(currentTick).getZPos();
         currentAction = actionSequence.get(currentTick).getAction();
 
-        //cloneCylinder.setTranslateX(xPos);
-        //cloneCylinder.setTranslateZ(zPos);
-
-        /*double deltaZ = zPos - lastzPos;
-        double deltaX = xPos - lastxPos;
-        double angle = (Math.atan(deltaX / deltaZ) * 180 / Math.PI)+180;*/
-
         for (int i = 0; i < cloneMesh.length; i++)
         {
-          //cloneMesh[i].setTranslateZ();
           cloneMesh[i].setTranslateZ(zPos);
           cloneMesh[i].setTranslateX(xPos);
-          //cloneMesh[i].setTranslateX(movementAmountX);
           if (health>0)
             cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle() + 180);
         }
@@ -118,22 +102,20 @@ public class ZombieClone extends Zombie
           }
         }
         else if (currentAction.equals(Action.DIE)) {
-          //System.out.println("A zombie clone just died!");
           isDead = true;
           active = false;
         }
-
       }
-
     }
-
   }
 
-  public void setActive(boolean active) {
+  public void setActive(boolean active)
+  {
     this.active = active;
   }
 
-  public void updateMesh() {
+  public void updateMesh()
+  {
     health--;
     System.out.println("Current zombie health: " + health);
     ZombieHouse3d.root.getChildren().removeAll(this.cloneMesh);
@@ -142,7 +124,6 @@ public class ZombieClone extends Zombie
     else if (health == 1)
       setMesh(ZombieHouse3d.dyingGhoul);
     ZombieHouse3d.root.getChildren().addAll(this.cloneMesh);
-
   }
 
   public GraphNode getCurrentNode() {
@@ -159,9 +140,9 @@ public class ZombieClone extends Zombie
     return currentNode;
   }
 
-  public void makeClone() {
+  public void makeClone()
+  {
     System.out.println("new clone!!");
-
   }
 
   public void setMesh(Node[] cloneMesh)
@@ -172,8 +153,4 @@ public class ZombieClone extends Zombie
       cloneMesh[i].setRotationAxis(Rotate.Y_AXIS);
     }
   }
-
-
-
-
 }

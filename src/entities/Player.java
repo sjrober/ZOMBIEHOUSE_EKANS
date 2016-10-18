@@ -86,16 +86,10 @@ public class Player extends Creature
 
   private Action action= Action.NOACTION;
 
-  /*
-
-   */
   public ArrayList<PointTime> pointList = new ArrayList<PointTime>();
 
   public ArrayList<Zombie> currentZombieClones = new ArrayList<Zombie>();
   public ArrayList<Integer> currentZombieTime = new ArrayList<>();
-
-
-  
 
   public Player() {
 
@@ -289,12 +283,8 @@ public class Player extends Creature
       double zDiff = collisionCloneCheck.zPos - zPos;
       if (isStabbing.get() && isFacingZombie(xDiff, zDiff, angle) && counter >= lastDam + damPeriod)
       {
-        //System.out.println("Bifurcate!!");
         entityManager.soundManager.playSoundClip(Sound.hits); // "tearing-flesh" by dereklieu from freesound.org
         lastDam = counter;
-        bifurcateZombie(collisionCloneCheck);
-        //System.out.println("zomb xy: " + collisionCloneCheck.xPos + ", " + collisionCloneCheck.zPos);
-        //System.out.println("zombClone xy: " + zomb.xPos + ", " + zomb.zPos);
        }
     }
 
@@ -306,7 +296,6 @@ public class Player extends Creature
       lastDam = counter;
       health--;
       if (health <= 0) isDead.set(true);
-      //addPointTime(Action.LOSEHEALTH);
       action = Action.LOSEHEALTH;
 
       //engage player
@@ -325,11 +314,6 @@ public class Player extends Creature
       bifurcateZombie(collisionCloneCheck);
     }
 
-
-    /*boundingCircle.setRadius(2);
-    if(entityManager.checkPlayerCollision(boundingCircle) != null) System.out.println("testing");
-    boundingCircle.setRadius(radius);*/
-    
     //checking for exit collision
     for (Box box: entityManager.zombieHouse.exits){
       if (box.getBoundsInParent().intersects(boundingCircle.getBoundsInParent())){
@@ -441,14 +425,6 @@ public class Player extends Creature
     zomb.index = counter;
 
     System.out.println("clone index: " + zomb.index);
-    /*entityManager.scenes.zombieClonePaths.
-            get(collisionCloneCheck.index).
-            get(ZombieHouse3d.tickCount).
-            setAction(Action.CREATECLONE);*/
-    //entityManager.scenes.zombieCloneChildren.set(counter,zomb);
-    //entityManager.zombies.add(zomb);
-    //if (zomb==null) System.out.println("the clone is null");
-    //Zombie mart = zomb;
     currentZombieClones.add(zomb);
     currentZombieTime.add(counter);
   }
@@ -480,25 +456,18 @@ public class Player extends Creature
     {
       System.out.println("current time: " + counter);
       for(int i=0;i<currentZombieTime.size();i++) {
-        //entityManager.scenes.zombieCloneChildren.get(counter).set;
-        //thisRun.add(currentZombieClones.get(i).pointList);         \
 
         ArrayList<PointTime> thisRun = new ArrayList<PointTime>();
         for(int j=0;j<currentZombieTime.get(i);j++) {
-          thisRun.add(i,new PointTime(0, 0, j, 0, Action.NOACTION));
+          thisRun.add(new PointTime(0, 0, j, 0, Action.NOACTION));
         }
         thisRun.addAll(currentZombieClones.get(i).pointList);
         thisRun.get(thisRun.size()-1).setAction(Action.DIE);
 
         System.out.println("currentzombietime: " + currentZombieTime.get(i));
         entityManager.scenes.zombieCreateList.set(currentZombieTime.get(i),1);
-        //entityManager.scenes.zombieCloneChildren.set(currentZombieTime.get(i),currentZombieClones.get(i).pointList);
         entityManager.scenes.zombieCloneChildren.set(currentZombieTime.get(i),thisRun);
       }
-      //entityManager.scenes.zombieCloneChildren.set(currentZombieTime.get(0),thisRun);
-      //for(int i=0;i<currentZombieClones.size()-1;i++) {
-        //entityManager.scenes.zombieCloneChildren.get(currentZombieTime.get(i)).set(currentZombieTime.get(i),currentZombieClones.get(i).pointList);
-      //}
     }
 
   }

@@ -101,9 +101,6 @@ public class ZombieHouse3d
   public static String Dying_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.obj";
   private String Lambent_Female = "Resources/Meshes/Lambent_Female/Lambent_Female.obj";
   public static String Weapon = "Resources/Meshes/Weapon/sword.obj";
-
-  //private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
-  //private String Player_Clone = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
   private String Player_Clone = "Resources/Meshes/Player_Clone/Casual_Man.obj";
 
   public static int tickCount;
@@ -173,12 +170,9 @@ public class ZombieHouse3d
     root = new Group();
     root.setCache(true);
     root.setCacheHint(CacheHint.SPEED);
-    
-    // initialize entity manager
+
     entityManager = new EntityManager(soundManager, main, scenes);
     entityManager.setZombieHouse3d(this);
-    //entityManager.createZombies(gameBoard, boardHeight, boardWidth);
-    //numZombies = entityManager.zombies.size();
 
     entityManager.playerClones = tempPlayerClones;
 
@@ -466,18 +460,12 @@ public class ZombieHouse3d
     weapon.translateXProperty();
     pane.setBottom(weapon);
 
-
     // Use a SubScene
     SubScene subScene = new SubScene(root, 1280, 800, true,
         SceneAntialiasing.BALANCED);
-    //subScene.setFill(Color.rgb(10, 10, 40));
     subScene.setFill(Color.BLACK);
     subScene.setCamera(camera);
     subScene.setCursor(Cursor.CROSSHAIR);
-    /*subScene.setOnMouseMoved(e ->
-    {
-      m
-    });*/
 
     Group group = new Group();
     group.getChildren().addAll(subScene,pane);
@@ -490,7 +478,6 @@ public class ZombieHouse3d
   }
   /**
    * The animation timer used in running the game.
-   *
    */
   private class MainGameLoop extends AnimationTimer
   {
@@ -550,10 +537,6 @@ public class ZombieHouse3d
    */
   public Scene zombieHouse3d(Stage gameStage) throws Exception
   {
-    //Stage gameStage = new Stage();
-    // gameBoard = MapLoader.loadLevel("/Maps/testmap.txt");
-
-    //System.out.println(tempGameBoard.length);
     System.out.println(sameLevel);
     if (sameLevel == false) {
       gameBoard = ProceduralMap.generateMap(Attributes.Map_Width, Attributes.Map_Height, difficulty);
@@ -584,7 +567,6 @@ public class ZombieHouse3d
       entityManager.player.gameIsRunning.set(false);
       entityManager.gameIsRunning.set(false);
     });
-    //setUpHUD(gameStage);
 
     Button play = new Button();
     play.setText("Play!");
@@ -644,13 +626,10 @@ public class ZombieHouse3d
   public void dispose()
   {
     gameLoop.stop();
-    //entityManager = null;
     entityManager.addClones();
     scene = null;
     camera = null;
     light = null;
-    //System.out.println("Disposing...");
-    //tempGameBoard = gameBoard;
     tempPlayerClones = entityManager.playerClones;
     gameBoard = null;
     walls.clear();

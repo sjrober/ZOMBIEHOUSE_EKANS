@@ -39,7 +39,6 @@ public class Zombie extends Creature
   public double masterZombie2dSpeed = .3;
   public double health = Attributes.Zombie_Health;
   public boolean isMasterZombie = false;
-  public boolean isParalyzed = false;
   public double zombieSmell = 15.0;
   public Circle zombieCirc = null;
   public double pastX = 0;
@@ -100,8 +99,6 @@ public class Zombie extends Creature
   {
     stepDistance = 1;
     this.index = index;
-
-    //this.zombiesEngaged = zombiesEngaged;
 
     this.entityManager = entityManager;
     // 50% chance that the zombie is either a random
@@ -191,15 +188,6 @@ public class Zombie extends Creature
     cylinder.setTranslateX(xPos * cellSize);
     cylinder.setTranslateZ(zPos * cellSize);
     zombieCylinder = cylinder;
-    //follow = entityManager.player;
-
-    /*if(zombiesEngaged.containsKey(index)) {
-      System.out.println("Zombie " + index + " is following clone...");
-      engage((Player) zombiesEngaged.get(index));
-    }else{
-      follow = entityManager.player;
-    } */
-
   }
 
   /**
@@ -479,15 +467,6 @@ public class Zombie extends Creature
   @Override
   public void tick()
   {
-    // Tried to get zombies to stop getting stuck on the walls. Oh well...
-    /*if ((zombieCylinder.getTranslateX() + 0.05 > pastX && zombieCylinder.getTranslateX() - 0.1 < pastX)
-            && (zombieCylinder.getTranslateZ() + 0.05 > pastZ && zombieCylinder.getTranslateZ() - 0.1 < pastZ))
-    {
-      //stopThreeDZombie();
-      //adjustAngle();
-      zombieCylinder.setTranslateX(xPos + 0.5);
-      zombieCylinder.setTranslateZ(zPos + 0.5);
-    }*/
     pastX = zombieCylinder.getTranslateX();
     pastZ = zombieCylinder.getTranslateZ();
     if (isStunned.get()) // Zombie is in the state of being stunned for 20 ticks

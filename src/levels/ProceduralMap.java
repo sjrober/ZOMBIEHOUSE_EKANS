@@ -53,7 +53,6 @@ public class ProceduralMap
     return map;
   }
   
-  
   /**
    * generates an ArrayList of 5 ArrayLists of Rectangle objects where the rectangles in the first
    * list represent the dimensions of the regions, and the rectangles in the next 4 lists represent
@@ -137,7 +136,6 @@ public class ProceduralMap
     
     return regions;
   }
-  
   
   /**
    * this method gets the rectangles that will fill a given region of the map
@@ -783,7 +781,6 @@ public class ProceduralMap
         subRects[1] = rectangle2;
         return  subRects;
       }
-      
       return null;
     }
     
@@ -814,7 +811,6 @@ public class ProceduralMap
           height -= 1;
           return hallway;
         }
-        
       }
       
       if (orientation == 1){//vertical hallway
@@ -832,9 +828,7 @@ public class ProceduralMap
           width -= 1;
           return hallway;
         }
-        
       }
-      
       return null;
     }
   }
