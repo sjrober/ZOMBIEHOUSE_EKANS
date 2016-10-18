@@ -1,4 +1,5 @@
 package entities;
+
 import game_engine.Attributes;
 import game_engine.ZombieHouse3d;
 import javafx.scene.Node;
@@ -10,11 +11,10 @@ import javafx.scene.media.AudioClip;
 import java.util.ArrayList;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Sam
- * Date: 9/26/16
- * Time: 9:38 PM
- * To change this template use File | Settings | File Templates.
+ * @author Sam Roberts
+ *         <p/>
+ *         PlayerClone class. Does whatever the previous player did
+ *         in terms of XPOS, ZPOS, action and direction.
  */
 public class PlayerClone extends Player
 {
@@ -23,20 +23,22 @@ public class PlayerClone extends Player
 
   private double lastxPos;
   private double lastzPos;
-  private boolean active=false;
+  private boolean active = false;
   public Node[] cloneMesh;
 
-  private boolean isDead=false;
+  private boolean isDead = false;
   private Cylinder cloneCylinder;
 
-  public PlayerClone(ArrayList<PointTime> actionSequence) {
+  public PlayerClone(ArrayList<PointTime> actionSequence)
+  {
     this.entityManager = entityManager;
     this.actionSequence = actionSequence;
     create3DClone(1);
 
   }
 
-  public void setEntityManager(EntityManager entityManager) {
+  public void setEntityManager(EntityManager entityManager)
+  {
     this.entityManager = entityManager;
   }
 
@@ -49,56 +51,44 @@ public class PlayerClone extends Player
     cloneCylinder = cylinder;
   }
 
-  public void setDead(boolean dead) {
+  public void setDead(boolean dead)
+  {
     isDead = dead;
   }
 
-  public void tick() {
-    if (active) {
-
+  public void tick()
+  {
+    if (active)
+    {
 
       lastxPos = xPos;
       lastzPos = zPos;
 
-
-
-
-
       int currentTick = ZombieHouse3d.tickCount;
 
-      //if there are still ticks left in clone's action sequence linkedlist
-      //if (actionSequence.get(currentTick)!=null) {
-      if (isDead == false) {
+      if (isDead == false)
+      {
         xPos = actionSequence.get(currentTick).getXPos();
         zPos = actionSequence.get(currentTick).getZPos();
         currentAction = actionSequence.get(currentTick).getAction();
 
-        //cloneCylinder.setTranslateX(xPos);
-        //cloneCylinder.setTranslateZ(zPos);
-
-        /*double deltaZ = zPos - lastzPos;
-        double deltaX = xPos - lastxPos;
-        double angle = (Math.atan(deltaX / deltaZ) * 180 / Math.PI)+180;*/
-
         for (int i = 0; i < cloneMesh.length; i++)
         {
-          //cloneMesh[i].setTranslateZ();
           cloneMesh[i].setTranslateZ(zPos);
           cloneMesh[i].setTranslateX(xPos);
-          //cloneMesh[i].setTranslateX(movementAmountX);
-          cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle()+180);
+          cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle() + 180);
         }
 
-        if (currentAction.equals(Action.LOSEHEALTH)) {
+        if (currentAction.equals(Action.LOSEHEALTH))
+        {
           playSound(Sound.pain);
           currentAction = Action.NOACTION;
-        }
-        else if (currentAction.equals(Action.STAB)) {
+        } else if (currentAction.equals(Action.STAB))
+        {
           playSound(Sound.hits);
           currentAction = Action.NOACTION;
-        }
-        else if (currentAction.equals(Action.DIE)) {
-          //System.out.println("A player clone just died!");
+        } else if (currentAction.equals(Action.DIE))
+        {
           playSound(Sound.death);
           currentAction = Action.NOACTION;
           isDead = true;
@@ -111,18 +101,20 @@ public class PlayerClone extends Player
 
   }
 
-  public void playSound(Sound sound) {
-  double distance = entityManager.calculateDistanceFromPlayer(xPos,zPos);
-  if (distance < Attributes.Player_Hearing)
+  public void playSound(Sound sound)
   {
-    double balance = entityManager.calculateSoundBalance(this);
+    double distance = entityManager.calculateDistanceFromPlayer(xPos, zPos);
+    if (distance < Attributes.Player_Hearing)
+    {
+      double balance = entityManager.calculateSoundBalance(this);
 
-    entityManager.soundManager.playSoundClip(sound, distance,
-            balance);
+      entityManager.soundManager.playSoundClip(sound, distance,
+              balance);
+    }
   }
-}
 
-  public void setActive(boolean active) {
+  public void setActive(boolean active)
+  {
     this.active = active;
   }
 

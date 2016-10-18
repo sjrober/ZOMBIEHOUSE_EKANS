@@ -101,8 +101,6 @@ public class Zombie extends Creature
     stepDistance = 1;
     this.index = index;
 
-    //this.zombiesEngaged = zombiesEngaged;
-
     this.entityManager = entityManager;
     // 50% chance that the zombie is either a random
     // walk zombie or a line walk zombie.
@@ -191,14 +189,6 @@ public class Zombie extends Creature
     cylinder.setTranslateX(xPos * cellSize);
     cylinder.setTranslateZ(zPos * cellSize);
     zombieCylinder = cylinder;
-    //follow = entityManager.player;
-
-    /*if(zombiesEngaged.containsKey(index)) {
-      System.out.println("Zombie " + index + " is following clone...");
-      engage((Player) zombiesEngaged.get(index));
-    }else{
-      follow = entityManager.player;
-    } */
 
   }
 
@@ -271,9 +261,6 @@ public class Zombie extends Creature
    */
   private double getAngleToPlayer()
   {
-    /*if (following!=null && following.equals(entityManager.player)) {
-      System.out.print("WE ARE EQUAL!");
-    } */
     Player following = setFollowing(follow);
     double xDiff=0;
     double zDiff=0;
@@ -309,6 +296,7 @@ public class Zombie extends Creature
     zombieCirc.setCenterY(zombieCirc.getCenterY());
     zombieCirc.setCenterX(zombieCirc.getCenterX());
   }
+
   /**
    * Stops the zombie on the 3D game map when it has hit an obstacle.
    */
