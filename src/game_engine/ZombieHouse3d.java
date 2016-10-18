@@ -77,6 +77,9 @@ public class ZombieHouse3d
   
   public static Group root;
   public ImageView weapon = new ImageView();
+  private Image swordImage = new Image("Images/sword.png");
+  private Image stabImage = new Image("Images/sword_stab.png");
+  private Boolean weaponChange = false;
 
   // The list of walls used for collision detection.
   public ArrayList<Box> walls = new ArrayList<>();
@@ -445,18 +448,14 @@ public class ZombieHouse3d
     pane.setMaxWidth(1280);
     pane.setMaxHeight(800);
 
-    Image image = new Image("Images/machete.png");
-    weapon.setImage(image);
-    weapon.setFitWidth(500);
+    weapon.setImage(swordImage);
+    //weapon.setFitWidth(500);
     weapon.setPreserveRatio(true);
     weapon.setSmooth(true);
     weapon.setCache(true);
-    weapon.setRotate(90);
-    weapon.setTranslateX(500);
-    weapon.setTranslateY(-192);
-    weapon.translateYProperty();
+    //weapon.setRotate(90);
+    weapon.setTranslateX(200);
     weapon.translateXProperty();
-
     pane.setBottom(weapon);
 
 
@@ -504,6 +503,27 @@ public class ZombieHouse3d
         catch (NullPointerException e)
         {
           System.out.println("NPE - ZombieHouse3d.java");
+        }
+
+        if(entityManager.player.isStabbing.get())
+        {
+          weapon.setImage(stabImage);
+          weapon.setPreserveRatio(true);
+          weapon.setSmooth(true);
+          weapon.setCache(true);
+          weapon.setTranslateX(200);
+          weapon.translateXProperty();
+          weaponChange = true;
+        }
+        else if(!entityManager.player.isStabbing.get() && weaponChange == true)
+        {
+          weapon.setImage(swordImage);
+          weapon.setPreserveRatio(true);
+          weapon.setSmooth(true);
+          weapon.setCache(true);
+          weapon.setTranslateX(200);
+          weapon.translateXProperty();
+          weaponChange = false;
         }
       }
       else
