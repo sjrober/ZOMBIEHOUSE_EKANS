@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ZombieHouse_Roberts_Loughrin_Campos.jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ZombieHouse_Roberts_Loughrin_Campos_jar</output-path>
+    <root id="archive" name="ZombieHouse.jar">
+      <element id="module-output" name="ZombieHouse" />
+      <element id="library" level="module" name="Resources" module-name="ZombieHouse" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Resources/External_Jars/jimObjModelImporterJFX.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src" />
+      <element id="dir-copy" path="$PROJECT_DIR$/Resources" />
+    </root>
+  </artifact>
+</component>
