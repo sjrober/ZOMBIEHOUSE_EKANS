@@ -39,6 +39,7 @@ public class Zombie extends Creature
   public double masterZombie2dSpeed = .3;
   public double health = Attributes.Zombie_Health;
   public boolean isMasterZombie = false;
+  public boolean isParalyzed = false;
   public double zombieSmell = 15.0;
   public Circle zombieCirc = null;
   public double pastX = 0;
@@ -188,6 +189,7 @@ public class Zombie extends Creature
     cylinder.setTranslateX(xPos * cellSize);
     cylinder.setTranslateZ(zPos * cellSize);
     zombieCylinder = cylinder;
+
   }
 
   /**
@@ -259,9 +261,6 @@ public class Zombie extends Creature
    */
   private double getAngleToPlayer()
   {
-    /*if (following!=null && following.equals(entityManager.player)) {
-      System.out.print("WE ARE EQUAL!");
-    } */
     Player following = setFollowing(follow);
     double xDiff=0;
     double zDiff=0;
@@ -297,6 +296,7 @@ public class Zombie extends Creature
     zombieCirc.setCenterY(zombieCirc.getCenterY());
     zombieCirc.setCenterX(zombieCirc.getCenterX());
   }
+
   /**
    * Stops the zombie on the 3D game map when it has hit an obstacle.
    */
@@ -467,6 +467,15 @@ public class Zombie extends Creature
   @Override
   public void tick()
   {
+    // Tried to get zombies to stop getting stuck on the walls. Oh well...
+    /*if ((zombieCylinder.getTranslateX() + 0.05 > pastX && zombieCylinder.getTranslateX() - 0.1 < pastX)
+            && (zombieCylinder.getTranslateZ() + 0.05 > pastZ && zombieCylinder.getTranslateZ() - 0.1 < pastZ))
+    {
+      //stopThreeDZombie();
+      //adjustAngle();
+      zombieCylinder.setTranslateX(xPos + 0.5);
+      zombieCylinder.setTranslateZ(zPos + 0.5);
+    }*/
     pastX = zombieCylinder.getTranslateX();
     pastZ = zombieCylinder.getTranslateZ();
     if (isStunned.get()) // Zombie is in the state of being stunned for 20 ticks

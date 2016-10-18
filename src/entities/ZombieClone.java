@@ -12,11 +12,10 @@ import levels.Tile;
 import java.util.ArrayList;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Sam
- * Date: 10/15/16
- * Time: 7:15 PM
- * To change this template use File | Settings | File Templates.
+ * @author Sam Roberts
+ *         <p/>
+ *         ZombieClone class. Does whatever the previous player did
+ *         in terms of XPOS, ZPOS, action and direction.
  */
 public class ZombieClone extends Zombie
 {
@@ -25,28 +24,30 @@ public class ZombieClone extends Zombie
 
   private double lastxPos;
   private double lastzPos;
-  private boolean active=false;
+  private boolean active = false;
   public Node[] cloneMesh;
 
-  private boolean isDead=false;
+  private boolean isDead = false;
   public Cylinder cloneCylinder;
 
   public int index;
   public int currentTick;
 
-  public double health=Attributes.Zombie_Health;
+  public double health = Attributes.Zombie_Health;
   public int ignoreFirstDamage = 0;
 
-  public ZombieClone(ArrayList<PointTime> actionSequence,int index)
+  public ZombieClone(ArrayList<PointTime> actionSequence, int index)
   {
     this.actionSequence = actionSequence;
     this.index = index;
     create3DClone(1);
+
   }
 
   public void setEntityManager(EntityManager entityManager)
   {
     this.entityManager = entityManager;
+
   }
 
   public void create3DClone(int cellSize)
@@ -58,19 +59,24 @@ public class ZombieClone extends Zombie
     cloneCylinder = cylinder;
   }
 
-  public void setDead(boolean dead) {
+  public void setDead(boolean dead)
+  {
     isDead = dead;
   }
 
-  public void tick() {
-    if (active) {
+  public void tick()
+  {
+    if (active)
+    {
+
 
       lastxPos = xPos;
       lastzPos = zPos;
 
       currentTick = ZombieHouse3d.tickCount;
 
-      if (isDead == false || actionSequence.get(currentTick)!=null) {
+      if (isDead == false || actionSequence.get(currentTick) != null)
+      {
         xPos = actionSequence.get(currentTick).getXPos();
         zPos = actionSequence.get(currentTick).getZPos();
         currentAction = actionSequence.get(currentTick).getAction();
@@ -79,34 +85,39 @@ public class ZombieClone extends Zombie
         {
           cloneMesh[i].setTranslateZ(zPos);
           cloneMesh[i].setTranslateX(xPos);
-          if (health>0)
+          if (health > 0)
             cloneMesh[i].setRotate(actionSequence.get(currentTick).getAngle() + 180);
         }
         cloneCylinder.setTranslateX(xPos);
         cloneCylinder.setTranslateZ(zPos);
 
-        if(currentAction.equals(Action.CREATECLONE)) {
+        if (currentAction.equals(Action.CREATECLONE))
+        {
           makeClone();
           currentAction = Action.NOACTION;
-        }
-        else if (currentAction.equals(Action.LOSEHEALTH)) {
-          if (ignoreFirstDamage==1) {
-            ignoreFirstDamage++;
-          }else if (ignoreFirstDamage==2)
+        } else if (currentAction.equals(Action.LOSEHEALTH))
+        {
+          if (ignoreFirstDamage == 1)
           {
-            ignoreFirstDamage=0;
-          }else
+            ignoreFirstDamage++;
+          } else if (ignoreFirstDamage == 2)
+          {
+            ignoreFirstDamage = 0;
+          } else
           {
             updateMesh();
             currentAction = Action.NOACTION;
           }
-        }
-        else if (currentAction.equals(Action.DIE)) {
+        } else if (currentAction.equals(Action.DIE))
+        {
           isDead = true;
           active = false;
         }
+
       }
+
     }
+
   }
 
   public void setActive(boolean active)
@@ -124,9 +135,11 @@ public class ZombieClone extends Zombie
     else if (health == 1)
       setMesh(ZombieHouse3d.dyingGhoul);
     ZombieHouse3d.root.getChildren().addAll(this.cloneMesh);
+
   }
 
-  public GraphNode getCurrentNode() {
+  public GraphNode getCurrentNode()
+  {
     GraphNode currentNode = null;
     Tile currentTile = null;
     double currentX = cloneCylinder.getTranslateX();
@@ -143,6 +156,7 @@ public class ZombieClone extends Zombie
   public void makeClone()
   {
     System.out.println("new clone!!");
+
   }
 
   public void setMesh(Node[] cloneMesh)
@@ -153,4 +167,6 @@ public class ZombieClone extends Zombie
       cloneMesh[i].setRotationAxis(Rotate.Y_AXIS);
     }
   }
+
+
 }
