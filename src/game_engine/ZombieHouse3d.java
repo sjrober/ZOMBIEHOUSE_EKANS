@@ -26,6 +26,8 @@ import javafx.scene.SubScene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -439,9 +441,25 @@ public class ZombieHouse3d
     pane.getChildren().add(box);
     pane.setMinWidth(1280);
     pane.setMinHeight(800);
-    Group weaponRoot = new Group();
-    weaponRoot.getChildren().addAll(/*Weapon image*/);
-    SubScene subScenes = new SubScene(weaponRoot,1280,800);
+    pane.setMaxWidth(1280);
+    pane.setMaxHeight(800);
+
+    ImageView weapon = new ImageView();
+
+    Image image = new Image("Images/machete.png");
+    weapon.setImage(image);
+    weapon.setFitWidth(500);
+    weapon.setPreserveRatio(true);
+    weapon.setSmooth(true);
+    weapon.setCache(true);
+    weapon.setRotate(90);
+    weapon.setTranslateX(500);
+    weapon.setTranslateY(-192);
+    weapon.translateYProperty();
+    weapon.translateXProperty();
+
+    pane.setBottom(weapon);
+
 
     // Use a SubScene
     SubScene subScene = new SubScene(root, 1280, 800, true,
@@ -456,7 +474,7 @@ public class ZombieHouse3d
     });*/
 
     Group group = new Group();
-    group.getChildren().addAll(subScene,pane,subScenes);
+    group.getChildren().addAll(subScene,pane);
     group.addEventFilter(
         MouseEvent.MOUSE_MOVED,
         new MouseEventHandler(camera, entityManager.player)
