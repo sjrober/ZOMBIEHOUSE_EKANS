@@ -1,13 +1,12 @@
 package entities;
-
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Math;
-
 import game_engine.Attributes;
 import game_engine.ZombieHouse3d;
 import graphing.GraphNode;
 import graphing.TileGraph;
+import javafx.scene.Node;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.PointLight;
 import javafx.scene.shape.Box;
@@ -125,14 +124,14 @@ public class Player extends Creature
     this.angle = 0;
     this.strafeVelocity = 0;
     camera.setRotate(this.angle);
-    this.camera = camera;
     camera.setTranslateX(x);
     camera.setTranslateZ(z);
+    this.camera = camera;
     this.light = light;
     light.setRotationAxis(Rotate.Y_AXIS);
-    boundingCircle = new Cylinder(radius, 1);
     PlayerStamina staminaCounter=new PlayerStamina();
     staminaCounter.start();
+    boundingCircle = new Cylinder(radius, 1);
     boundingCircle.setTranslateX(camera.getTranslateX());
     boundingCircle.setTranslateZ(camera.getTranslateZ());
     lastX = camera.getTranslateX();

@@ -26,6 +26,8 @@ import javafx.scene.SubScene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -74,6 +76,7 @@ public class ZombieHouse3d
   public ArrayList<Box> exits = new ArrayList<>();
   
   public static Group root;
+  public ImageView weapon = new ImageView();
 
   // The list of walls used for collision detection.
   public ArrayList<Box> walls = new ArrayList<>();
@@ -94,6 +97,7 @@ public class ZombieHouse3d
   public static String Hurt_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_hurt.obj";
   public static String Dying_Ghoul = "Resources/Meshes/Feral_ghoul/Feral_ghoul_dying.obj";
   private String Lambent_Female = "Resources/Meshes/Lambent_Female/Lambent_Female.obj";
+  public static String Weapon = "Resources/Meshes/Weapon/sword.obj";
 
   //private String Player_Clone = "Resources/Meshes/Player_Clone/cube.obj";
   //private String Player_Clone = "Resources/Meshes/Feral_ghoul/Feral_ghoul.obj";
@@ -438,6 +442,23 @@ public class ZombieHouse3d
     pane.getChildren().add(box);
     pane.setMinWidth(1280);
     pane.setMinHeight(800);
+    pane.setMaxWidth(1280);
+    pane.setMaxHeight(800);
+
+    Image image = new Image("Images/machete.png");
+    weapon.setImage(image);
+    weapon.setFitWidth(500);
+    weapon.setPreserveRatio(true);
+    weapon.setSmooth(true);
+    weapon.setCache(true);
+    weapon.setRotate(90);
+    weapon.setTranslateX(500);
+    weapon.setTranslateY(-192);
+    weapon.translateYProperty();
+    weapon.translateXProperty();
+
+    pane.setBottom(weapon);
+
 
     // Use a SubScene
     SubScene subScene = new SubScene(root, 1280, 800, true,
