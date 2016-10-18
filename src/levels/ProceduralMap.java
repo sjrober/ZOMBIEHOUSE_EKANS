@@ -452,13 +452,9 @@ public class ProceduralMap
             } else {
               map[y+1][x+1] = new Tile(r.region,y+1,x+1, !r.isRoom);
               if (x%2 == 1 && y%2 == 1 && r.isRoom){
-                double chance = (difficulty)/7d;
+                double chance = (difficulty + 2)/7d;
                 if (Math.random() < chance){
-                  map[y+1][x+1] = new Tile(0,y+1,x+1, !r.isRoom); //create obstacle
-                }
-                if (Math.random() < 1/7d)
-                {
-                  map[y+1][x+1] = new Tile(r.region + 5,y+1,x+1, !r.isRoom); //create decor
+                  map[y+1][x+1] = new Tile(r.region + 5,y+1,x+1, !r.isRoom); //create decorative obstacles
                 }
               }
             }

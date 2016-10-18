@@ -31,7 +31,7 @@ public class Tile
   public boolean isHallway = false;
   public boolean hasZombie = false;
   public boolean isWall = false;
-  private double zombieSpawn = 0.010;
+  private double zombieSpawn = 0.030;
   private Random rand = new Random();
   public double movementCost = 1;
   public boolean wallNW = false;
@@ -138,21 +138,28 @@ public class Tile
     if (type.equals(TileType.exit))
       typeString = "exit";
     if (type.equals(TileType.region1Decor))
-      //isWall = true;
-      //movementCost = Double.POSITIVE_INFINITY;
+    {
+      isWall = true;
+      movementCost = Double.POSITIVE_INFINITY;
       typeString = "red decor";
-    if (type.equals(TileType.region2Decor))
-      //isWall = true;
-      //movementCost = Double.POSITIVE_INFINITY;
+    }
+    if (type.equals(TileType.region2Decor)){
+      isWall = true;
+      movementCost = Double.POSITIVE_INFINITY;
       typeString = "orange decor";
+    }
     if (type.equals(TileType.region3Decor))
-      //isWall = true;
-      //movementCost = Double.POSITIVE_INFINITY;
+    {
+      isWall = true;
+      movementCost = Double.POSITIVE_INFINITY;
       typeString = "yellow decor";
+    }
     if (type.equals(TileType.region4Decor))
-      //isWall = true;
-      //movementCost = Double.POSITIVE_INFINITY;
+    {
+      isWall = true;
+      movementCost = Double.POSITIVE_INFINITY;
       typeString = "green decor";
+    }
   }
 
   /**

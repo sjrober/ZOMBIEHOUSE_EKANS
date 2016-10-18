@@ -38,4 +38,8 @@ public class PointTime
   public Action getAction() {
     return action;
   }
+
+  public void setAction(Action action) {
+    this.action = action;
+  }
 }

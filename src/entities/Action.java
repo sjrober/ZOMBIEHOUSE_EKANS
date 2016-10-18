@@ -5,5 +5,5 @@ package entities;
  */
 public enum Action
 {
-  NOACTION, STAB, LOSEHEALTH, DIE
+  NOACTION, STAB, LOSEHEALTH, DIE, CREATECLONE
 }

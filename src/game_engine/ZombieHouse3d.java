@@ -292,7 +292,11 @@ public class ZombieHouse3d
           roofDrawingBoard[col][row]
               .setTranslateZ(gameBoard[col][row].zPos);
         }
-        if (!gameBoard[col][row].type.equals(TileType.wall))
+        if (!gameBoard[col][row].type.equals(TileType.wall)
+                && !gameBoard[col][row].type.equals(TileType.region1Decor)
+                && !gameBoard[col][row].type.equals(TileType.region2Decor)
+                && !gameBoard[col][row].type.equals(TileType.region3Decor)
+                && !gameBoard[col][row].type.equals(TileType.region4Decor))
         {
           floorDrawingBoard[col][row].setTranslateY(-1);
           roofDrawingBoard[col][row].setTranslateY(1);
@@ -308,7 +312,11 @@ public class ZombieHouse3d
     {
       for (int row = 0; row < boardWidth; row++)
       {
-        if (gameBoard[col][row].getType().equals("wall"))
+        if (gameBoard[col][row].getType().equals("wall")
+                || gameBoard[col][row].getType().equals("red decor")
+                || gameBoard[col][row].getType().equals("orange decor")
+                || gameBoard[col][row].getType().equals("yellow decor")
+                || gameBoard[col][row].getType().equals("green decor"))
         {
           walls.add(floorDrawingBoard[col][row]);
           entityManager.numTiles++;
