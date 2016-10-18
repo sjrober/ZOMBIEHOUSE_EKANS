@@ -31,7 +31,7 @@ public class Tile
   public boolean isHallway = false;
   public boolean hasZombie = false;
   public boolean isWall = false;
-  private double zombieSpawn = 0.030;
+  private double zombieSpawn = 0.010;
   private Random rand = new Random();
   public double movementCost = 1;
   public boolean wallNW = false;

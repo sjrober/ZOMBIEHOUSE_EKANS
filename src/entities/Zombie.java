@@ -34,13 +34,16 @@ public class Zombie extends Creature
   public boolean randomWalk = false;
   //seeded random - Sam
   Random rand = new Random(360);
-  public double zombieWalkingSpeed = .05;
-  public double masterZombieSpeed = .05;
+  public double zombieWalkingSpeed = .1;
+  public double masterZombieSpeed = .1;
   public double masterZombie2dSpeed = .3;
   public double health = Attributes.Zombie_Health;
   public boolean isMasterZombie = false;
+  public boolean isParalyzed = false;
   public double zombieSmell = 15.0;
   public Circle zombieCirc = null;
+  public double pastX = 0;
+  public double pastZ = 0;
   public double twoDSpeed = (.5/60)*ZombieBoardRenderer.cellSize;
   int twoDSize = 3;
   public boolean twoDBoard = false;
@@ -476,6 +479,17 @@ public class Zombie extends Creature
   @Override
   public void tick()
   {
+    // Tried to get zombies to stop getting stuck on the walls. Oh well...
+    /*if ((zombieCylinder.getTranslateX() + 0.05 > pastX && zombieCylinder.getTranslateX() - 0.1 < pastX)
+            && (zombieCylinder.getTranslateZ() + 0.05 > pastZ && zombieCylinder.getTranslateZ() - 0.1 < pastZ))
+    {
+      //stopThreeDZombie();
+      //adjustAngle();
+      zombieCylinder.setTranslateX(xPos + 0.5);
+      zombieCylinder.setTranslateZ(zPos + 0.5);
+    }*/
+    pastX = zombieCylinder.getTranslateX();
+    pastZ = zombieCylinder.getTranslateZ();
     if (isStunned.get()) // Zombie is in the state of being stunned for 20 ticks
     {
       if (++stunTickCounter > Attributes.Zombie_Stun_Duration)
@@ -829,7 +843,7 @@ public class Zombie extends Creature
     if (twoDBoard)
     {
       if (currentTile.wallNE || currentTile.wallNW || currentTile.wallSW
-          || currentTile.wallSE)
+          || currentTile.wallSE || currentTile.isWall)
       {
         zombieCirc.setCenterX(currentTile.xPos * ZombieBoardRenderer.cellSize);
         zombieCirc.setCenterY(currentTile.zPos * ZombieBoardRenderer.cellSize);
@@ -837,7 +851,7 @@ public class Zombie extends Creature
     } else
     {
       if (currentTile.wallNE || currentTile.wallNW || currentTile.wallSW
-          || currentTile.wallSE)
+          || currentTile.wallSE || currentTile.isWall)
       {
         zombieCylinder.setTranslateZ(currentTile.zPos);
         zombieCylinder.setTranslateX(currentTile.xPos);
