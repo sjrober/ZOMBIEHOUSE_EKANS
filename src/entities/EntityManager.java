@@ -334,10 +334,14 @@ public class EntityManager
     }
 
     if (scenes.zombieCloneChildren.get(ZombieHouse3d.tickCount)!=null) {
+      System.out.println("Creating bifurcated Zombie Clone!!!");
       for(int i=0;i<scenes.zombieCloneChildren.get(ZombieHouse3d.tickCount).size()-1;i++)
       {
         ZombieClone newZombieClone = new ZombieClone(scenes.zombieCloneChildren.get(i),ZombieHouse3d.tickCount);
         zombieClones.add(newZombieClone);
+        newZombieClone.setActive(true);
+        newZombieClone.setMesh(ZombieHouse3d.feralGhoul);
+        ZombieHouse3d.root.getChildren().addAll(newZombieClone.cloneMesh);
       }
     }
     

@@ -91,8 +91,10 @@ public class Player extends Creature
    */
   public ArrayList<PointTime> pointList = new ArrayList<PointTime>();
 
-  public ArrayList<Zombie> currentZombieClones = null;
-  public ArrayList<Integer> currentZombieTime;
+  public ArrayList<Zombie> currentZombieClones = new ArrayList<Zombie>();
+  public ArrayList<Integer> currentZombieTime = new ArrayList<>();
+
+
   
 
   public Player() {
@@ -436,8 +438,9 @@ public class Player extends Creature
     zomb.setMesh(ZombieHouse3d.loadMeshViews(ZombieHouse3d.Feral_Ghoul));
     zomb.startZombie();
     ZombieHouse3d.root.getChildren().addAll(zomb.zombieMesh);
+    zomb.index = counter;
 
-    System.out.println("clone index: " + collisionCloneCheck.index);
+    System.out.println("clone index: " + zomb.index);
     /*entityManager.scenes.zombieClonePaths.
             get(collisionCloneCheck.index).
             get(ZombieHouse3d.tickCount).
@@ -445,8 +448,8 @@ public class Player extends Creature
     //entityManager.scenes.zombieCloneChildren.set(counter,zomb);
     //entityManager.zombies.add(zomb);
     if (zomb==null) System.out.println("the clone is null");
-    Zombie mart = zomb;
-    currentZombieClones.add(mart);
+    //Zombie mart = zomb;
+    currentZombieClones.add(zomb);
     currentZombieTime.add(counter);
   }
 
@@ -472,9 +475,16 @@ public class Player extends Creature
     light = null;
     boundingCircle = null;
 
+    //ArrayList<Zombie> currentZombieClones = new ArrayList<Zombie>();
+
     System.out.println("current time: " + counter);
-    if(currentZombieClones!=null)
+    if(!currentZombieTime.isEmpty())
     {
+      /*for (Zombie zombie: entityManager.zombies) {
+        if (zombie.index == counter) {
+          currentZombieClones.add(zombie);
+        }
+      }*/
       for(int i=0;i<currentZombieClones.size()-1;i++) {
         entityManager.scenes.zombieCloneChildren.set(currentZombieTime.get(i),currentZombieClones.get(i).pointList);
       }
