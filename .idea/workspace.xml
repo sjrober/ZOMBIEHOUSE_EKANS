@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa80007-b8f0-4fea-848a-1a923e74dfd9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/EntityManager$MasterZombieDecision.class" afterPath="$PROJECT_DIR$/bin/entities/EntityManager$MasterZombieDecision.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/EntityManager$ZombieDecision.class" afterPath="$PROJECT_DIR$/bin/entities/EntityManager$ZombieDecision.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/EntityManager.class" afterPath="$PROJECT_DIR$/bin/entities/EntityManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Player$PlayerStamina.class" afterPath="$PROJECT_DIR$/bin/entities/Player$PlayerStamina.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/Player.class" afterPath="$PROJECT_DIR$/bin/entities/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/entities/PointTime.class" afterPath="$PROJECT_DIR$/bin/entities/PointTime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Scenes.class" afterPath="$PROJECT_DIR$/bin/game_engine/Scenes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$1.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$MainGameLoop.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d$MainGameLoop.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d.class" afterPath="$PROJECT_DIR$/bin/game_engine/ZombieHouse3d.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/game_engine/Attributes.class" afterPath="$PROJECT_DIR$/bin/game_engine/Attributes.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/levels/ProceduralMap.class" afterPath="$PROJECT_DIR$/bin/levels/ProceduralMap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/levels/Tile.class" afterPath="$PROJECT_DIR$/bin/levels/Tile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/levels/ProceduralMap.java" afterPath="$PROJECT_DIR$/src/levels/ProceduralMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game_engine/Attributes.java" afterPath="$PROJECT_DIR$/src/game_engine/Attributes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/levels/Tile.java" afterPath="$PROJECT_DIR$/src/levels/Tile.java" />
     </list>
     <ignored path="ZombieHouse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,24 +101,34 @@
       <file leaf-file-name="Zombie.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="234">
+              <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/levels/Tile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProceduralMap.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Attributes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game_engine/Attributes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProceduralMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/levels/ProceduralMap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -193,6 +196,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/levels/ProceduralMap.java" />
+        <option value="$PROJECT_DIR$/src/game_engine/Attributes.java" />
+        <option value="$PROJECT_DIR$/src/levels/Tile.java" />
       </list>
     </option>
   </component>
@@ -1009,7 +1014,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476693096556</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Obstacles now appear as if it were 2 difficulty levels higher">
+      <created>1476759841163</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1476759841163</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1051,7 +1063,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20885417" sideWeight="0.6042945" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20885417" sideWeight="0.6042945" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32619774" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1066,7 +1079,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.43560606" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32619774" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1103,7 +1115,8 @@
     <MESSAGE value="PlayerClones now make sounds upon death and when hitting zombies." />
     <MESSAGE value="ZombieClones now update meshes correctly." />
     <MESSAGE value="Added images and materials for decor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added images and materials for decor" />
+    <MESSAGE value="Obstacles now appear as if it were 2 difficulty levels higher" />
+    <option name="LAST_COMMIT_MESSAGE" value="Obstacles now appear as if it were 2 difficulty levels higher" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1228,14 +1241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game_engine/ZombieHouse3d.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1245,14 +1250,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utilities/ZombieBoardRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/levels/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1304,6 +1301,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="454" column="47" selection-start-line="454" selection-start-column="47" selection-end-line="454" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Zombie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game_engine/Attributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/levels/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding />
         </state>
       </provider>

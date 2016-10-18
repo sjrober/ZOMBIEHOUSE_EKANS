@@ -25,7 +25,7 @@ public class Attributes
 
   // Zombie
   public static double Zombie_Smell = 15;
-  public static double Max_Zombies = 10;
+  public static double Max_Zombies = 30;
   
   // Map
   public static int Map_Width = 25;
