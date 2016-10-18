@@ -15,7 +15,8 @@ Entry Point: Main.java
   * W, A, S, D: Player Movement
   * Mouse on screen: rotates camera
   * Left and Right arrow keys: rotates camera
-  * Space:     peek above the map
+  * F1:     peek above the map
+  * Space: Attack
   * F: toggle player lighting
   8 ESC: pause game
 
