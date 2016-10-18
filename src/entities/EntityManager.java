@@ -332,6 +332,14 @@ public class EntityManager
     for (ZombieClone zombieClone: zombieClones) {
       zombieClone.tick();
     }
+
+    if (scenes.zombieCloneChildren.get(ZombieHouse3d.tickCount)!=null) {
+      for(int i=0;i<scenes.zombieCloneChildren.get(ZombieHouse3d.tickCount).size()-1;i++)
+      {
+        ZombieClone newZombieClone = new ZombieClone(scenes.zombieCloneChildren.get(i),ZombieHouse3d.tickCount);
+        zombieClones.add(newZombieClone);
+      }
+    }
     
     if (player.isDead.get())
     {

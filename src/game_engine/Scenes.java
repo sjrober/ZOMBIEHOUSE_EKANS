@@ -1,8 +1,6 @@
 package game_engine;
 
-import entities.Player;
-import entities.PlayerClone;
-import entities.Zombie;
+import entities.*;
 import gui.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -27,7 +25,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import entities.PointTime;
 
 /**
  * @author Atle Olson
@@ -78,6 +75,8 @@ public class Scenes
   public static ArrayList<PlayerClone> engagedZombies = new ArrayList<>(10000);
   public static ArrayList<ArrayList<PointTime>> zombieClonePaths = new ArrayList<>(10000);
   //engagedZombies.
+
+  public static ArrayList<ArrayList<PointTime>> zombieCloneChildren = new ArrayList<>(10000);
   
   /**
    * @param primaryStage
@@ -93,8 +92,9 @@ public class Scenes
     for (int i = 0; i < 10000; i++) {
       engagedZombies.add(null);
       zombieClonePaths.add(null);
+      zombieCloneChildren.add(null);
     }
-    System.out.println("Size of CloneList: " + engagedZombies.size());
+    System.out.println("Size of CloneList: " + zombieCloneChildren.size());
 
     returnButton.setText("Back to main menu.");
     returnButton.setOnAction(new EventHandler<ActionEvent>()
