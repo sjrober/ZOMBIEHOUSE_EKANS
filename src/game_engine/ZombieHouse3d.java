@@ -76,6 +76,7 @@ public class ZombieHouse3d
   public ArrayList<Box> exits = new ArrayList<>();
   
   public static Group root;
+  public ImageView weapon = new ImageView();
 
   // The list of walls used for collision detection.
   public ArrayList<Box> walls = new ArrayList<>();
@@ -443,8 +444,6 @@ public class ZombieHouse3d
     pane.setMinHeight(800);
     pane.setMaxWidth(1280);
     pane.setMaxHeight(800);
-
-    ImageView weapon = new ImageView();
 
     Image image = new Image("Images/machete.png");
     weapon.setImage(image);
