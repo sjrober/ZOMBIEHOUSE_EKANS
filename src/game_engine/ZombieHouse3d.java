@@ -81,7 +81,6 @@ public class ZombieHouse3d
 
   // The list of walls used for collision detection.
   public ArrayList<Box> walls = new ArrayList<>();
-  //private static int zombieCounter = 0;
   public int numZombies = 0;
   boolean initZombieMovement = true;
   public int tileSize = Tile.getTileSize();
