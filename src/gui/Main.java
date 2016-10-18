@@ -29,7 +29,7 @@ public class Main extends Application
     scenes.setSoundManager(soundManager);
     soundManager.playTrack(0);
     gameStage = primaryStage;
-    gameStage.setTitle("Zombie House By: Atle, Ben, and Jeffrey");
+    gameStage.setTitle("Zombie House By: Atle, Ben, Jeffrey, Robin, Sam, and Dustin");
     gameStage.setScene(scenes.mainMenu);
     gameStage.show();
     

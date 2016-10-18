@@ -71,7 +71,6 @@ public class Player extends Creature
   
   //other player fields:
   public Cylinder boundingCircle = null;
-  public Node[] weaponMesh = null;
   public AtomicBoolean isDead = new AtomicBoolean(false);
   public AtomicBoolean foundExit = new AtomicBoolean(false);
   
@@ -95,14 +94,6 @@ public class Player extends Creature
 
   public Player() {
 
-  }
-  public void setWeaponMesh(Node[] weaponMesh) //Copying format for zombies
-  {
-    this.weaponMesh = weaponMesh;
-    for (int i = 0; i < weaponMesh.length; i++)
-    {
-      weaponMesh[i].setRotationAxis(Rotate.Y_AXIS);
-    }
   }
 
   /**
@@ -204,13 +195,6 @@ public class Player extends Creature
     movementX += (strafeVelocity * Math.sin(angle * (Math.PI / 180) - Math.PI / 2));
     movementZ += (velocity * Math.cos(angle * (Math.PI / 180)));
     movementZ += (strafeVelocity * Math.cos(angle * (Math.PI / 180) - Math.PI / 2));
-
-    for (int i = 0; i < weaponMesh.length; i++) //Copying format for camera
-    {
-      weaponMesh[i].setTranslateZ(movementZ);
-      weaponMesh[i].setTranslateX(movementX);
-      weaponMesh[i].setRotate(angle);
-    }
     
     tempX.setTranslateX(movementX);
     tempX.setTranslateZ(boundingCircle.getTranslateZ());

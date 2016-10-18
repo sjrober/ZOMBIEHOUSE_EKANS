@@ -391,8 +391,6 @@ public class ZombieHouse3d
     System.out.println("Number of Player Clones: " + entityManager.playerClones.size());
     System.out.println("Number of Zombie Clones: " + entityManager.zombieClones.size());
 
-    entityManager.player.setWeaponMesh(loadMeshViews(Weapon)); //Copying format from zombies
-
     for (Zombie zombie: entityManager.zombies){
       if (zombie.isMasterZombie){
         zombie.setMesh(loadMeshViews(Lambent_Female));
@@ -441,6 +439,9 @@ public class ZombieHouse3d
     pane.getChildren().add(box);
     pane.setMinWidth(1280);
     pane.setMinHeight(800);
+    Group weaponRoot = new Group();
+    weaponRoot.getChildren().addAll(/*Weapon image*/);
+    SubScene subScenes = new SubScene(weaponRoot,1280,800);
 
     // Use a SubScene
     SubScene subScene = new SubScene(root, 1280, 800, true,
@@ -455,7 +456,7 @@ public class ZombieHouse3d
     });*/
 
     Group group = new Group();
-    group.getChildren().addAll(subScene,pane);
+    group.getChildren().addAll(subScene,pane,subScenes);
     group.addEventFilter(
         MouseEvent.MOUSE_MOVED,
         new MouseEventHandler(camera, entityManager.player)
